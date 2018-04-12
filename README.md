@@ -5,7 +5,7 @@ This project is build on the Express framework in NodeJS.
 
 This webapp uses the [axe-webdriverjs](https://github.com/dequelabs/axe-webdriverjs) to display accessibility issues in your html elements.
 
-It also need to use selenium-webdriver to start a browser that to test your website.
+It also need to use selenium-webdriver to start a browser to test your website.
 
 Use npm install to install all necessary packages
 
