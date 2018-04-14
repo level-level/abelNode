@@ -19,7 +19,7 @@ how to run the project
 
 here below is a sample code that shows how to test a url:
 
-```
+```nodejs
 var driver = new WebDriver.Builder()
 		.forBrowser('firefox')
 		.setFirefoxOptions(new firefox.Options().headless())
