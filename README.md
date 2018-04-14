@@ -22,11 +22,12 @@ here below is a sample code that shows how to test a url:
 ```
 var driver = new WebDriver.Builder()
 		.forBrowser('firefox')
+		.setFirefoxOptions(new firefox.Options().headless())
 		.build();
 
 
 	driver
-		.get('https://level-level.com')
+		.get("https://"+url)
 		.then(function () {
 			AxeBuilder(driver)
 				.analyze(function (results) {
