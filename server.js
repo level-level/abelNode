@@ -3,6 +3,8 @@ var express = require('express');
 var app = express();
 var AxeBuilder = require('axe-webdriverjs');
 var WebDriver = require('selenium-webdriver');
+const puppeteer = require('puppeteer');
+const firefox = require('selenium-webdriver/firefox');
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -19,8 +21,10 @@ app.get('/', function (req, res) {
 	var description = "des";
 	var violations = [];
 
+
 	var driver = new WebDriver.Builder()
 		.forBrowser('firefox')
+		.setFirefoxOptions(new firefox.Options().headless())
 		.build();
 
 
