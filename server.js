@@ -5,23 +5,19 @@ var AxeBuilder = require('axe-webdriverjs');
 var WebDriver = require('selenium-webdriver');
 const puppeteer = require('puppeteer');
 const firefox = require('selenium-webdriver/firefox');
+const bodyParser = require('body-parser');
 
+var urlencoderParser = bodyParser.urlencoded({ extended: true });
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
+app.post('/', urlencoderParser, function (req, res) {
+	var header = "Test your website";
+	console.log(req.body.url);
 
-// Axe web test
+	url = req.body.url;
 
-
-// use res.render to load up an ejs view file
-
-// index page 
-app.get('/', function (req, res) {
-	var header = "Violations";
-	var description = "des";
 	var violations = [];
-
-
 	var driver = new WebDriver.Builder()
 		.forBrowser('firefox')
 		.setFirefoxOptions(new firefox.Options().headless())
@@ -29,7 +25,7 @@ app.get('/', function (req, res) {
 
 
 	driver
-		.get('https://level-level.com')
+		.get("https://"+url)
 		.then(function () {
 			AxeBuilder(driver)
 				.analyze(function (results) {
@@ -39,6 +35,16 @@ app.get('/', function (req, res) {
 				});
 		});
 
+	res.render('pages/index', {
+		header: header
+	});
+
+
+});
+
+// index page 
+app.get('/', function (req, res) {
+	var header = "Test your website";
 	res.render('pages/index', {
 		header: header
 	});
