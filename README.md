@@ -20,20 +20,18 @@ how to run the project
 here below is a sample code that shows how to test a url:
 
 ```
-	var driver = new WebDriver.Builder()
+var driver = new WebDriver.Builder()
 		.forBrowser('firefox')
-		.setFirefoxOptions(new firefox.Options().headless())
 		.build();
 
 
 	driver
-		.get("https://"+url)
+		.get('https://level-level.com')
 		.then(function () {
 			AxeBuilder(driver)
 				.analyze(function (results) {
-					violations.push(results);
 					driver.quit();
-					console.log(violations[0]['violations'][0]);
+					console.log(results);
 				});
 		});
 ```
