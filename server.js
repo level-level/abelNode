@@ -25,7 +25,7 @@ app.post('/', urlencoderParser, function (req, res) {
 	var result;
 	var driver = new WebDriver.Builder()
 		.forBrowser('firefox')
-		.setFirefoxOptions(new firefox.Options().headless())
+		.setFirefoxOptions(new firefox.Options().headless(), new firefox.Options().proxy = null)
 		.build();
 
 	if (url.indexOf("http://") == 0 || url.indexOf("https://") == 0) {
@@ -35,7 +35,7 @@ app.post('/', urlencoderParser, function (req, res) {
 	}
 
 	console.log(finalUrl);
-	
+
 	driver
 		.get(finalUrl)
 		.then(function () {
