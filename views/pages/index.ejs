@@ -19,6 +19,7 @@
 					<form id="urlForm" method="POST" action="/">
 						<div class="form-group">
 							<label for="InputUrl">URL</label>
+							<span id="warning"></span>
 							<input type="text" class="form-control" id="url" aria-describedby="urlHelp" name="url" placeholder="Enter url">
 						</div>
 						<button type="submit" class="btn btn-primary">Submit</button>
@@ -34,29 +35,8 @@
 		<% include ../partials/footer %>
 	</footer>
 	<script>
-		const preObject = document.getElementById('violationList');
-		let socket = io();
-		socket.on('data', function (val) {
-			for (let i = 0; i < val.length; i++) {
-				var item = val[i];
-				var elem = document.createElement("li");
-				var b = document.createElement("b");
-				var iElem = document.createElement("i");
-				var helpurl = document.createElement("b");
-				elem.innerText = item["description"];
-				b.innerText = "impact: " + item["impact"] + " ";
-				iElem.innerText = item["help"];
-				helpurl.innerHTML = "For more details: " + item["helpUrl"]
-				preObject.appendChild(elem);
-				preObject.appendChild(b);
-				preObject.appendChild(iElem);
-				preObject.appendChild(helpurl);
-			}
-			console.log(val);
-
-		});
+		
 	</script>
 </body>
 
 </html>
-
