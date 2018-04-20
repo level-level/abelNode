@@ -14,15 +14,11 @@
 	<main>
 		<div class="row">
 			<div class="col-sm-8">
-
-				<div class="jumbotron">
-					<h1>
-
-					</h1>
-					<p>Welcome to templating using EJS</p>
-				</div>
+				<h3>Results:</h3>
 				<ul>
 					<% for(var i = 0; i < data.length; i++) { %>
+
+						<b>Type: <%= data[i].id %></b>
 						<li>
 							Description: <%= data[i].description %>
 						</li>
@@ -32,13 +28,6 @@
 						<hr>
 						<% } %>
 				</ul>
-
-			</div>
-			<div class="col-sm-4">
-
-				<div class="well">
-					<h3>Look I'm A Sidebar!</h3>
-				</div>
 
 			</div>
 		</div>
