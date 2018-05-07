@@ -1,0 +1,237 @@
+body {
+    padding-top: 50px;
+}
+
+b {
+    display: inline-block;
+    /* margin-left: -4px; */
+}
+
+.accessibilityCheck, .home h3 {
+    font-weight: normal;
+   
+}
+
+@media (min-width: 576px){
+   #columnResults .col-sm-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 100%;
+        max-width: 100%;
+    
+    }
+}
+
+
+
+.home .wrapper {
+    width:80%;
+    margin: 0 auto;
+    text-align: center
+}
+
+.bold{
+font-weight:bold
+}
+
+div#columnResults {
+    border-right: 1px solid black;
+    margin-right: 20px;
+    font-size: 12px;
+}
+
+.accessibilityCheck input#url {
+    margin-top:20px;
+    display: inline;
+    margin-right: -6px;
+    width: 80%;
+    border-radius: 0px;
+}
+
+.btn-primary {
+    background-color: #eeeeef;
+    border: 1px solid #ccc;
+    color:black;
+}
+
+.accessibilityCheck .btn-primary {
+    border-radius: 0px;
+    width: 100px;
+    vertical-align: unset;
+}
+
+ .btn-primary:hover {
+    background-color: black;
+    color:#eeeeef;
+    border: 1px solid #ccc;
+}
+
+
+
+.card {
+    margin-top:20px;
+    margin-right: 20px;
+    width: 23%;
+}
+
+.card-body:nth-child(2) {
+    background: #e9ecf0;
+}
+
+.card-body:nth-child(2) a.card-link {
+    color: #000000;
+}
+
+.card-body {
+    border-bottom: 1px solid #e9ecf0;
+}
+
+
+.accessibilityCheck .jumbotron { 
+    background-color: white;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.home .jumbotron {
+    border-radius: 0px;
+    background-color: #f1f3f7;
+}
+
+.wrapper-results {
+    display: flex;
+    margin-top: 30px;
+}
+
+.explanation {
+    display: flex;
+    margin-top: 40px;
+}
+
+.compareWrapper {
+    display: flex;
+    margin-top: 20px;
+}
+
+.compareResults{
+display: none;
+}
+
+.exampleShortsighted {height: 300px;margin-right: 10px;border:1px solid #ccc;margin-bottom:10px;filter: grayscale(100%);width: 400px;}
+.exampleNotShortsighted {height: 300px;border:1px solid #ccc;margin-bottom:10px;width: 400px;}
+
+.columnWrapper .row .card {
+    width: 30%;
+}
+
+img.iconEye {
+    width: 20px;
+    margin-left: -39px;
+    margin-right: 18px;
+}
+
+.columnWrapper {
+    width: 82%;
+    margin: 0 auto;
+}
+
+.row {
+    margin-left: 0px;
+    margin-bottom: 20px;
+}
+
+.compareWrapper .row {
+    display: flex;
+    margin: 10px;
+}
+
+.compareWrapper .row .card {
+    font-size: 9px;
+}
+
+
+.home .columnWrapper {
+    text-align: center;
+}
+
+.home .navbar {
+    margin-bottom: 0px;
+    border-radius: 4px 0px 4px 0px;
+}
+
+/* circle div  */
+
+#outer-circle {
+    background: #a9aaab;
+    border-radius: 50%;
+    text-align: center;
+    height: 250px;
+    margin-bottom: 20px;
+    width: 250px;
+    position: relative;
+    /* 
+     Child elements with absolute positioning will be 
+     positioned relative to this div 
+    */
+  }
+
+  .center-text {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 63px;
+}
+  #inner-circle {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    top: 70%;
+    left: 69%;
+    margin: -150px 0px 0px -150px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .accessibilityCheck .jumbotron { 
+        width: 100%;
+        text-align: center;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .explanation {
+        margin-top: 31px;
+        display: grid;
+    }
+
+    .explanation span {
+        margin-bottom: 20px;
+    }
+
+   .accessibilityCheck input#url {
+        margin-top:20px;
+        display: inline;
+        margin-right: -4px;
+        width: 60%;
+
+    }
+
+    .wrapper-results {
+        display: block;
+    }
+
+    .scoreOverview {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .accessibilityCheck input#url {
+     
+        width: 70%;
+
+    }
+}

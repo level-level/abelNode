@@ -6,37 +6,71 @@
 </head>
 
 <body class="container">
+	<div class="home">
+		<header>
+			<% include ../partials/header %>
+		</header>
 
-	<header>
-		<% include ../partials/header %>
-	</header>
+		<main>
 
-	<main>
-		<div class="jumbotron">
-			<h3>
-				<%= header %>
-					</h1>
-					<form id="urlForm" method="POST" action="/">
-						<div class="form-group">
-							<label for="InputUrl">URL</label>
-							<span id="warning"></span>
-							<input type="text" class="form-control" id="url" aria-describedby="urlHelp" name="url" placeholder="Enter url">
+			<div class="jumbotron">
+				<div class="wrapper">
+					<h3>
+						Is jouw website toegankelijk voor
+						<span class='bold'> iedereen?</span>
+					</h3>
+					<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam hic, repellendus porro nulla, quaerat laboriosam dicta
+						nemo aperiam numquam beatae, culpa esse obcaecati fugit nostrum aliquid eaque blanditiis doloremque laudantium.</span>
+				</div>
+			</div>
+
+			<div class="columnWrapper">
+				<h5>
+					Is jouw website toegankelijk voor
+					<span class='bold'> iedereen?</span>
+					</h3>
+					<div class="row">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Developer</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							</div>
+							<div class="card-body">
+								<a href="/accessibilityCheck" class="card-link">Test</a>
+							</div>
 						</div>
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</form>
-					<ul>
-					</ul>
-					<ol id="violationList">
-						<ol>
-		</div>
+
+						<div class="card" >
+							<div class="card-body">
+								<h5 class="card-title">CEO</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							</div>
+							<div class="card-body">
+								<a href="#" class="card-link">Test</a>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Webeigenaar</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							</div>
+							<div class="card-body">
+								<a href="#" class="card-link">Test</a>
+							</div>
+						</div>
+					</div>
+			</div>
+	</div>
 	</main>
 
 	<footer>
 		<% include ../partials/footer %>
 	</footer>
 	<script>
-		
+
 	</script>
+	</div>
 </body>
 
 </html>

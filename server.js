@@ -18,9 +18,31 @@ app.set('view engine', 'ejs');
 let port = 8080;
 
 
+app.use(express.static(__dirname + '/public'));
+
+// index page 
+app.get('/', function (req, res) {
 
 
-app.post('/', urlencoderParser, function (req, res) {
+	var header = "Test your website";
+	res.render('pages/index', {
+	});
+
+});
+
+
+
+// Test results page 
+app.get('/about', function (req, res) {
+	res.render('pages/about');
+});
+
+// Accessibility check page 
+app.get('/accessibilityCheck', function (req, res) {
+	res.render('pages/accessibilityCheck');
+});
+
+app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	url = req.body.url;
 	var finalUrl;
 
@@ -41,7 +63,6 @@ app.post('/', urlencoderParser, function (req, res) {
 
 	urlExists(finalUrl, function (err, exists) {
 		if (exists) {
-			console.log("yeahh");
 			driver
 				.get(finalUrl)
 				.then(function () {
@@ -49,27 +70,15 @@ app.post('/', urlencoderParser, function (req, res) {
 						.analyze(function (results) {
 							driver.quit();
 							result = result;
-							// console.log(results['violations'][0]);
-							// resultArray = Object.values(results['violations'][0]);
-							// console.log(resultArray);
-
 							result = results['violations'];
 
-							console.log(result);
-
-
-							var data = {
-								title: 'Cleaning Supplies',
-								supplies: ['mop', 'broom', 'duster']
-							};
-							res.render('pages/about', {
+							res.render('pages/results', {
 								data: result
 							});
 
 						});
 				});
 		} else {
-			console.log("NOOO");
 		}
 
 	});
@@ -77,24 +86,6 @@ app.post('/', urlencoderParser, function (req, res) {
 
 
 
-});
-
-// index page 
-app.get('/', function (req, res) {
-
-
-	var header = "Test your website";
-	res.render('pages/index', {
-		header: header
-	});
-
-});
-
-
-
-// about page 
-app.get('/about', function (req, res) {
-	res.render('pages/about');
 });
 
 
