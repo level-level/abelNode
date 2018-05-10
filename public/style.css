@@ -12,14 +12,6 @@ b {
    
 }
 
-@media (min-width: 576px){
-   #columnResults .col-sm-8 {
-        -ms-flex: 0 0 66.666667%;
-        flex: 100%;
-        max-width: 100%;
-    
-    }
-}
 
 
 
@@ -34,7 +26,7 @@ font-weight:bold
 }
 
 div#columnResults {
-    border-right: 1px solid black;
+    border-right: 1px solid #e6e6e6;
     margin-right: 20px;
     font-size: 12px;
 }
@@ -123,6 +115,10 @@ display: none;
     width: 30%;
 }
 
+.wrapper-results .row .card {
+    width: 80%;
+}
+
 img.iconEye {
     width: 20px;
     margin-left: -39px;
@@ -190,7 +186,17 @@ img.iconEye {
     margin: -150px 0px 0px -150px;
   }
 
-  @media screen and (max-width: 800px) {
+
+@media (min-width: 576px){
+    #columnResults .col-sm-8 {
+         -ms-flex: 0 0 66.666667%;
+         flex: 100%;
+         max-width: 100%;
+     
+     }
+ }
+
+  @media screen and (max-width: 1000px) {
     .accessibilityCheck .jumbotron { 
         width: 100%;
         text-align: center;
@@ -222,16 +228,39 @@ img.iconEye {
     }
 
     .scoreOverview {
-        width: 70%;
+        width: 90%;
         margin: 0 auto;
+    }
+
+    .columnWrapper .row .card {
+
+        width: 100%;
     }
 }
 
+@media screen and (min-width: 1000px) {
+
+div#overviewScore {width: 50%;}
+
+}
 @media screen and (max-width: 1000px) {
 
     .accessibilityCheck input#url {
      
         width: 70%;
 
+    }
+
+    .wrapper-results .row .card {
+        width: 90%;
+    }
+    
+
+    #outer-circle {
+        margin: 0 auto;
+    }
+
+    div#columnResults {
+        border-right: 0px;
     }
 }

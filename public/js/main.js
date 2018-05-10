@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (event) {
 
+
     let resultClick = document.querySelectorAll('.showCompare');
     let scoreOverview = document.getElementById('overviewScore');
     let resultsWrapper = document.getElementById('resultsWrapper');
