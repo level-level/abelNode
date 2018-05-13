@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="container">
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <main>
+        <div class="accessibilityCheck">
+            <div class="jumbotron">
+                <h3>
+                    Is jouw website toegankelijk voor
+                    <span class='bold'> iedereen?</span>
+                </h3>
+                <form id="urlForm" method="POST" action="/accessibilityCheck">
+
+
+                    <div class="form-group">
+                        <span id="warning"></span>
+                        <input type="text" class="form-control" id="url" aria-describedby="urlHelp" name="url" placeholder="Enter url">
+                        <button type="submit" class="btn btn-primary">Test</button>
+                    </div>
+                </form>
+                <div class="explanation">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, temporibus ratione eum impedit minus quo
+                        unde tenetur ab sapiente nam facilis deleniti recusandae soluta. Doloremque ipsum ipsa repellat facere
+                        reiciendis!
+                    </span>
+                    <span> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil, iusto necessitatibus tempora cum, veritatis
+                        esse quam reiciendis, magnam ducimus dolorem sequi ea temporibus debitis consectetur voluptatibus
+                        reprehenderit odio qui aperiam.</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    <script>
+    </script>
+</body>
+
+</html>
