@@ -8,6 +8,10 @@ const puppeteer = require('puppeteer');
 const firefox = require('selenium-webdriver/firefox');
 const bodyParser = require('body-parser');
 var urlExists = require('url-exists');
+var axe = require('axe-core');
+var events = require('events');
+
+
 
 
 var urlencoderParser = bodyParser.urlencoded({ extended: true });
@@ -15,18 +19,34 @@ var urlencoderParser = bodyParser.urlencoded({ extended: true });
 app.set('view engine', 'ejs');
 
 // Set the port number
-let port = 8080;
+let port = 8000;
+
+
+app.use(express.static(__dirname + '/public'));
+
+// index page 
+app.get('/', function (req, res) {
+
+
+	var header = "Test your website";
+	res.render('pages/index', {
+	});
+
+});
 
 
 
+// Accessibility check page 
+app.get('/accessibilityCheck', function (req, res) {
+	res.render('pages/accessibilityCheck');
+});
 
-app.post('/', urlencoderParser, function (req, res) {
+app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	url = req.body.url;
 	var finalUrl;
 
 
 	var result;
-
 
 	var driver = new WebDriver.Builder()
 		.forBrowser('firefox')
@@ -36,65 +56,33 @@ app.post('/', urlencoderParser, function (req, res) {
 	if (url.indexOf("http://") == 0 || url.indexOf("https://") == 0) {
 		finalUrl = url;
 	} else {
-		finalUrl = "http://" + url;
+		finalUrl = "https://" + url;
 	}
+	try {
+		urlExists(finalUrl, function (err, exists) {
+			if (exists) {
+				driver
+					.get(finalUrl)
+					.then(function () {
+						AxeBuilder(driver)
+							.analyze(function (results) {
+								driver.quit();
+								result = results['violations'];
+								res.render('pages/results', {
+									data: result
+								});
 
-	urlExists(finalUrl, function (err, exists) {
-		if (exists) {
-			console.log("yeahh");
-			driver
-				.get(finalUrl)
-				.then(function () {
-					AxeBuilder(driver)
-						.analyze(function (results) {
-							driver.quit();
-							result = result;
-							// console.log(results['violations'][0]);
-							// resultArray = Object.values(results['violations'][0]);
-							// console.log(resultArray);
-
-							result = results['violations'];
-
-							console.log(result);
-
-
-							var data = {
-								title: 'Cleaning Supplies',
-								supplies: ['mop', 'broom', 'duster']
-							};
-							res.render('pages/about', {
-								data: result
 							});
+					});
+			}
 
-						});
-				});
-		} else {
-			console.log("NOOO");
-		}
-
-	});
+		});
+	} catch (e) {
+		console.error(e);
+	}
 	console.log(finalUrl);
 
 
-
-});
-
-// index page 
-app.get('/', function (req, res) {
-
-
-	var header = "Test your website";
-	res.render('pages/index', {
-		header: header
-	});
-
-});
-
-
-
-// about page 
-app.get('/about', function (req, res) {
-	res.render('pages/about');
 });
 
 

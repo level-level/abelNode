@@ -2,6 +2,7 @@
   "name": "node-ejs",
   "main": "server.js",
   "dependencies": {
+    "EventEmitter": "^1.0.0",
     "axe-webdriverjs": "^2.0.0",
     "body-parser": "^1.18.2",
     "ejs": "2.5.5",
@@ -12,7 +13,7 @@
     "socket.io": "^2.1.0"
   },
   "devDependencies": {
-    "axe-core": "^3.0.1",
+    "axe-core": "^3.0.2",
     "url-exists": "^1.0.3"
   }
 }

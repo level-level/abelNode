@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<% include ../partials/head %>
+</head>
+
+<body class="container">
+
+	<header>
+		<% include ../partials/header %>
+	</header>
+
+	<main class="wrapper-results" id="resultsWrapper">
+		<div class="row" id="columnResults">
+			<div class="col-sm-8">
+				<h3>Resultaten:</h3>
+				<ul>
+					<% for(var i = 0; i < data.length; i++) { %>
+						<a href="#" class="showCompare">
+							<img class="iconEye" src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-4/256/eye-icon.png" alt="">
+						</a>
+						<b>Type:
+							<%= data[i].id %>
+						</b>
+						<li>
+							Description:
+							<%= data[i].description %>
+						</li>
+						<li>
+							Help:
+							<%= data[i].help %>
+						</li>
+						<b>
+							Impact:
+							<%= data[i].impact %>
+						</b>
+						<hr>
+						<% } %>
+				</ul>
+
+			</div>
+		</div>
+		<div class="compareResults" id="resultsCompare">
+			<h3>Vergelijk</h3>
+			<span>Onderstaande is een vergelijking te zien tussen iemand die slechtziend is en iemand die alles goed ziet (doorsnee persoon).</span>
+
+			<div class="compareWrapper">
+				<div class="shortSighted">
+					<span>Slechtziende</span>
+					<div class="exampleShortsighted">
+						<div class="row">
+							<div class="card">
+								<img class="card-img-top" src="https://cdn.rebelle.com/26/26df97f220180315-10-raiel2.jpg?width=420&height=420" alt="Card image cap">
+								<div class="card-body">
+									<p class="card-text">Roze Jurk</p>
+								</div>
+							</div>
+							<div class="card">
+								<img class="card-img-top" src="https://cdn.rebelle.com/d7/d79841a120180405-10-1tbn7ep.jpg?width=420&height=420" alt="Card image cap">
+								<div class="card-body">
+									<p class="card-text">Bruine jurk</p>
+								</div>
+							</div>
+							<div class="card">
+								<img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt9L1clxUvdTCI2d4wRaVpi2YrYf_uYwvxaer9UzsgFUzFMV-a"
+								 alt="Card image cap">
+								<div class="card-body">
+									<p class="card-text">Zwarte jurk</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<p>Door de onjuiste contrasten te gebruiken wordt het niet duidelijk voor de slechtziende wat het verschil is tussen bepaalde
+						producten.Ongeveer 8% van de mannen en 0.5% van de vrouwen hebben een kleurenblindheid.
+					</p>
+				</div>
+				<div class="NotshortSighted">
+					<span>Niet beperkte</span>
+					<div class="exampleNotShortsighted">
+						<div class="row">
+							<div class="card">
+								<img class="card-img-top" src="https://cdn.rebelle.com/26/26df97f220180315-10-raiel2.jpg?width=420&height=420" alt="Card image cap">
+								<div class="card-body">
+									<p class="card-text">Roze Jurk</p>
+								</div>
+							</div>
+							<div class="card">
+								<img class="card-img-top" src="https://cdn.rebelle.com/d7/d79841a120180405-10-1tbn7ep.jpg?width=420&height=420" alt="Card image cap">
+								<div class="card-body">
+									<p class="card-text">Bruine jurk</p>
+								</div>
+							</div>
+							<div class="card">
+								<img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt9L1clxUvdTCI2d4wRaVpi2YrYf_uYwvxaer9UzsgFUzFMV-a"
+								 alt="Card image cap">
+								<div class="card-body">
+									<p class="card-text">Zwarte jurk</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<p>Als niet beperkte kunnen wij een duidelijk beeld krijgen door de kleuren dat er een verschil is tussen verschillende
+						producten. </p>
+				</div>
+			</div>
+
+		</div>
+		<div class="scoreOverview" id="overviewScore">
+			<div id="outer-circle">
+				<div id="inner-circle">
+					<div class="center-text">
+						<div>De score is
+							<h3 class="bold">325</h3> van
+							<span class="bold">500</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<span>Soorten testen</span>
+			<div class="row">
+				<div class="card">
+					<div class="card-body">
+						<p class="card-text">Laat de website testen door een blinde of slechtziende.</p>
+					</div>
+					<div class="card-body">
+						<a href="#" class="card-link">Meer informatie</a>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-body">
+						<p class="card-text">Laat de website live testen door een blinde of slechtziende.</p>
+					</div>
+					<div class="card-body">
+						<a href="#" class="card-link">Meer informatie</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<% include ../partials/footer %>
+	</footer>
+
+</body>
+
+</html>
