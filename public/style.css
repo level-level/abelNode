@@ -119,6 +119,10 @@ display: none;
     width: 80%;
 }
 
+.compareWrapper .row .card {
+    width: 23%;
+}
+
 img.iconEye {
     width: 20px;
     margin-left: -39px;
@@ -255,6 +259,14 @@ div#overviewScore {width: 50%;}
         width: 90%;
     }
     
+    .compareWrapper .row .card {
+        width: 20%;
+    }
+
+    .compareWrapper {
+        display: block;
+    }
+   
 
     #outer-circle {
         margin: 0 auto;
