@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 var urlExists = require('url-exists');
 var axe = require('axe-core');
 var events = require('events');
-
+var score;
 
 
 
@@ -42,6 +42,7 @@ app.get('/accessibilityCheck', function (req, res) {
 });
 
 app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
+	score = 500;
 	url = req.body.url;
 	var finalUrl;
 
@@ -53,6 +54,11 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 		.setFirefoxOptions(new firefox.Options().headless(), new firefox.Options().proxy = null)
 		.build();
 
+	// var criticalArray = [];
+	// var seriousArray = [];
+	// var moderateArray = []
+	// var minorArray = [];
+	var impact;
 	if (url.indexOf("http://") == 0 || url.indexOf("https://") == 0) {
 		finalUrl = url;
 	} else {
@@ -68,8 +74,35 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 							.analyze(function (results) {
 								driver.quit();
 								result = results['violations'];
+
+								for (let i = 0; i < result.length; i++) {
+									impact = results['violations'][i]['impact']
+									console.log(impact);
+
+									switch (impact) {
+										case 'critical':
+											score -= 40;
+											break;
+										case 'serious':
+											score -= 20;
+											break;
+										case 'moderate':
+											score -= 10;
+											break;
+										case 'minor':
+											score -= 5;
+											break;
+										default:
+											break;
+									}
+
+
+								}
+								console.log("Score: " + score);
+								console.log(result.length);
 								res.render('pages/results', {
-									data: result
+									data: result,
+									score: score
 								});
 
 							});
