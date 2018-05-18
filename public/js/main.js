@@ -7,16 +7,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let columnResults = document.getElementById('columnResults');
     let resultsCompare = document.getElementById('resultsCompare');
 
+    let crossClick = document.getElementById('cross');
+
     function showResult() {
-        scoreOverview.remove();
+        scoreOverview.style.display = 'none'
         resultsCompare.style.display = 'block';
 
+    }
 
+    function showScore() {
+        scoreOverview.style.display = 'block';
+        resultsCompare.style.display = 'none'
     }
 
     for (let i = 0; i < resultClick.length; i++) {
         resultClick[i].addEventListener('click', showResult, false);
     }
+    crossClick.addEventListener('click', showScore, false);
+
 });
 
 

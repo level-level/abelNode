@@ -13,6 +13,9 @@
 
 	<main class="wrapper-results" id="resultsWrapper">
 		<div class="row" id="columnResults">
+			<a id="goBack" href="/accessibilityCheck">
+				<img src="https://image.flaticon.com/icons/png/128/2/2558.png" alt="">
+			</a>
 			<div class="col-sm-8">
 				<h3>Resultaten:</h3>
 				<ul>
@@ -42,6 +45,9 @@
 			</div>
 		</div>
 		<div class="compareResults" id="resultsCompare">
+			<a id="cross" href="#">
+				<img src="https://cdn2.iconfinder.com/data/icons/filled-icons/493/x-128.png" alt="">
+			</a>
 			<h3>Vergelijk</h3>
 			<span>Onderstaande is een vergelijking te zien tussen iemand die slechtziend is en iemand die alles goed ziet (doorsnee persoon).</span>
 
@@ -107,37 +113,45 @@
 
 		</div>
 		<div class="scoreOverview" id="overviewScore">
-			<div id="outer-circle">
-				<div id="inner-circle">
-					<div class="center-text">
-						<div>De score is
-							<h3 class="bold">325</h3> van
-							<span class="bold">500</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<span>Soorten testen</span>
-			<div class="row">
-				<div class="card">
-					<div class="card-body">
-						<p class="card-text">Laat de website testen door een blinde of slechtziende.</p>
-					</div>
-					<div class="card-body">
-						<a href="#" class="card-link">Meer informatie</a>
-					</div>
-				</div>
+			<%if (score < 300) { %>
+				<div id="outer-circle" style="background-color: red">
+					<% } %>
+						<%if (score >= 300) { %>
+							<div id="outer-circle" style="background-color: green">
+								<% } %>
 
-				<div class="card">
-					<div class="card-body">
-						<p class="card-text">Laat de website live testen door een blinde of slechtziende.</p>
-					</div>
-					<div class="card-body">
-						<a href="#" class="card-link">Meer informatie</a>
-					</div>
+									<div id="inner-circle">
+										<div class="center-text">
+											<div>De score is
+												<h3 class="bold">
+													<%= score %>
+												</h3> van
+												<span class="bold">500</span>
+											</div>
+										</div>
+									</div>
+							</div>
+							<span>Soorten testen</span>
+							<div class="row">
+								<div class="card">
+									<div class="card-body">
+										<p class="card-text">Laat de website testen door een blinde of slechtziende.</p>
+									</div>
+									<div class="card-body">
+										<a href="#" class="card-link">Meer informatie</a>
+									</div>
+								</div>
+
+								<div class="card">
+									<div class="card-body">
+										<p class="card-text">Laat de website live testen door een blinde of slechtziende.</p>
+									</div>
+									<div class="card-body">
+										<a href="#" class="card-link">Meer informatie</a>
+									</div>
+								</div>
+							</div>
 				</div>
-			</div>
-		</div>
 	</main>
 
 	<footer>
