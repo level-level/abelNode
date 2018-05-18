@@ -12,6 +12,23 @@ b {
    
 }
 
+.compareResults a>img {
+    width: 30px;
+    height: 30px;
+}
+
+.compareResults a {
+    float: right;
+}
+
+a#goBack>img {
+    width: 30px;
+    height: 30px;
+}
+.wrapper-results .col-sm-8 {
+    margin-top: 20px;
+}
+
 
 
 
