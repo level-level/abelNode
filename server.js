@@ -74,11 +74,15 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 							.analyze(function (results) {
 								driver.quit();
 								result = results['violations'];
-
+								for (let i = 0; i < results.length; i++) {
+								
+								}
 								for (let i = 0; i < result.length; i++) {
 									impact = results['violations'][i]['impact']
-									console.log(impact);
-
+									console.log( "\n" +results['violations'][i]['tags'][0]);
+									if(results['violations'][i]['tags'][0] == 'cat.color'){
+										console.log("yeahhh");
+									}
 									switch (impact) {
 										case 'critical':
 											score -= 40;
@@ -98,8 +102,6 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 
 
 								}
-								console.log("Score: " + score);
-								console.log(result.length);
 								res.render('pages/results', {
 									data: result,
 									score: score
