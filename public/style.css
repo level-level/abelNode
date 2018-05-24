@@ -1,6 +1,3 @@
-body {
-    padding-top: 50px;
-}
 
 b {
     display: inline-block;
@@ -43,9 +40,8 @@ font-weight:bold
 }
 
 div#columnResults {
-    border-right: 1px solid #e6e6e6;
-    margin-right: 20px;
     font-size: 12px;
+    width: 25%;
 }
 
 .accessibilityCheck input#url {
@@ -108,7 +104,6 @@ div#columnResults {
 
 .wrapper-results {
     display: flex;
-    margin-top: 30px;
 }
 
 .explanation {
@@ -133,8 +128,18 @@ display: none;
 }
 
 .wrapper-results .row .card {
-    width: 80%;
+    width: 100%;
+    margin-top: 20px;
 }
+
+.wrapper-results #columnResults .card {
+    
+    margin-top: 0px;
+    border:0px;
+    border-radius: 0;
+}
+
+
 
 .compareWrapper .row .card {
     width: 23%;
@@ -175,6 +180,10 @@ img.iconEye {
     border-radius: 4px 0px 4px 0px;
 }
 
+div#headingTitle {
+    text-align: center;
+}
+
 /* circle div  */
 
 #outer-circle {
@@ -207,6 +216,8 @@ img.iconEye {
     margin: -150px 0px 0px -150px;
   }
 
+ 
+
 
 @media (min-width: 576px){
     #columnResults .col-sm-8 {
@@ -223,6 +234,7 @@ img.iconEye {
         text-align: center;
     }
 
+  
     .card {
         width: 100%;
     }
@@ -253,15 +265,43 @@ img.iconEye {
         margin: 0 auto;
     }
 
-    .columnWrapper .row .card {
+    .columnWrapper .row  .card {
 
         width: 100%;
     }
 }
 
+a.navbar-brand {
+    width: 45%;
+    margin-left: 15%;
+}
+
+
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+.bg-light {
+    background: #e2e2e2!important;
+}
+
 @media screen and (min-width: 1000px) {
 
-div#overviewScore {width: 50%;}
+div#overviewScore {width: 50%;margin: 0 auto;margin-top: 68px;}
+div#accordion {
+    width: 95%;
+}
+ul.navbar-nav.mr-auto.mt-2.mt-lg-0 {
+    background: darkgray;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.tab-content {
+    margin-top: 20px;
+}
+
 
 }
 @media screen and (max-width: 1000px) {

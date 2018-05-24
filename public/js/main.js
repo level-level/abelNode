@@ -1,29 +1,27 @@
 document.addEventListener("DOMContentLoaded", function (event) {
+    // let resultClick = document.querySelectorAll('.showCompare');
+    // let scoreOverview = document.getElementById('overviewScore');
+    // let resultsWrapper = document.getElementById('resultsWrapper');
+    // let columnResults = document.getElementById('columnResults');
+    // let resultsCompare = document.getElementById('resultsCompare');
 
+    // let crossClick = document.getElementById('cross');
 
-    let resultClick = document.querySelectorAll('.showCompare');
-    let scoreOverview = document.getElementById('overviewScore');
-    let resultsWrapper = document.getElementById('resultsWrapper');
-    let columnResults = document.getElementById('columnResults');
-    let resultsCompare = document.getElementById('resultsCompare');
+    // function showResult() {
+    //     scoreOverview.style.display = 'none'
+    //     resultsCompare.style.display = 'block';
 
-    let crossClick = document.getElementById('cross');
+    // }
 
-    function showResult() {
-        scoreOverview.style.display = 'none'
-        resultsCompare.style.display = 'block';
+    // function showScore() {
+    //     scoreOverview.style.display = 'block';
+    //     resultsCompare.style.display = 'none'
+    // }
 
-    }
-
-    function showScore() {
-        scoreOverview.style.display = 'block';
-        resultsCompare.style.display = 'none'
-    }
-
-    for (let i = 0; i < resultClick.length; i++) {
-        resultClick[i].addEventListener('click', showResult, false);
-    }
-    crossClick.addEventListener('click', showScore, false);
+    // for (let i = 0; i < resultClick.length; i++) {
+    //     resultClick[i].addEventListener('click', showResult, false);
+    // }
+    // crossClick.addEventListener('click', showScore, false);
 
 });
 

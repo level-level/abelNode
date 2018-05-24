@@ -5,49 +5,155 @@
 	<% include ../partials/head %>
 </head>
 
-<body class="container">
+<body>
 
 	<header>
 		<% include ../partials/header %>
 	</header>
-
+	<!-- <a id="goBack" href="/accessibilityCheck">
+		<img src="https://image.flaticon.com/icons/png/128/2/2558.png" alt="">
+	</a> -->
 	<main class="wrapper-results" id="resultsWrapper">
 		<div class="row" id="columnResults">
-			<a id="goBack" href="/accessibilityCheck">
-				<img src="https://image.flaticon.com/icons/png/128/2/2558.png" alt="">
-			</a>
-			<div class="col-sm-8">
-				<h3>Resultaten:</h3>
-				<ul>
-					<% for(var i = 0; i < data.length; i++) { %>
-						<a href="#" class="showCompare">
-							<img class="iconEye" src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-4/256/eye-icon.png" alt="">
-						</a>
-						<b>Type:
-							<%= data[i].id %>
-						</b>
-						<li>
-							Description:
-							<%= data[i].description %>
-						</li>
-						<li>
-							Help:
-							<%= data[i].help %>
-						</li>
-						<b>
-							Impact:
-							<%= data[i].impact %>
-						</b>
-						<hr>
-						<% } %>
-				</ul>
+			<div id="accordion">
+				<div class="card">
+					<div class="card-header" id="headingTitle">
+						<h5 class="mb-0">
+							Resultaten
+						</h5>
+					</div>
+				</div>
+				<%if (colorContrastArray.length > 0) { %>
+					<div class="card">
+						<div class="card-header" id="headingOne">
+							<h5 class="mb-0">
+								<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+									Colors and contrast
+								</button>
+							</h5>
+						</div>
 
+						<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+							<div class="card-body">
+								<ul>
+									<% for(var i = 0; i < colorContrastArray.length; i++) { %>
+										<li>Type:
+											<%= colorContrastArray[i].id %>
+										</li>
+										<li>
+											Help:
+											<%= colorContrastArray[i].help %>
+										</li>
+										<li>
+											Impact:
+											<%= colorContrastArray[i].impact %>
+										</li>
+										<hr>
+										<% } %>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<% } %>
+						<%if (HTMLstructureArray.length > 0) { %>
+							<div class="card">
+								<div class="card-header" id="headingTwo">
+									<h5 class="mb-0">
+										<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+											HTML structure
+										</button>
+									</h5>
+								</div>
+								<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+									<div class="card-body">
+										<ul>
+											<% for(var i = 0; i < HTMLstructureArray.length; i++) { %>
+												<li>Type:
+													<%= HTMLstructureArray[i].id %>
+												</li>
+												<li>
+													Help:
+													<%= HTMLstructureArray[i].help %>
+												</li>
+												<li>
+													Impact:
+													<%= HTMLstructureArray[i].impact %>
+												</li>
+												<hr>
+												<% } %>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<% } %>
+								<%if (scalingArray.length > 0) { %>
+									<div class="card">
+										<div class="card-header" id="headingThree">
+											<h5 class="mb-0">
+												<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+													Scaling and Zoom
+												</button>
+											</h5>
+										</div>
+										<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+											<div class="card-body">
+												<ul>
+													<% for(var i = 0; i < scalingArray.length; i++) { %>
+														<li>Type:
+															<%= scalingArray[i].id %>
+														</li>
+														<li>
+															Help:
+															<%= scalingArray[i].help %>
+														</li>
+														<li>
+															Impact:
+															<%= scalingArray[i].impact %>
+														</li>
+														<hr>
+														<% } %>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<% } %>
+										<%if (missingHTMLArray.length > 0) { %>
+											<div class="card">
+												<div class="card-header" id="headingThree">
+													<h5 class="mb-0">
+														<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+															Missing HTML elements
+														</button>
+													</h5>
+												</div>
+												<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+													<div class="card-body">
+														<ul>
+															<% for(var i = 0; i < missingHTMLArray.length; i++) { %>
+																<li>Type:
+																	<%= missingHTMLArray[i].id %>
+																</li>
+																<li>
+																	Help:
+																	<%= missingHTMLArray[i].help %>
+																</li>
+																<li>
+																	Impact:
+																	<%= missingHTMLArray[i].impact %>
+																</li>
+																<hr>
+																<% } %>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<% } %>
 			</div>
 		</div>
 		<div class="compareResults" id="resultsCompare">
-			<a id="cross" href="#">
+			<!-- <a id="cross" href="#">
 				<img src="https://cdn2.iconfinder.com/data/icons/filled-icons/493/x-128.png" alt="">
-			</a>
+			</a> -->
 			<h3>Vergelijk</h3>
 			<span>Onderstaande is een vergelijking te zien tussen iemand die slechtziend is en iemand die alles goed ziet (doorsnee persoon).</span>
 
@@ -113,7 +219,43 @@
 
 		</div>
 		<div class="scoreOverview" id="overviewScore">
-			<%if (score < 300) { %>
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Probleem</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Effect</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Oplossing</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="contact2-tab" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="false">Externe hulp</a>
+				</li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+					<div class="problem">
+						<h3>Probleem</h3>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="effect">
+						<h3>Effect</h3>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+					<div class="solution">
+						<h3>Oplossing</h3>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact2-tab">
+					<div class="help">
+						<h3>Externe hulp</h3>
+					</div>
+				</div>
+			</div>
+			<!-- <%if (score < 300) { %>
 				<div id="outer-circle" style="background-color: red">
 					<% } %>
 						<%if (score >= 300) { %>
@@ -131,27 +273,8 @@
 										</div>
 									</div>
 							</div>
-							<span>Soorten testen</span>
-							<div class="row">
-								<div class="card">
-									<div class="card-body">
-										<p class="card-text">Laat de website testen door een blinde of slechtziende.</p>
-									</div>
-									<div class="card-body">
-										<a href="#" class="card-link">Meer informatie</a>
-									</div>
-								</div>
-
-								<div class="card">
-									<div class="card-body">
-										<p class="card-text">Laat de website live testen door een blinde of slechtziende.</p>
-									</div>
-									<div class="card-body">
-										<a href="#" class="card-link">Meer informatie</a>
-									</div>
-								</div>
-							</div>
-				</div>
+				</div> -->
+		</div>
 	</main>
 
 	<footer>

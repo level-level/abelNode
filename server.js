@@ -54,11 +54,12 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 		.setFirefoxOptions(new firefox.Options().headless(), new firefox.Options().proxy = null)
 		.build();
 
-	// var criticalArray = [];
-	// var seriousArray = [];
-	// var moderateArray = []
-	// var minorArray = [];
+	var colorContrastArray = [];
+	var HTMLstructureArray = [];
+	var missingHTMLArray = []
+	var scalingArray = [];
 	var impact;
+	var category;
 	if (url.indexOf("http://") == 0 || url.indexOf("https://") == 0) {
 		finalUrl = url;
 	} else {
@@ -75,14 +76,35 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 								driver.quit();
 								result = results['violations'];
 								for (let i = 0; i < results.length; i++) {
-								
+
 								}
 								for (let i = 0; i < result.length; i++) {
 									impact = results['violations'][i]['impact']
-									console.log( "\n" +results['violations'][i]['tags'][0]);
-									if(results['violations'][i]['tags'][0] == 'cat.color'){
-										console.log("yeahhh");
+									category = results['violations'][i]['tags'][0];
+									// console.log("\n" + results['violations'][i]['tags'][0]);
+
+
+
+									if (category == 'cat.color') {
+										colorContrastArray.push(results['violations'][i]);
+
 									}
+
+									if (category == 'cat.sensory-and-visual-cues' || category == 'cat.time-and-media') {
+										scalingArray.push(results['violations'][i]);
+
+									}
+
+									if (category == 'cat.text-alternatives' || category == 'cat.aria' || category == 'cat.name-role-value' || category == 'cat.forms') {
+										missingHTMLArray.push(results['violations'][i]);
+
+									}
+
+									if (category == 'cat.language' || category == 'cat.tables' || category == 'cat.structure' || category == 'cat.semantics' || category == 'cat.keyboard' || category == 'cat.parsing') {
+										HTMLstructureArray.push(results['violations'][i]);
+
+									}
+
 									switch (impact) {
 										case 'critical':
 											score -= 40;
@@ -104,7 +126,11 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 								}
 								res.render('pages/results', {
 									data: result,
-									score: score
+									score: score,
+									scalingArray: scalingArray,
+									colorContrastArray: colorContrastArray,
+									missingHTMLArray: missingHTMLArray,
+									HTMLstructureArray: HTMLstructureArray
 								});
 
 							});
@@ -116,6 +142,7 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 		console.error(e);
 	}
 	console.log(finalUrl);
+
 
 
 });
