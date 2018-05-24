@@ -87,6 +87,7 @@ div#columnResults {
 }
 
 .card-body {
+    border-right: 1px solid #e9ecf0;
     border-bottom: 1px solid #e9ecf0;
 }
 
@@ -133,8 +134,8 @@ display: none;
 }
 
 .wrapper-results #columnResults .card {
-    
     margin-top: 0px;
+    background: #D8D8D8;
     border:0px;
     border-radius: 0;
 }
@@ -286,11 +287,14 @@ a.navbar-brand {
     background: #e2e2e2!important;
 }
 
+.paragraph-score {width: 60%;margin-right: 40px;padding: 50px;}
+
 @media screen and (min-width: 1000px) {
 
-div#overviewScore {width: 50%;margin: 0 auto;margin-top: 68px;}
+div#overviewScore {width: 75%;display: flex;background: #EDEDED;}
 div#accordion {
-    width: 95%;
+    width: 24.2%;
+    position: absolute;
 }
 ul.navbar-nav.mr-auto.mt-2.mt-lg-0 {
     background: darkgray;
@@ -300,6 +304,13 @@ ul.navbar-nav.mr-auto.mt-2.mt-lg-0 {
 
 .tab-content {
     margin-top: 20px;
+    margin: 10px;
+}
+
+
+.result-explanation {
+    width: calc(100% - 24.2%);
+    float: right;
 }
 
 
