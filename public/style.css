@@ -185,21 +185,13 @@ div#headingTitle {
     text-align: center;
 }
 
-/* circle div  */
+.c100.big {
+    margin-top: 30px;
+}
 
-#outer-circle {
-    background: #a9aaab;
-    border-radius: 50%;
-    text-align: center;
-    height: 250px;
-    margin-bottom: 20px;
-    width: 250px;
-    position: relative;
-    /* 
-     Child elements with absolute positioning will be 
-     positioned relative to this div 
-    */
-  }
+.tab-content .row>.card {
+    width:40%;
+}
 
   .center-text {
     width: 50%;

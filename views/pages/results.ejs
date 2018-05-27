@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<% include ../partials/head %>
 </head>
-
 <body>
-
 	<header>
 		<% include ../partials/header %>
 	</header>
@@ -27,7 +24,7 @@
 					<div class="card">
 						<div class="card-header" id="headingOne">
 							<h5 class="mb-0">
-								<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+								<button class="btn btn-link" id="buttonContrast" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 									Colors and contrast
 								</button>
 							</h5>
@@ -59,7 +56,7 @@
 							<div class="card">
 								<div class="card-header" id="headingTwo">
 									<h5 class="mb-0">
-										<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										<button class="btn btn-link collapsed" id="buttonStructure" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 											HTML structure
 										</button>
 									</h5>
@@ -90,7 +87,7 @@
 									<div class="card">
 										<div class="card-header" id="headingThree">
 											<h5 class="mb-0">
-												<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+												<button class="btn btn-link collapsed" id="buttonScaling" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 													Scaling and Zoom
 												</button>
 											</h5>
@@ -121,7 +118,7 @@
 											<div class="card">
 												<div class="card-header" id="headingThree">
 													<h5 class="mb-0">
-														<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+														<button class="btn btn-link collapsed" id="buttonMissingHTML" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 															Missing HTML elements
 														</button>
 													</h5>
@@ -156,26 +153,20 @@
 				<h2>Uw score is bekend!</h2>
 
 				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat velit ipsum nihil soluta</p>
+				<a class="btn btn-primary" data-toggle="collapse" id="hideScore" href="#overviewScore" role="button" aria-expanded="false" aria-controls="overviewScore">
+						Ik begrijp het
+					  </a>
 			</div>
-			<%if (score < 300) { %>
-				<div id="outer-circle" style="background-color: red">
-					<% } %>
-						<%if (score >= 300) { %>
-							<div id="outer-circle" style="background-color: green">
-								<% } %>
-									<div id="inner-circle">
-										<div class="center-text">
-											<div>De score is
-												<h3 class="bold">
-													<%= score %>
-												</h3> van
-												<span class="bold">500</span>
-											</div>
-										</div>
-									</div>
-							</div>
+				<div id="outer-circle">
+					<div class="c100 p<%= scorePercentage.toFixed(0) %> big">
+						<span><%= scorePercentage.toFixed(0) %>%</span>
+						<div class="slice">
+						  <div class="bar"></div>
+						  <div class="fill"></div>
+						</div>
+					  </div>
+					</div>
 				</div>
-
 		</div>
 	</main>
 	<div class="result-explanation">
@@ -195,24 +186,53 @@
 		</ul>
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-				<div class="problem">
-					<h3>Probleem</h3>
+				<div class="problem" id="problem">
+					 <div class="row ">
+						</div> 
 				</div>
 			</div>
 			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-				<div class="effect">
-					<h3>Effect</h3>
-				</div>
+				<div class="effect" id="effect">
+					<div class="row ">
+					   </div> 
+			   </div>
 			</div>
 			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-				<div class="solution">
-					<h3>Oplossing</h3>
-				</div>
+				<div class="oplossing" id="oplossing">
+					<div class="row ">
+					   </div> 
+			   </div>
 			</div>
 			<div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact2-tab">
-				<div class="help">
-					<h3>Externe hulp</h3>
-				</div>
+				<div class="hulp" id="hulp">
+						<div class="row">
+								<div class="card">
+									<div class="card-body">
+										<h5 class="card-title">Externe hulp</h5>
+										<p class="card-text">Voor meer informatie kunt u kijken op de volgende websites:
+												</p>
+										<p class="card-text">
+												
+												<ul>
+													<li><a href="https://www.accessibility.nl">https://www.accessibility.nl</a></li>
+													<li><a href="https://level-level.com/">https://level-level.com/</a></li>
+												</ul>
+												
+										</p>
+										<p class="card-text">
+										Heeft u meer hulp nodig of zou u graag uw website aan willen passen? 
+										Full service wordpress agency Level Level kunt u daarbij helpen. 
+									
+									</p>
+									<p class="card-text">
+									Willem Buytewechstraat 42
+										3024 BN Rotterdam
+										The Netherlands
+										+31 10 842 9259</p>
+									
+									</div>
+								</div>
+			   </div>
 			</div>
 		</div>
 	</div>

@@ -122,12 +122,17 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 											break;
 									}
 
+							
+
 
 								}
+								scorePercentage = score / 500 * 100;
+								console.log(scorePercentage);
 								res.render('pages/results', {
 									data: result,
 									score: score,
 									scalingArray: scalingArray,
+									scorePercentage:scorePercentage,
 									colorContrastArray: colorContrastArray,
 									missingHTMLArray: missingHTMLArray,
 									HTMLstructureArray: HTMLstructureArray
