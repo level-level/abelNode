@@ -19,7 +19,7 @@ var urlencoderParser = bodyParser.urlencoded({ extended: true });
 app.set('view engine', 'ejs');
 
 // Set the port number
-let port = 8000;
+let port = 8080;
 
 
 app.use(express.static(__dirname + '/public'));
