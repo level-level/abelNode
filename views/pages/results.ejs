@@ -1,158 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<% include ../partials/head %>
 </head>
-
-<body class="container">
-
+<body>
 	<header>
 		<% include ../partials/header %>
 	</header>
-
+	<!-- <a id="goBack" href="/accessibilityCheck">
+		<img src="https://image.flaticon.com/icons/png/128/2/2558.png" alt="">
+	</a> -->
 	<main class="wrapper-results" id="resultsWrapper">
 		<div class="row" id="columnResults">
-			<a id="goBack" href="/accessibilityCheck">
-				<img src="https://image.flaticon.com/icons/png/128/2/2558.png" alt="">
-			</a>
-			<div class="col-sm-8">
-				<h3>Resultaten:</h3>
-				<ul>
-					<% for(var i = 0; i < data.length; i++) { %>
-						<a href="#" class="showCompare">
-							<img class="iconEye" src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-4/256/eye-icon.png" alt="">
-						</a>
-						<b>Type:
-							<%= data[i].id %>
-						</b>
-						<li>
-							Description:
-							<%= data[i].description %>
-						</li>
-						<li>
-							Help:
-							<%= data[i].help %>
-						</li>
-						<b>
-							Impact:
-							<%= data[i].impact %>
-						</b>
-						<hr>
-						<% } %>
-				</ul>
+			<div id="accordion">
+				<div class="card">
+					<div class="card-header" id="headingTitle">
+						<h5 class="mb-0">
+							Resultaten
+						</h5>
+					</div>
+				</div>
+				<%if (colorContrastArray.length > 0) { %>
+					<div class="card">
+						<div class="card-header" id="headingOne">
+							<h5 class="mb-0">
+								<button class="btn btn-link" id="buttonContrast" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+									Colors and contrast
+								</button>
+							</h5>
+						</div>
 
-			</div>
-		</div>
-		<div class="compareResults" id="resultsCompare">
-			<a id="cross" href="#">
-				<img src="https://cdn2.iconfinder.com/data/icons/filled-icons/493/x-128.png" alt="">
-			</a>
-			<h3>Vergelijk</h3>
-			<span>Onderstaande is een vergelijking te zien tussen iemand die slechtziend is en iemand die alles goed ziet (doorsnee persoon).</span>
-
-			<div class="compareWrapper">
-				<div class="shortSighted">
-					<span>Slechtziende</span>
-					<div class="exampleShortsighted">
-						<div class="row">
-							<div class="card">
-								<img class="card-img-top" src="https://cdn.rebelle.com/26/26df97f220180315-10-raiel2.jpg?width=420&height=420" alt="Card image cap">
-								<div class="card-body">
-									<p class="card-text"></p>
-								</div>
-							</div>
-							<div class="card">
-								<img class="card-img-top" src="https://cdn.rebelle.com/d7/d79841a120180405-10-1tbn7ep.jpg?width=420&height=420" alt="Card image cap">
-								<div class="card-body">
-									<p class="card-text"></p>
-								</div>
-							</div>
-							<div class="card">
-								<img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt9L1clxUvdTCI2d4wRaVpi2YrYf_uYwvxaer9UzsgFUzFMV-a"
-								 alt="Card image cap">
-								<div class="card-body">
-									<p class="card-text"></p>
-								</div>
+						<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+							<div class="card-body">
+								<ul>
+									<% for(var i = 0; i < colorContrastArray.length; i++) { %>
+										<li>Type:
+											<%= colorContrastArray[i].id %>
+										</li>
+										<li>
+											Help:
+											<%= colorContrastArray[i].help %>
+										</li>
+										<li>
+											Impact:
+											<%= colorContrastArray[i].impact %>
+										</li>
+										<hr>
+										<% } %>
+								</ul>
 							</div>
 						</div>
 					</div>
-					<p>Door de onjuiste contrasten te gebruiken wordt het niet duidelijk voor de slechtziende wat het verschil is tussen bepaalde
-						producten.Ongeveer 8% van de mannen en 0.5% van de vrouwen hebben een kleurenblindheid.
-					</p>
-				</div>
-				<div class="NotshortSighted">
-					<span>Niet beperkte</span>
-					<div class="exampleNotShortsighted">
-						<div class="row">
-							<div class="card">
-								<img class="card-img-top" src="https://cdn.rebelle.com/26/26df97f220180315-10-raiel2.jpg?width=420&height=420" alt="Card image cap">
-								<div class="card-body">
-									<p class="card-text">Roze Jurk</p>
-								</div>
-							</div>
-							<div class="card">
-								<img class="card-img-top" src="https://cdn.rebelle.com/d7/d79841a120180405-10-1tbn7ep.jpg?width=420&height=420" alt="Card image cap">
-								<div class="card-body">
-									<p class="card-text">Bruine jurk</p>
-								</div>
-							</div>
-							<div class="card">
-								<img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt9L1clxUvdTCI2d4wRaVpi2YrYf_uYwvxaer9UzsgFUzFMV-a"
-								 alt="Card image cap">
-								<div class="card-body">
-									<p class="card-text">Zwarte jurk</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<p>Als niet beperkte kunnen wij een duidelijk beeld krijgen door de kleuren dat er een verschil is tussen verschillende
-						producten. </p>
-				</div>
-			</div>
-
-		</div>
-		<div class="scoreOverview" id="overviewScore">
-			<%if (score < 300) { %>
-				<div id="outer-circle" style="background-color: red">
 					<% } %>
-						<%if (score >= 300) { %>
-							<div id="outer-circle" style="background-color: green">
-								<% } %>
-
-									<div id="inner-circle">
-										<div class="center-text">
-											<div>De score is
-												<h3 class="bold">
-													<%= score %>
-												</h3> van
-												<span class="bold">500</span>
+						<%if (HTMLstructureArray.length > 0) { %>
+							<div class="card">
+								<div class="card-header" id="headingTwo">
+									<h5 class="mb-0">
+										<button class="btn btn-link collapsed" id="buttonStructure" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+											HTML structure
+										</button>
+									</h5>
+								</div>
+								<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+									<div class="card-body">
+										<ul>
+											<% for(var i = 0; i < HTMLstructureArray.length; i++) { %>
+												<li>Type:
+													<%= HTMLstructureArray[i].id %>
+												</li>
+												<li>
+													Help:
+													<%= HTMLstructureArray[i].help %>
+												</li>
+												<li>
+													Impact:
+													<%= HTMLstructureArray[i].impact %>
+												</li>
+												<hr>
+												<% } %>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<% } %>
+								<%if (scalingArray.length > 0) { %>
+									<div class="card">
+										<div class="card-header" id="headingThree">
+											<h5 class="mb-0">
+												<button class="btn btn-link collapsed" id="buttonScaling" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+													Scaling and Zoom
+												</button>
+											</h5>
+										</div>
+										<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+											<div class="card-body">
+												<ul>
+													<% for(var i = 0; i < scalingArray.length; i++) { %>
+														<li>Type:
+															<%= scalingArray[i].id %>
+														</li>
+														<li>
+															Help:
+															<%= scalingArray[i].help %>
+														</li>
+														<li>
+															Impact:
+															<%= scalingArray[i].impact %>
+														</li>
+														<hr>
+														<% } %>
+												</ul>
 											</div>
 										</div>
 									</div>
-							</div>
-							<span>Soorten testen</span>
-							<div class="row">
-								<div class="card">
-									<div class="card-body">
-										<p class="card-text">Laat de website testen door een blinde of slechtziende.</p>
-									</div>
-									<div class="card-body">
-										<a href="#" class="card-link">Meer informatie</a>
-									</div>
-								</div>
+									<% } %>
+										<%if (missingHTMLArray.length > 0) { %>
+											<div class="card">
+												<div class="card-header" id="headingThree">
+													<h5 class="mb-0">
+														<button class="btn btn-link collapsed" id="buttonMissingHTML" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+															Missing HTML elements
+														</button>
+													</h5>
+												</div>
+												<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+													<div class="card-body">
+														<ul>
+															<% for(var i = 0; i < missingHTMLArray.length; i++) { %>
+																<li>Type:
+																	<%= missingHTMLArray[i].id %>
+																</li>
+																<li>
+																	Help:
+																	<%= missingHTMLArray[i].help %>
+																</li>
+																<li>
+																	Impact:
+																	<%= missingHTMLArray[i].impact %>
+																</li>
+																<hr>
+																<% } %>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<% } %>
+			</div>
+		</div>
+		<div class="scoreOverview" id="overviewScore">
 
+			<div class="paragraph-score">
+				<h2>Uw score is bekend!</h2>
+
+				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat velit ipsum nihil soluta</p>
+				<a class="btn btn-primary" data-toggle="collapse" id="hideScore" href="#overviewScore" role="button" aria-expanded="false" aria-controls="overviewScore">
+						Ik begrijp het
+					  </a>
+			</div>
+				<div id="outer-circle">
+					<div class="c100 p<%= scorePercentage.toFixed(0) %> big">
+						<span><%= scorePercentage.toFixed(0) %>%</span>
+						<div class="slice">
+						  <div class="bar"></div>
+						  <div class="fill"></div>
+						</div>
+					  </div>
+					</div>
+				</div>
+		</div>
+	</main>
+	<div class="result-explanation">
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Probleem</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Effect</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Oplossing</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="contact2-tab" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="false">Externe hulp</a>
+			</li>
+		</ul>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+				<div class="problem" id="problem">
+					 <div class="row ">
+						</div> 
+				</div>
+			</div>
+			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+				<div class="effect" id="effect">
+					<div class="row ">
+					   </div> 
+			   </div>
+			</div>
+			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+				<div class="oplossing" id="oplossing">
+					<div class="row ">
+					   </div> 
+			   </div>
+			</div>
+			<div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact2-tab">
+				<div class="hulp" id="hulp">
+						<div class="row">
 								<div class="card">
 									<div class="card-body">
-										<p class="card-text">Laat de website live testen door een blinde of slechtziende.</p>
-									</div>
-									<div class="card-body">
-										<a href="#" class="card-link">Meer informatie</a>
+										<h5 class="card-title">Externe hulp</h5>
+										<p class="card-text">Voor meer informatie kunt u kijken op de volgende websites:
+												</p>
+										<p class="card-text">
+												
+												<ul>
+													<li><a href="https://www.accessibility.nl">https://www.accessibility.nl</a></li>
+													<li><a href="https://level-level.com/">https://level-level.com/</a></li>
+												</ul>
+												
+										</p>
+										<p class="card-text">
+										Heeft u meer hulp nodig of zou u graag uw website aan willen passen? 
+										Full service wordpress agency Level Level kunt u daarbij helpen. 
+									
+									</p>
+									<p class="card-text">
+									Willem Buytewechstraat 42
+										3024 BN Rotterdam
+										The Netherlands
+										+31 10 842 9259</p>
+									
 									</div>
 								</div>
-							</div>
-				</div>
-	</main>
+			   </div>
+			</div>
+		</div>
+	</div>
 
 	<footer>
 		<% include ../partials/footer %>
