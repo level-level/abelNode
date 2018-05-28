@@ -11,6 +11,7 @@ var urlExists = require('url-exists');
 var axe = require('axe-core');
 var events = require('events');
 var score;
+var scoreColor;
 
 
 
@@ -75,14 +76,11 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 							.analyze(function (results) {
 								driver.quit();
 								result = results['violations'];
-								for (let i = 0; i < results.length; i++) {
 
-								}
 								for (let i = 0; i < result.length; i++) {
 									impact = results['violations'][i]['impact']
 									category = results['violations'][i]['tags'][0];
-									// console.log("\n" + results['violations'][i]['tags'][0]);
-
+									// console.log("\n" + results['passes'][i]['id']);
 
 
 									if (category == 'cat.color') {
@@ -107,10 +105,10 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 
 									switch (impact) {
 										case 'critical':
-											score -= 40;
+											score -= 50;
 											break;
 										case 'serious':
-											score -= 20;
+											score -= 40;
 											break;
 										case 'moderate':
 											score -= 10;
@@ -122,17 +120,25 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 											break;
 									}
 
-							
-
-
 								}
 								scorePercentage = score / 500 * 100;
+								if (scorePercentage >= 95) {
+									scoreColor = 'green';
+								} else if (scorePercentage < 95 && scorePercentage > 70) {
+									coreColor = 'yellow';
+								} else if(scorePercentage <= 70 && scorePercentage > 50) {
+									scoreColor = 'orange';
+								}else {
+									scoreColor = 'red';
+								}
 								console.log(scorePercentage);
+								console.log(scoreColor);
 								res.render('pages/results', {
 									data: result,
 									score: score,
+									scoreColor: scoreColor,
 									scalingArray: scalingArray,
-									scorePercentage:scorePercentage,
+									scorePercentage: scorePercentage,
 									colorContrastArray: colorContrastArray,
 									missingHTMLArray: missingHTMLArray,
 									HTMLstructureArray: HTMLstructureArray
