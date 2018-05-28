@@ -228,7 +228,11 @@ div#headingTitle {
         text-align: center;
     }
 
-  
+    .result-explanation {
+        display: none;
+
+    }
+
     .card {
         width: 100%;
     }
