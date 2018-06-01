@@ -109,7 +109,6 @@ div#columnResults {
 }
 
 .explanation {
-    display: flex;
     margin-top: 40px;
 }
 
@@ -172,6 +171,9 @@ img.iconEye {
     font-size: 9px;
 }
 
+.effect > .row p.card-text {
+    padding: 10px;
+}
 
 .home .columnWrapper {
     text-align: center;
@@ -190,9 +192,7 @@ div#headingTitle {
     /* margin-top: 30px; */
 }
 
-.tab-content .row>.card {
-    width:40%;
-}
+.tab-content .row>.card {width: 70%;}
 
   .center-text {
     width: 50%;
@@ -308,6 +308,14 @@ ul.navbar-nav.mr-auto.mt-2.mt-lg-0 {
 .result-explanation {
     width: calc(100% - 24.2%);
     float: right;
+}
+
+div#myTabContent .card-text {
+    width: 50%;
+}
+
+div#columnResults ul>li {
+    font-size: 18px;
 }
 
 

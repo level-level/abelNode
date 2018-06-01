@@ -150,12 +150,13 @@
 		<div class="scoreOverview" id="overviewScore">
 
 			<div class="paragraph-score">
-				<h2>Uw score is bekend!</h2>
+				<h2>De score van  <%= url %> is bekend!</h2>
 
 				<p>Om te slagen voor de test moet u minimaal 95% scoren. Tot 70% hebben slechtziende al behoorlijk wat moeite met het gebruiken van de website en onder de 70% is de kans groot dat de website onbruikbaar is voor slechtziende.</p>
-				<a class="btn btn-primary"  id="hideScore" href="#overviewScore" role="button" aria-expanded="false" aria-controls="overviewScore">
+				<!-- <a class="btn btn-primary"  id="hideScore" href="#overviewScore" role="button" aria-expanded="false" aria-controls="overviewScore">
 						Ik begrijp het
-					  </a>
+					  </a> -->
+					  
 			</div>
 				<div id="outer-circle">
 					<div class="c100 p<%= scorePercentage.toFixed(0) %> big <%= scoreColor%>">
@@ -170,6 +171,8 @@
 		</div>
 	</main>
 	<div class="result-explanation">
+
+		
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
 			<li class="nav-item">
 				<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Probleem</a>
@@ -214,8 +217,10 @@
 										<p class="card-text">
 												
 												<ul>
-													<li><a href="https://www.accessibility.nl">https://www.accessibility.nl</a></li>
-													<li><a href="https://level-level.com/">https://level-level.com/</a></li>
+													<li><a href="https://www.accessibility.nl">accessibility.nl</a></li>
+													<li><a href="https://level-level.com/">Level level</a></li>
+													<li><a href="https://dequeuniversity.com/rules/axe/3.0/">dequeuniversity</a></li>
+													<li><a href="https://inclusive-components.design">inclusive-components design</a></li>
 												</ul>
 												
 										</p>

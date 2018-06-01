@@ -131,11 +131,10 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 								}else {
 									scoreColor = 'red';
 								}
-								console.log(scorePercentage);
-								console.log(scoreColor);
 								res.render('pages/results', {
 									data: result,
 									score: score,
+									url:url,
 									scoreColor: scoreColor,
 									scalingArray: scalingArray,
 									scorePercentage: scorePercentage,
