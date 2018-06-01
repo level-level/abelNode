@@ -56,9 +56,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         buttonMissingHTML.addEventListener('click', showMissingHTML, false);
 
     }
-    hideScore.addEventListener('click', function () {
-        overviewScore.style.display = 'none';
-    })
 
 
 
@@ -73,7 +70,6 @@ function showContrast(e) {
     var cardBody = createDomElement({ tagName: 'div', attributes: { class: 'card-body' }, });
     var cardTitle = createDomElement({ tagName: 'h5', content: "Probleem Colors and contrast", attributes: { class: 'card-title' }, });
     var cardText = createDomElement({ tagName: 'p', content: "Het kleurgebruik van de website is niet optimaal voor slechtzienden. Mensen met bijvoorbeeld kleurenblindheid kunnen uw website hierdoor niet goed bekijken. 1 op de 200 vrouwen en zelfs 1 op de 12 mannen is kleurenblind. Doordat zij uw website niet goed kunnen bekijken loopt u mogelijke omzet mis of bereikt u niet het effect van de website zoals bedoeld is. ", attributes: { class: 'card-text' }, });
-
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
     card.appendChild(cardBody);
@@ -83,10 +79,20 @@ function showContrast(e) {
     var cardBody = createDomElement({ tagName: 'div', attributes: { class: 'card-body' }, });
     var cardTitle = createDomElement({ tagName: 'h5', content: "Effect Colors and contrast", attributes: { class: 'card-title' }, });
     var cardText = createDomElement({ tagName: 'p', content: "Onderstaand ziet u wat dit betekent voor uw website. Het is verstandig uw website aan te passen zodat uw website toegankelijker is. Uw website wordt tenslotte door 1 op de 200 vrouwen en 1 op de 12 mannen niet goed bekeken.", attributes: { class: 'card-text' }, });
+    var imgblind = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/clothesblind.png' }, });
+    var imgText = createDomElement({ tagName: 'p', content: "Slechtziende: ", attributes: { class: 'card-text' }, });
+    var imgText2 = createDomElement({ tagName: 'p', content: "Niet Slechtziende: ", attributes: { class: 'card-text' }, });
+    var imgnormal = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/clothes.png' }, });
+  
+
 
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
     card.appendChild(cardBody);
+    card.appendChild(imgText);
+    card.appendChild(imgblind);
+    card.appendChild(imgText2);
+    card.appendChild(imgnormal);
     effectRow.appendChild(card);
 
     var card = createDomElement({ tagName: 'div', attributes: { class: 'card' }, });
@@ -109,7 +115,6 @@ function showHTMLStructure(e) {
     var cardBody = createDomElement({ tagName: 'div', attributes: { class: 'card-body' }, });
     var cardTitle = createDomElement({ tagName: 'h5', content: "Probleem HTML structure", attributes: { class: 'card-title' }, });
     var cardText = createDomElement({ tagName: 'p', content: "De structuur van de website is niet optimaal voor slechtzienden en blinden. Doordat de html structuur niet compleet is, raken slechtzienden en blinden al snel verdwaald op uw website. Zij verlaten hierdoor sneller uw website, waardoor u mogelijke omzet misloopt of waardoor u het effect van uw website niet bereikt.  ", attributes: { class: 'card-text' }, });
-
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
     card.appendChild(cardBody);
@@ -119,10 +124,18 @@ function showHTMLStructure(e) {
     var cardBody = createDomElement({ tagName: 'div', attributes: { class: 'card-body' }, });
     var cardTitle = createDomElement({ tagName: 'h5', content: "Effect HTML structure", attributes: { class: 'card-title' }, });
     var cardText = createDomElement({ tagName: 'p', content: "Onderstaand ziet u wat dit betekent voor uw website. Het is verstandig uw website aan te passen zodat uw website toegankelijker is", attributes: { class: 'card-text' }, });
+    var imgblind = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/menuslechtziende.png' }, });
+    var imgText = createDomElement({ tagName: 'p', content: "Slechtziende: ", attributes: { class: 'card-text' }, });
+    var imgText2 = createDomElement({ tagName: 'p', content: "Niet Slechtziende: ", attributes: { class: 'card-text' }, });
+    var imgnormal = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/menu.png' }, });
 
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
     card.appendChild(cardBody);
+    card.appendChild(imgText);
+    card.appendChild(imgblind);
+    card.appendChild(imgText2);
+    card.appendChild(imgnormal);
     effectRow.appendChild(card);
 
     var card = createDomElement({ tagName: 'div', attributes: { class: 'card' }, });
@@ -155,10 +168,19 @@ function showScaling(e) {
     var cardBody = createDomElement({ tagName: 'div', attributes: { class: 'card-body' }, });
     var cardTitle = createDomElement({ tagName: 'h5', content: "Effect Scaling and zoom", attributes: { class: 'card-title' }, });
     var cardText = createDomElement({ tagName: 'p', content: "Onderstaand ziet u wat dit betekent voor uw website. Het is verstandig uw website aan te passen zodat uw website toegankelijker is.   ", attributes: { class: 'card-text' }, });
+    var imgblind = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/coolblueZoom.png' }, });
+    var imgText = createDomElement({ tagName: 'p', content: "Slechtziende: ", attributes: { class: 'card-text' }, });
+    var imgText2 = createDomElement({ tagName: 'p', content: "Niet Slechtziende: ", attributes: { class: 'card-text' }, });
+    var imgnormal = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/coolblue.png' }, });
+
 
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
     card.appendChild(cardBody);
+    card.appendChild(imgText);
+    card.appendChild(imgblind);
+    card.appendChild(imgText2);
+    card.appendChild(imgnormal);
     effectRow.appendChild(card);
 
     var card = createDomElement({ tagName: 'div', attributes: { class: 'card' }, });
@@ -197,10 +219,18 @@ function showMissingHTML(e) {
     var cardBody = createDomElement({ tagName: 'div', attributes: { class: 'card-body' }, });
     var cardTitle = createDomElement({ tagName: 'h5', content: "Effect Missing html elements", attributes: { class: 'card-title' }, });
     var cardText = createDomElement({ tagName: 'p', content: "Onderstaand ziet u wat dit betekent voor uw website. Het is verstandig uw website aan te passen zodat uw website toegankelijker is.", attributes: { class: 'card-text' }, });
+    var imgblind = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/clothesMissing.png' }, });
+    var imgText = createDomElement({ tagName: 'p', content: "Slechtziende: ", attributes: { class: 'card-text' }, });
+    var imgText2 = createDomElement({ tagName: 'p', content: "Niet Slechtziende: ", attributes: { class: 'card-text' }, });
+    var imgnormal = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/clothes.png' }, });
 
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
     card.appendChild(cardBody);
+    card.appendChild(imgText);
+    card.appendChild(imgblind);
+    card.appendChild(imgText2);
+    card.appendChild(imgnormal);
     effectRow.appendChild(card);
 
     var card = createDomElement({ tagName: 'div', attributes: { class: 'card' }, });
