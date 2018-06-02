@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
- 
-    if(accordionFirst == buttonContrast ){
+
+    if (accordionFirst == buttonContrast) {
         showContrast();
     }
 
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         showHTMLStructure();
     }
 
-    if (accordionFirst ==  buttonScaling) {
+    if (accordionFirst == buttonScaling) {
         showScaling();
 
     }
@@ -78,12 +78,12 @@ function showContrast(e) {
     var card = createDomElement({ tagName: 'div', attributes: { class: 'card' }, });
     var cardBody = createDomElement({ tagName: 'div', attributes: { class: 'card-body' }, });
     var cardTitle = createDomElement({ tagName: 'h5', content: "Effect Colors and contrast", attributes: { class: 'card-title' }, });
-    var cardText = createDomElement({ tagName: 'p', content: "Onderstaand ziet u wat dit betekent voor uw website. Het is verstandig uw website aan te passen zodat uw website toegankelijker is. Uw website wordt tenslotte door 1 op de 200 vrouwen en 1 op de 12 mannen niet goed bekeken.", attributes: { class: 'card-text' }, });
-    var imgblind = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/clothesblind.png' }, });
+    var cardText = createDomElement({ tagName: 'p', content: "Onderstaand ziet u wat dit betekent voor uw website. Het is verstandig uw website aan te passen zodat uw website toegankelijker is. Uw website wordt tenslotte door 1 op de 200 vrouwen en 1 op de 12 mannen niet goed bekeken. Kleur contrasten zijn heel belangrijk wanneer er geen duidelijk verschil is tussen kleuren van elemenetn binnen de site zullen zullen lijnen, hoeken en details niet duidelijk worden voor de gebruiker. Dit zorgt er dus dan voor dat de webiste meer op een geheel stuk lijkt inplaats van verschillende delen. Verder si het ook belangrijk om binnen images bijvoorbeeld een kleur van een kleding stuk te beschrijven zodat gebruikers niet afhankelijk zijn van de afbeelding zelf om te erachter te komen welke kleur het is. ", attributes: { class: 'card-text' }, });
+    var imgblind = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src: '../img/clothesblind.png' }, });
     var imgText = createDomElement({ tagName: 'p', content: "Slechtziende: ", attributes: { class: 'card-text' }, });
     var imgText2 = createDomElement({ tagName: 'p', content: "Niet Slechtziende: ", attributes: { class: 'card-text' }, });
-    var imgnormal = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/clothes.png' }, });
-  
+    var imgnormal = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src: '../img/clothes.png' }, });
+
 
 
     cardBody.appendChild(cardTitle);
@@ -98,10 +98,13 @@ function showContrast(e) {
     var card = createDomElement({ tagName: 'div', attributes: { class: 'card' }, });
     var cardBody = createDomElement({ tagName: 'div', attributes: { class: 'card-body' }, });
     var cardTitle = createDomElement({ tagName: 'h5', content: "Oplossing Colors and contrast", attributes: { class: 'card-title' }, });
-    var cardText = createDomElement({ tagName: 'p', content: "De vraag is, hoe verandert u uw website? U kunt het volgende doen:Gebruik xxxxx kleuren Zorg dat links onderlijnd worden, zodat men weet dat dit een link is.", attributes: { class: 'card-text' }, });
+    var cardText = createDomElement({ tagName: 'p', content: "De vraag is, hoe verandert u uw website? U kunt het volgende doen:Gebruik zorg dat elementen genoeg kleuren conrast hebben zodat ze kunnen worden onderscheiden van elkaar. Zorg dat links onderlijnd worden, zodat men weet dat dit een link is. U kunt op de volgende pagina gebruiken maken van de Color Contrast Analyzer om de correcte contrast te vinden: ", attributes: { class: 'card-text' }, });
+
+    var link = createDomElement({ tagName: 'a', content: "color-contrast helper", attributes:{href:'https://dequeuniversity.com/rules/axe/3.0/color-contrast'} });
 
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
+    cardText.appendChild(link);
     card.appendChild(cardBody);
     oplossingRow.appendChild(card);
 
@@ -123,11 +126,11 @@ function showHTMLStructure(e) {
     var card = createDomElement({ tagName: 'div', attributes: { class: 'card' }, });
     var cardBody = createDomElement({ tagName: 'div', attributes: { class: 'card-body' }, });
     var cardTitle = createDomElement({ tagName: 'h5', content: "Effect HTML structure", attributes: { class: 'card-title' }, });
-    var cardText = createDomElement({ tagName: 'p', content: "Onderstaand ziet u wat dit betekent voor uw website. Het is verstandig uw website aan te passen zodat uw website toegankelijker is", attributes: { class: 'card-text' }, });
-    var imgblind = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/menuslechtziende.png' }, });
+    var cardText = createDomElement({ tagName: 'p', content: "Onderstaand ziet u wat dit betekent voor uw website. Het is verstandig uw website aan te passen zodat uw website toegankelijker is. Hieronder ziet u een voorbeeld van hoe een slechtziende een website ervaart die geen correcte heading toepast. Doordat de headings missen moeten slechtziende elke link afgaan om het gewenste categorie te vinden. Dit is geen probleem als u maar 5 items in het menu heeft maar stelt u voor dat er honderd keuzes zijn hoe moeilijk het dan zou zijn voor een slechtziende om een bestelling te plaatsen op uw site.", attributes: { class: 'card-text' }, });
+    var imgblind = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src: '../img/menuslechtziende.png' }, });
     var imgText = createDomElement({ tagName: 'p', content: "Slechtziende: ", attributes: { class: 'card-text' }, });
     var imgText2 = createDomElement({ tagName: 'p', content: "Niet Slechtziende: ", attributes: { class: 'card-text' }, });
-    var imgnormal = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/menu.png' }, });
+    var imgnormal = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src: '../img/menu.png' }, });
 
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
@@ -141,7 +144,7 @@ function showHTMLStructure(e) {
     var card = createDomElement({ tagName: 'div', attributes: { class: 'card' }, });
     var cardBody = createDomElement({ tagName: 'div', attributes: { class: 'card-body' }, });
     var cardTitle = createDomElement({ tagName: 'h5', content: "Oplossing HTML structure", attributes: { class: 'card-title' }, });
-    var cardText = createDomElement({ tagName: 'p', content: "De vraag is, hoe verandert u uw website? U kunt het volgende doen: Zorg voor een duidelijke structuur op de website. Maak gebruik van H1, H2 etc.", attributes: { class: 'card-text' }, });
+    var cardText = createDomElement({ tagName: 'p', content: "De vraag is, hoe verandert u uw website? U kunt het volgende doen: Zorg voor een duidelijke structuur op de website. Maak gebruik van H1, H2. Zorg dat elke pagina gebruikt maakt van headers. De headers moeten uiteraard beginnen met een H1 zodat de gebruiker met een voicereader kan navigeren door de website. Gebruik headers dus nooit door elkaar want dit zal ervoor zorgen dat de voice reader geen strcutuur kan vinden waardoor de gebruiker verdwaald raakt op je website.", attributes: { class: 'card-text' }, });
 
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
@@ -150,7 +153,6 @@ function showHTMLStructure(e) {
 }
 
 function showScaling(e) {
-    console.log("hello world");
     problemRow.innerHTML = "";
     effectRow.innerHTML = "";
     oplossingRow.innerHTML = "";
@@ -167,11 +169,11 @@ function showScaling(e) {
     var card = createDomElement({ tagName: 'div', attributes: { class: 'card' }, });
     var cardBody = createDomElement({ tagName: 'div', attributes: { class: 'card-body' }, });
     var cardTitle = createDomElement({ tagName: 'h5', content: "Effect Scaling and zoom", attributes: { class: 'card-title' }, });
-    var cardText = createDomElement({ tagName: 'p', content: "Onderstaand ziet u wat dit betekent voor uw website. Het is verstandig uw website aan te passen zodat uw website toegankelijker is.   ", attributes: { class: 'card-text' }, });
-    var imgblind = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/coolblueZoom.png' }, });
+    var cardText = createDomElement({ tagName: 'p', content: "Onderstaand ziet u wat dit betekent voor uw website. Het is verstandig uw website aan te passen zodat uw website toegankelijker is. Het is belangrijk voor slechtziende om gebruik te kunnen maken van de zoom functionaliteit binnen uw site. Als deze funtionaliteit mist zullen slechtziende een groot deel van uw website niet duidelijk kunnen bekijken zoals je hieronder ziet. plaatjes en teksten blijven te klein en de klant zal daaorm geen bestelling kunnen maken wat betekent dat u klanten zult mis lopen. ", attributes: { class: 'card-text' }, });
+    var imgblind = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src: '../img/coolblueZoom.png' }, });
     var imgText = createDomElement({ tagName: 'p', content: "Slechtziende: ", attributes: { class: 'card-text' }, });
     var imgText2 = createDomElement({ tagName: 'p', content: "Niet Slechtziende: ", attributes: { class: 'card-text' }, });
-    var imgnormal = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/coolblue.png' }, });
+    var imgnormal = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src: '../img/coolblue.png' }, });
 
 
     cardBody.appendChild(cardTitle);
@@ -188,11 +190,17 @@ function showScaling(e) {
     var cardTitle = createDomElement({ tagName: 'h5', content: "Oplossing Scaling and zoom", attributes: { class: 'card-title' }, });
     var cardText = createDomElement({ tagName: 'p', content: "De vraag is, hoe verandert u uw webiste? u kent het volgende doen: ", attributes: { class: 'card-text' }, });
     var ul = createDomElement({ tagName: 'ul', attributes: { class: 'card-ul' }, });
-    var li = createDomElement({ tagName: 'li', content: "Met behulp van viewport maakt u de website scalable voor verschillende devices. Hierdoor is het mogelijk in te zoomen.", attributes: { class: 'card-items' }, });
-    var li2 = createDomElement({ tagName: 'li', content: "Maak gebruik van viewport. ", attributes: { class: 'card-items' }, });
+    var li = createDomElement({ tagName: 'li', content: "Met behulp van viewport maakt u de website scalable voor verschillende devices. Hierdoor is het mogelijk in te zoomen. ", attributes: { class: 'card-items' }, });
+    var li2 = createDomElement({ tagName: 'li', content: "Verwijder user-scalable=no van uw viewport dit zorgt er namelijk voro dat de zooming functionaliteit uit staat. ", attributes: { class: 'card-items' }, });
+    var li3 = createDomElement({ tagName: 'li',content:'Bezoek de volgende pagina voor meer uitleg: ', attributes: { class: 'card-items' }, });
+    var link = createDomElement({ tagName: 'a', content:'dequeuniversity - meta-viewport', attributes: { href: 'https://dequeuniversity.com/rules/axe/3.0/meta-viewport' }, });
+    
 
+    li3.appendChild(link);
     ul.appendChild(li);
     ul.appendChild(li2);
+    ul.appendChild(li3);
+
 
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
@@ -218,11 +226,11 @@ function showMissingHTML(e) {
     var card = createDomElement({ tagName: 'div', attributes: { class: 'card' }, });
     var cardBody = createDomElement({ tagName: 'div', attributes: { class: 'card-body' }, });
     var cardTitle = createDomElement({ tagName: 'h5', content: "Effect Missing html elements", attributes: { class: 'card-title' }, });
-    var cardText = createDomElement({ tagName: 'p', content: "Onderstaand ziet u wat dit betekent voor uw website. Het is verstandig uw website aan te passen zodat uw website toegankelijker is.", attributes: { class: 'card-text' }, });
-    var imgblind = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/clothesMissing.png' }, });
+    var cardText = createDomElement({ tagName: 'p', content: "Onderstaand ziet u wat dit betekent voor uw website. Het is verstandig uw website aan te passen zodat uw website toegankelijker is. Missende attributen binenn HTML elementen of HTML elementen die compleet missen kunnen ernstige gevolgen hebben voor de gebruikers van je website vooral voor slechtziende. Wanneer links en images een description missen zullen slechtziende niet kunnen navigeren door je website omdat het element dan context mist dus de screenreeader leest dan betekenloze teksten op zoals: img1, img2, img3. Hierdoor heeft de gebruiker totaal geen idee waar hij zicht binnen de website bevindt en zal daarom hoogstwaarschijnlijk uw website niet gebruiken in de toekomst. Dus probeer zoveel mogelijk HTML5 elementen te gebruiken zoals nav,header,footer, article enz.", attributes: { class: 'card-text' }, });
+    var imgblind = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src: '../img/clothesMissing.png' }, });
     var imgText = createDomElement({ tagName: 'p', content: "Slechtziende: ", attributes: { class: 'card-text' }, });
     var imgText2 = createDomElement({ tagName: 'p', content: "Niet Slechtziende: ", attributes: { class: 'card-text' }, });
-    var imgnormal = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src:'../img/clothes.png' }, });
+    var imgnormal = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src: '../img/clothes.png' }, });
 
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
