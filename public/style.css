@@ -42,7 +42,6 @@ font-weight:bold
 div#columnResults {
     font-size: 12px;
     width: 25%;
-    /* height: 100%; */
 }
 
 .accessibilityCheck input#url {
@@ -89,7 +88,6 @@ div#columnResults {
 
 .card-body {
     border-right: 1px solid #e9ecf0;
-    border-bottom: 1px solid #e9ecf0;
 }
 
 
@@ -189,7 +187,6 @@ div#headingTitle {
 }
 
 .c100.big {
-    /* margin-top: 30px; */
 }
 
 .tab-content .row>.card {width: 70%;}
@@ -284,13 +281,13 @@ a.navbar-brand {
     background: #e2e2e2!important;
 }
 
-.paragraph-score {width: 42%;float: left;padding: 50px;}
+.paragraph-score {width: 48%;float: left;padding: 50px;}
 
 @media screen and (min-width: 1000px) {
 
 div#overviewScore {background: #EDEDED;padding: 10px;width: 76%;}
 div#accordion {
-    width: 24.2%;
+    width: 23.8%;
     position: absolute;
 }
 ul.navbar-nav.mr-auto.mt-2.mt-lg-0 {
@@ -311,7 +308,6 @@ ul.navbar-nav.mr-auto.mt-2.mt-lg-0 {
 }
 
 div#myTabContent .card-text {
-    width: 50%;
 }
 
 div#columnResults ul>li {
