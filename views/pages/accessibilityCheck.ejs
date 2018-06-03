@@ -5,7 +5,7 @@
     <% include ../partials/head %>
 </head>
 
-<body >
+<body>
     <header>
         <% include ../partials/header %>
     </header>
@@ -16,20 +16,25 @@
                     Is jouw website toegankelijk voor
                     <span class='bold'> iedereen?</span>
                 </h3>
+                <div class="wrapper-loader" id="wrapper-loader">
+                    <div class="loader" id="loader"></div>
+                    <h4>Loading ...</h4>
+                </div>
+
                 <form id="urlForm" method="POST" action="/accessibilityCheck">
-
-
                     <div class="form-group">
                         <span id="warning"></span>
                         <input type="text" class="form-control" id="url" aria-describedby="urlHelp" name="url" placeholder="Enter url">
-                        <button type="submit" class="btn btn-primary">Test</button>
+                        <button type="submit" class="btn btn-primary" id="testButton">Test</button>
                     </div>
                 </form>
                 <div class="explanation">
-                    <span>Zoekmachines zijn blind. Het is dus goed om te zorgen dat de code van je website aan de eisen voldoet voor kwaliteit en toegankelijkheid.
+                    <span>Zoekmachines zijn blind. Het is dus goed om te zorgen dat de code van je website aan de eisen voldoet
+                        voor kwaliteit en toegankelijkheid.
                     </span>
                     <span> Steeds meer landen voeren wetten en regelingen in om de toegankelijkheidsrichtlijnen verplicht te stellen.
-                        Doordat de code en toegankelijkheids standaarden international worden vastgesteld door het World Wide Web Consortium, is toegang tot een website ook in de toekomst gegarandeerd.</span>
+                        Doordat de code en toegankelijkheids standaarden international worden vastgesteld door het World
+                        Wide Web Consortium, is toegang tot een website ook in de toekomst gegarandeerd.</span>
                 </div>
             </div>
         </div>
@@ -37,8 +42,7 @@
     <footer>
         <% include ../partials/footer %>
     </footer>
-    <script>
-    </script>
+    <script type="" src="/js/testSite.js"></script>
 </body>
 
 </html>

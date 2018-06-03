@@ -1,6 +1,7 @@
 // load the things we need
 var express = require('express');
 var app = express();
+var path = require('path');
 var http = require('http');
 var AxeBuilder = require('axe-webdriverjs');
 var WebDriver = require('selenium-webdriver');
@@ -10,6 +11,7 @@ const bodyParser = require('body-parser');
 var urlExists = require('url-exists');
 var axe = require('axe-core');
 var events = require('events');
+var fs = require('fs');
 var score;
 var scoreColor;
 
@@ -27,7 +29,22 @@ app.use(express.static(__dirname + '/public'));
 
 // index page 
 app.get('/', function (req, res) {
+	// var driver = new WebDriver.Builder()
+	// .forBrowser('firefox')
+	// .setFirefoxOptions(new firefox.Options().headless(), new firefox.Options().proxy = null)
+	// .build();
 
+	// driver.get('https://coolblue.nl');
+
+	// function writeScreenshot(data, name) {
+	// 	name = name || 'ss.png';
+	// 	var screenshotPath = 'public/img/';
+	// 	fs.writeFileSync(screenshotPath + name, data, 'base64');
+	//   };
+	  
+	//   driver.takeScreenshot().then(function(data) {
+	// 	writeScreenshot(data, 'out1.png');
+	//   });
 
 	var header = "Test your website";
 	res.render('pages/index', {
@@ -40,6 +57,7 @@ app.get('/', function (req, res) {
 // Accessibility check page 
 app.get('/accessibilityCheck', function (req, res) {
 	res.render('pages/accessibilityCheck');
+	res.sendFile(path.join(__dirname + '/public/js/main.js')); 
 });
 
 app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
@@ -49,7 +67,6 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 
 
 	var result;
-
 	var driver = new WebDriver.Builder()
 		.forBrowser('firefox')
 		.setFirefoxOptions(new firefox.Options().headless(), new firefox.Options().proxy = null)
