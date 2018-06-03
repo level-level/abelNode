@@ -13,6 +13,36 @@ b {
     width: 30px;
     height: 30px;
 }
+.wrapper-loader {
+    display: none;
+}
+
+.wrapper-loader h4 {
+    margin-top: 8px;
+    text-align: -webkit-center;
+}
+.loader {
+   
+    margin: 0 auto;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+
+  /* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
 .compareResults a {
     float: right;
@@ -88,7 +118,6 @@ div#columnResults {
 
 .card-body {
     border-right: 1px solid #e9ecf0;
-    border-bottom: 1px solid #e9ecf0;
 }
 
 
@@ -108,7 +137,6 @@ div#columnResults {
 }
 
 .explanation {
-    display: flex;
     margin-top: 40px;
 }
 
@@ -171,6 +199,9 @@ img.iconEye {
     font-size: 9px;
 }
 
+.effect > .row p.card-text {
+    padding: 10px;
+}
 
 .home .columnWrapper {
     text-align: center;
@@ -186,12 +217,9 @@ div#headingTitle {
 }
 
 .c100.big {
-    margin-top: 30px;
 }
 
-.tab-content .row>.card {
-    width:40%;
-}
+.tab-content .row>.card {width: 70%;}
 
   .center-text {
     width: 50%;
@@ -227,7 +255,11 @@ div#headingTitle {
         text-align: center;
     }
 
-  
+    .result-explanation {
+        display: none;
+
+    }
+
     .card {
         width: 100%;
     }
@@ -279,13 +311,13 @@ a.navbar-brand {
     background: #e2e2e2!important;
 }
 
-.paragraph-score {width: 60%;margin-right: 40px;padding: 50px;}
+.paragraph-score {width: 48%;float: left;padding: 50px;}
 
 @media screen and (min-width: 1000px) {
 
-div#overviewScore {width: 75%;display: flex;background: #EDEDED;}
+div#overviewScore {background: #EDEDED;padding: 10px;width: 76%;}
 div#accordion {
-    width: 24.2%;
+    width: 23.8%;
     position: absolute;
 }
 ul.navbar-nav.mr-auto.mt-2.mt-lg-0 {
@@ -303,6 +335,13 @@ ul.navbar-nav.mr-auto.mt-2.mt-lg-0 {
 .result-explanation {
     width: calc(100% - 24.2%);
     float: right;
+}
+
+div#myTabContent .card-text {
+}
+
+div#columnResults ul>li {
+    font-size: 18px;
 }
 
 
