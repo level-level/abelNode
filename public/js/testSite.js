@@ -10,12 +10,10 @@ var effect = document.querySelector('#effect');
 var problemRow = problem.querySelector('div.row');
 var effectRow = effect.querySelector('div.row');
 var oplossingRow = oplossing.querySelector('div.row');
-var testButton = document.querySelector('#urlForm > .form-group > button');
 var accordionFirst = document.querySelector('#accordion > div:nth-child(2) > .card-header > h5 > button ');
-var loader = document.getElementById('loader');
+
 document.addEventListener("DOMContentLoaded", function (event) {
 
-    testButton.addEventListener('click', showLoading,false)
      
 
     if (accordionFirst == buttonContrast) {
@@ -58,15 +56,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     }
 
-
-
-
 });
-
-function showLoading(){
-    console.log('testtt');
-    loader.style.display = 'block';
-}
 
 function showContrast(e) {
     problemRow.innerHTML = ""
@@ -79,12 +69,10 @@ function showContrast(e) {
         tagName: 'p', content: 'Het kleurgebruik van de website is niet optimaal voor slechtzienden. Mensen met bijvoorbeeld kleurenblindheid kunnen uw website hierdoor niet goed bekijken. 1 op de 200 vrouwen en zelfs 1 op de 12 mannen is kleurenblind. Doordat zij uw website niet goed kunnen bekijken loopt u mogelijke omzet mis of bereikt u niet het effect van de website zoals bedoeld is.', attributes: { class: 'card-text' },
     });
     var cardText2 = createDomElement({ tagName: 'p', content: 'In Nederland is ongeveer 1 op de 12 mannen en 1 op de 200 vrouwen kleurenblind (zie onderstaande afbeelding). Voor de liefhebber: de mannen worden harder getroffen omdat de belangrijkste kleurenstoornis via het zoganaamde X-chromosoom wordt doorgegeven. Volledige kleurenblindheid (a-chromaat) komt bij een zeer kleine groep van ongeveer 1 op de 33.000 mensen voor. Deze mensen nemen de wereld als het ware via een grijsfilter waar. ', attributes: { class: 'card-text' }, });
-    var img = createDomElement({ tagName: 'img', attributes: { class: 'card-img', src: 'https://www.accessibility.nl/content/images/mv.gif' }, });
 
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardText);
     cardBody.appendChild(cardText2);
-    cardBody.appendChild(img);
     card.appendChild(cardBody);
     problemRow.appendChild(card);
 
