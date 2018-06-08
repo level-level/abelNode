@@ -57,10 +57,9 @@ app.get('/', function (req, res) {
 // Accessibility check page 
 app.get('/accessibilityCheck', function (req, res) {
 	res.render('pages/accessibilityCheck');
-	res.sendFile(path.join(__dirname + '/public/js/main.js')); 
 });
 
-app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
+app.post('/accessibilityCheck', urlencoderParser, function (req, res) {	
 	score = 500;
 	url = req.body.url;
 	var finalUrl;

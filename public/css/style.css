@@ -17,7 +17,7 @@ b {
     display: none;
 }
 
-.wrapper-loader h4 {
+.wrapper-loader h6 {
     margin-top: 8px;
     text-align: -webkit-center;
 }
@@ -163,7 +163,6 @@ display: none;
 
 .wrapper-results #columnResults .card {
     margin-top: 0px;
-    background: #D8D8D8;
     border:0px;
     border-radius: 0;
 }
@@ -326,11 +325,6 @@ ul.navbar-nav.mr-auto.mt-2.mt-lg-0 {
     padding-left: 10px;
 }
 
-.tab-content {
-    margin-top: 20px;
-    margin: 10px;
-}
-
 
 .result-explanation {
     width: calc(100% - 24.2%);
@@ -355,7 +349,7 @@ div#columnResults ul>li {
     }
 
     .wrapper-results .row .card {
-        width: 90%;
+        width: 90%; 
     }
     
     .compareWrapper .row .card {
