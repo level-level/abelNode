@@ -77,6 +77,7 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	var scalingArray = [];
 	var impact;
 	var category;
+	var scorePercentage;
 	if (url.indexOf("http://") == 0 || url.indexOf("https://") == 0) {
 		finalUrl = url;
 	} else {
@@ -90,7 +91,7 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 					.then(function () {
 						AxeBuilder(driver)
 							.analyze(function (results) {
-								driver.quit();
+								
 								result = results['violations'];
 
 								for (let i = 0; i < result.length; i++) {
@@ -158,7 +159,7 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 									missingHTMLArray: missingHTMLArray,
 									HTMLstructureArray: HTMLstructureArray
 								});
-
+								driver.quit();
 							});
 					});
 			}
