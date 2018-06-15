@@ -17,7 +17,7 @@ chmod +x geckodriver
 sudo mv geckodriver /usr/local/bin/
 ```
 
-## Selemnium webDriver & Firefox
+## Selenium webDriver & Firefox
 [Running Selenium WebDriver tests using Firefox headless mode on Ubuntu](https://medium.com/@griggheo/running-selenium-webdriver-tests-using-firefox-headless-mode-on-ubuntu-d32500bb6af2)
 
 
