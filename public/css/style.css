@@ -1,13 +1,240 @@
 
+body {
+    font-family: "PT Sans";
+}
 
+.container.intro {
+    width: 55%;
+    margin: 0 auto;
+    display: flex;
+}
+
+section.footer {
+    width: 55%;
+    margin: 0 auto;
+}
+
+.contact {
+    margin-top: 20px;
+}
+
+footer.blockquote-footer {
+    margin-top: 15px;
+}
+
+.container.partners {
+    width: 55%;
+    background: #fff;
+    text-align: center;
+    height: 220px;
+    border-radius: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.slideshow-content {
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.container.partners img {
+    margin-left: 80px;
+}
+
+.container.slideshow h2 {
+    margin-bottom: 60px;
+}
+
+.slideshow-content img {
+    margin-right: 40px;
+    width: 150px;
+    margin-top: -26px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.footer-components h3 {
+    margin-bottom: 20px;
+}
+
+section.slideshow {
+    height: 300px;
+    border-bottom: 8px solid #e88421;
+}
+
+.container.slideshow  {
+   margin-top: 30px;
+   width: 55%;
+}
+
+.container.slideshow h2 {
+    text-align: -webkit-center;
+}
+
+
+.container.partners h2 {
+ padding-top: 20px;
+ margin-bottom: 35px;
+ font-family: 'Concert One';
+}
+
+h2,h3 {
+    font-family: 'Concert One';
+}
+
+section.partners {
+    background: #f4eee9;
+    overflow:auto;
+}
+
+.intro-text {
+    padding-right: 47px;
+}
+
+.container.intro p {
+    font-size: 20px;
+}
+
+
+.container.intro img {
+    width: 250px;
+    margin-top: 50px;
+}
+
+.footer-components ul {
+    width: 33%;
+}
+
+.btn.btn-primary, a {
+    font-weight: bold;
+}
+
+.home-info button.btn.btn-primary {background: #fff;height: 50px;font-weight: bold;color: #04549A;border: 1.5px solid #E88421;width: 185px;}
+
+.container.intro button {height: 50px;width: 235px;}
 
 b {
     display: inline-block;
 }
 
+section.home-info {background-color: #F3EEE9;min-height: 401px;margin-top: 90px;}
+
+
+.home-info h5.card-title {font-family: 'Concert One', cursive;margin-bottom: 30px;}
+
+.home section .container.abel {
+    width: 55%;
+    margin-top: 50px;
+    display: flex;
+}
+
+div#socialMedia {
+    display: flex;
+}
+
+.iconTel {
+    background: url('../img/phone.png');
+    height:20px;
+    width: 20px;
+    display: block;
+}
+
+.iconMail {
+    background: url('../img/mail.png');
+    height: 20px;
+    width: 20px;
+    display: block;
+}
+
+.iconig {
+    background: url('../img/instagram.png');
+    height: 20px;
+    width: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.iconfb {
+    background: url('../img/facebook.png');
+    height: 20px;
+    width: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+
+
+.icontwitter {
+    background: url('../img/twitter.png');
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    display: block;
+}
+
+
+
+
+.iconMap {
+    background: url('../img/location.png');
+    height: 20px;
+    width: 33px;
+    display: block;
+}
+
+.footer-components span {
+    margin-right: 21px;
+    margin-bottom: 18px;
+}
+
+.footer-components button {
+    border-radius: 0px;
+}
+
+.footer-components a {
+    text-decoration: underline;
+}
+
+.home section .container.abel p {
+    width: 90%;
+    font-size: 20px;
+}
+.home section .container.abel h2 {
+    font-family: 'Concert One';
+    margin-bottom: 30px;
+}
+
+.home section h1 {
+    font-family: 'Concert One', cursive;
+    border-bottom:5px solid #E88421;
+    padding-bottom: 15px;
+    padding-top: 45px;
+    font-size: 47px;
+    margin-bottom: 20px;
+}
+
+.footer-components {
+    display: flex;
+}
+ul li {
+    list-style-type: none;
+}
+
+.footer-components>ul>li {text-decoration: none;display: flex;}
+
 nav {
+    
+   
+}
+
+a.navbar-brand {
     font-family: 'Concert One', cursive;
 }
+
 
 .navbar-expand-lg .navbar-collapse {
     height: 50px;
@@ -113,9 +340,8 @@ div#columnResults {
 }
 
 .btn-primary {
-    background-color: #eeeeef;
-    border: 1px solid #ccc;
-    color:black;
+    background-color: #04549A;
+    border-radius:15px;
 }
 
 .accessibilityCheck .btn-primary {
@@ -124,22 +350,16 @@ div#columnResults {
     vertical-align: unset;
 }
 
- .btn-primary:hover {
-    background-color: black;
-    color:#eeeeef;
-    border: 1px solid #ccc;
-}
-
 
 
 .card {
-    margin-top:20px;
+    margin-top: 50px;
     margin-right: 20px;
+    margin-bottom: 40px;
     width: 23%;
 }
 
 .card-body:nth-child(2) {
-    background: #e9ecf0;
 }
 
 .card-body:nth-child(2) a.card-link {
@@ -159,7 +379,7 @@ div#columnResults {
 
 .home .jumbotron {
     border-radius: 0px;
-    background-color: #f1f3f7;
+    background-color: #fff;
 }
 
 .wrapper-results {
@@ -184,6 +404,7 @@ display: none;
 
 .columnWrapper .row .card {
     width: 30%;
+    border-radius: 15px;
 }
 
 .wrapper-results .row .card {
@@ -234,11 +455,12 @@ img.iconEye {
 
 .home .columnWrapper {
     text-align: center;
+    width: 55%;
 }
 
 .home .navbar {
     margin-bottom: 0px;
-    border-radius: 4px 0px 4px 0px;
+    box-shadow: 0 1px 1px 1px rgba(0,0,0,0.1);
 }
 
 div#headingTitle {
