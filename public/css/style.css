@@ -129,14 +129,32 @@ section.home-info {background-color: #F3EEE9;min-height: 401px;margin-top: 90px;
     display: flex;
 }
 
+.footer-components {
+    margin-bottom: 40px;
+}   
+
+.subfooter li:nth-child(4) {
+    border:0px;
+}
+
+.subfooter ul li {display: inline-flex;border-right: 1px solid black;padding: 5px;}
+
 div#socialMedia {
     display: flex;
+}
+
+.subfooter {
+    margin: 0 auto;
+    width: 60%;
+    font-size: 14px;
 }
 
 .iconTel {
     background: url('../img/phone.png');
     height:20px;
     width: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
     display: block;
 }
 
@@ -144,6 +162,8 @@ div#socialMedia {
     background: url('../img/mail.png');
     height: 20px;
     width: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
     display: block;
 }
 
@@ -181,8 +201,10 @@ div#socialMedia {
 
 .iconMap {
     background: url('../img/location.png');
-    height: 20px;
-    width: 33px;
+    height: 50px;
+    width: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
     display: block;
 }
 
