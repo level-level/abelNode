@@ -63,6 +63,10 @@ app.get('/over-ons', function (req, res) {
 	res.render('pages/about');
 });
 
+app.get('/contact', function (req, res) {
+	res.render('pages/contact');
+});
+
 app.post('/accessibilityCheck', urlencoderParser, function (req, res) {	
 	score = 500;
 	url = req.body.url;

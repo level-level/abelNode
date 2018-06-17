@@ -83,8 +83,13 @@ footer {
  font-family: 'Concert One';
 }
 
-h2,h3,h4,.table thead th {
+h1,h2,h3,h4,.table thead th {
     font-family: 'Concert One';
+}
+
+.home-info button.btn.btn-primary:hover {
+    border-color: #04549a;
+    color: #e88421;
 }
 
 .container {
@@ -120,6 +125,8 @@ section.partners {
 
 .home-info button.btn.btn-primary {background: #fff;height: 50px;font-weight: bold;color: #04549A;border: 1.5px solid #E88421;width: 185px;}
 
+.contact-info button.btn.btn-primary {background: #E88421;height: 50px;font-weight: bold;color: #fff;border: 1.5px solid #04549A ;width: 185px;}
+
 .container.intro button {height: 50px;width: 235px;}
 
 b {
@@ -144,6 +151,7 @@ section.home-info {background-color: #F3EEE9;min-height: 401px;margin-top: 90px;
 .subfooter li:nth-child(4) {
     border:0px;
 }
+.intro a.btn.btn-primary {color: #fff;}
 
 .subfooter ul li {display: inline-flex;border-right: 1px solid black;padding: 5px;}
 
@@ -205,6 +213,42 @@ div#socialMedia {
 }
 
 
+.info-contact .iconMap {
+    height: 30px;
+    width: 30px;
+}
+
+.info-contact .footer-components {
+    padding-top: 18px;
+}
+
+.footer-components span {
+    margin-right: 21px;
+    margin-bottom: 18px;
+}
+
+.info-contact .footer-components span {
+    margin-right: 12px;
+}
+
+.footer-components ul {
+    width: 70%;
+}
+
+
+.info-contact {
+    font-size: 18px;
+    width: 38%;
+}
+
+.info-contact h1 {
+    margin-bottom: 20px;
+}
+
+.container.contacts {
+    padding-top: 80px;
+    display: flex;
+}
 
 
 .iconMap {
@@ -216,10 +260,7 @@ div#socialMedia {
     display: block;
 }
 
-.footer-components span {
-    margin-right: 21px;
-    margin-bottom: 18px;
-}
+
 
 .footer-components button {
     border-radius: 0px;
@@ -271,6 +312,7 @@ a.navbar-brand {
 }
 
 .navbar-light .navbar-nav .nav-item.checker {
+    font-weight: bold;
     background: #04549a;
     line-height: 5px;
     height: 52px;
@@ -593,6 +635,8 @@ section.references {
     overflow: auto;
 }
 
+
+
 .container.refer {
     width: 55%;
     padding: 30px 0px 30px 0px;
@@ -643,7 +687,11 @@ tbody td a {
 }
 
 
- 
+.info-contact a.btn.btn-primary {
+    width: 246px;
+    height: 55px;
+    line-height: 45px;
+}
 
 a.btn.btn-primary {
     width: 200px;
@@ -798,6 +846,12 @@ div#columnResults ul>li {
 
 
 @media screen and (max-width: 1300px) {
+
+    .container.contacts {
+        padding-top: 80px;
+        display: flex;
+        width: 68%;
+    }
 
     .container.intro {
         width: 70%;
