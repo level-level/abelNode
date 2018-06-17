@@ -629,6 +629,10 @@
         height: 200px;
     }
 
+    div#myTabContent p.card-text {
+        min-height: 0px;
+    }
+
     body.bodyresult {background-color: #F3EEE9;}
 
     .introTest .jumbotron p {
@@ -637,9 +641,7 @@
 
     div#myTabContent h5 {font-family: concert one;}
 
-    div#myTabContent p.card-text {
-        min-height: 0px;
-    }
+  
 
     .container.about {
         width: 55%;
