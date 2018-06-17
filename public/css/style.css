@@ -20,6 +20,7 @@ section.footer {
 
 footer.blockquote-footer {
     margin-top: 15px;
+    border: 0px;
 }
 
 .container.partners {
@@ -60,7 +61,10 @@ footer.blockquote-footer {
 
 section.slideshow {
     height: 300px;
-    border-bottom: 8px solid #e88421;
+}
+
+footer {
+    border-top: 8px solid #e88421;
 }
 
 .container.slideshow  {
@@ -692,4 +696,8 @@ div#columnResults ul>li {
 
    .navbar-brand img {
     width: 35px;
+}
+
+main.container.checker {
+    margin-bottom: 140px;
 }
