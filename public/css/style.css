@@ -561,6 +561,7 @@ div#headingTitle {
     width: 35px;
 }
 
+
 main.container.checker {
     margin-bottom: 140px;
 }
@@ -774,7 +775,9 @@ a.btn.btn-primary {
 
 a.navbar-brand {
     width: 45%;
+    text-decoration: none;
     margin-left: 15%;
+    margin-top: -10px;
 }
 
 
