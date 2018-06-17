@@ -85,9 +85,15 @@
      font-family: 'Concert One';
     }
 
-    h1,h2,h3,h4,.table thead th {
+    h1,h2,h3,h4,.table thead th,div#headingTitle {
         font-family: 'Concert One';
     }
+
+    div#accordion button {
+        color: #000;
+    }
+
+    .result-explanation .nav-link {font-family: 'Concert One';color: #000;font-size: 20px;}
 
     .home-info button.btn.btn-primary:hover {
         border-color: #04549a;
@@ -512,6 +518,7 @@
     .wrapper-results #columnResults .card {
         margin-top: 0px;
         border:0px;
+        background: transparent;
         border-radius: 0;
     }
 
@@ -561,14 +568,14 @@
 
     div#headingTitle {
         text-align: center;
+        border-radius: 10px;
     }
 
-    .c100.big {
-    }
+ .c100.big { font-size: 174px; }
 
     .jumbotron.highscore {width: 41%; text-align: left}
 
-    .tab-content .row>.card {width: 70%;}
+    .tab-content .row>.card {border-radius: 15px;width: 70%;}
 
       .center-text {
         width: 50%;
@@ -597,12 +604,12 @@
     }
 
     section.introTest {
-        height: 350px;
+        height: 500px;
         background-color: #F3EEE9;
     }
 
     .introTest .jumbotron {
-        width: 55%;
+        width: 60%;
         text-align: center;
         margin: 0 auto;
         margin-top: 40px;
@@ -616,6 +623,8 @@
         margin-top: -30px;
         text-align: center;
     }
+
+    body.bodyresult {background-color: #F3EEE9;}
 
     .introTest .jumbotron p {
         font-size: 20px;
@@ -670,6 +679,11 @@
     section.references {
         background: #f4eee9;
         overflow: auto;
+    }
+
+
+    div#myTabContent {
+        margin-top: 25px;
     }
 
     .wrapper-check {background-color: #F3EEE9;height: 100%;}
@@ -868,19 +882,20 @@
         background: #fff!important;
     }
 
-    .paragraph-score {width: 48%;float: left;padding: 50px;}
+    .paragraph-score {width: 56%;border-radius: 10px;float: left;margin-right: 71px;background: #fff;padding: 26px;}
 
     @media screen and (min-width: 1000px) {
 
-    div#overviewScore {background: #EDEDED;padding: 10px;width: 76%;}
+    div#overviewScore {background: transparent;padding: 10px;margin-top: 30px;width: 60%;}
     div#accordion {
         width: 23.8%;
+        margin-top: 30px;
         position: absolute;
     }
 
 
     .result-explanation {
-        width: calc(100% - 24.2%);
+        width: calc(100% - 24.7%);
         float: right;
     }
 

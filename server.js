@@ -175,6 +175,7 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 		});
 	} catch (e) {
 		console.error(e);
+		driver.quit();
 	}
 	console.log(finalUrl);
 
