@@ -635,6 +635,8 @@
         font-size: 20px;
     }
 
+    div#myTabContent h5 {font-family: concert one;}
+
     .container.about {
         width: 55%;
         margin: 0 auto;
