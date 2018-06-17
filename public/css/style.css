@@ -83,8 +83,12 @@ footer {
  font-family: 'Concert One';
 }
 
-h2,h3 {
+h2,h3,h4,.table thead th {
     font-family: 'Concert One';
+}
+
+.container {
+    overflow: auto;
 }
 
 section.partners {
@@ -110,7 +114,7 @@ section.partners {
     width: 33%;
 }
 
-.btn.btn-primary, a {
+.btn.btn-primary {
     font-weight: bold;
 }
 
@@ -403,10 +407,7 @@ div#columnResults {
     margin: 0 auto;
 }
 
-.home .jumbotron {
-    border-radius: 0px;
-    background-color: #fff;
-}
+
 
 .wrapper-results {
     display: flex;
@@ -513,8 +514,142 @@ div#headingTitle {
     margin: -150px 0px 0px -150px;
   }
 
+  .navbar-brand img {
+    width: 35px;
+}
+
+main.container.checker {
+    margin-bottom: 140px;
+}
+
+section.introTest {
+    height: 350px;
+    background-color: #F3EEE9;
+}
+
+.introTest .jumbotron {
+    width: 55%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+    background: #fff;
+    border-radius: 15px;
+}
+
+.introTest .jumbotron h4 {
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: -30px;
+    text-align: center;
+}
+
+.introTest .jumbotron p {
+    font-size: 20px;
+}
+
+.container.about {
+    width: 55%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.vision {
+    display: flex;
+}
+
+.vision-text {
+    width: 60%;
+}
+
+
+
+
+
+.vision-image img {
+    width: 200px;
+}
+
+.mission {
+    display: flex;
+}
+
+.mission-text {
+    width: 60%;
+    align-self: flex-end;
+    padding: 30px;
+}
+
+
+.mission-image img {
+    width: 200px;
+}
+
+section.aboutus p {
+    font-size: 20px;
+}
+
+section.references {
+    background: #f4eee9;
+    overflow: auto;
+}
+
+.container.refer {
+    width: 55%;
+    padding: 30px 0px 30px 0px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    background: #fff;
+}
+
+.container.refer h3 {
+    text-align: center;
+}
+
+ tbody th{
+    font-weight: 100;
+    width: 55%;
+}
+
+tbody td a {
+    text-decoration: underline;
+}
+
+.table thead th {
+    border-top:0px;
+}
+
+.ref-column {
+    display: flex;
+}
+
+.ref-column img {
+    margin-right: 15px;
+    width: 80px;
+    height: 80px;
+}
+
+
+.table td, .table th {
+    padding: 0px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-right: 30px;
+}
+
+.reference {
+    width: 90%;
+    margin: 0 auto;
+}
+
 
  
+
+a.btn.btn-primary {
+    width: 200px;
+    line-height: 33px;
+    height: 47px;
+}
 
   @media screen and (max-width: 1300px) {
 
@@ -694,10 +829,3 @@ div#columnResults ul>li {
        
    }
 
-   .navbar-brand img {
-    width: 35px;
-}
-
-main.container.checker {
-    margin-bottom: 140px;
-}

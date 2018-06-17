@@ -59,6 +59,10 @@ app.get('/accessibilityCheck', function (req, res) {
 	res.render('pages/accessibilityCheck');
 });
 
+app.get('/over-ons', function (req, res) {
+	res.render('pages/about');
+});
+
 app.post('/accessibilityCheck', urlencoderParser, function (req, res) {	
 	score = 500;
 	url = req.body.url;
