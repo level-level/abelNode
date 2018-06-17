@@ -6,43 +6,75 @@
 </head>
 
 <body>
-    <header>
-        <% include ../partials/header %>
-    </header>
-    <main class="container checker ">
-        <div class="accessibilityCheck">
-            <div class="jumbotron">
-                <h3>
-                    Is jouw website toegankelijk voor
-                    <span class='bold'> iedereen?</span>
-                </h3>
-                <div class="wrapper-loader" id="wrapper-loader">
-                    <div class="loader" id="loader"></div>
-                    <h6>Een moment geduld uw website wordt getest...</h6>
+    <div class="wrapper-check">
+        <header>
+            <% include ../partials/header %>
+        </header>
+        <main class="container checker ">
+            <div class="accessibilityCheck">
+                <div class="jumbotron">
+                    <h3>
+                        Accessibility Check
+                    </h3>
+                    <div class="explanation">
+                        <span>Zoekmachines zijn blind. Het is dus goed om te zorgen dat de code van je website aan de eisen voldoet
+                            voor kwaliteit en toegankelijkheid.
+                        </span>
+                    </div>
+                    <div class="wrapper-loader" id="wrapper-loader">
+                        <div class="loader" id="loader"></div>
+                        <h6>Een moment geduld uw website wordt getest...</h6>
+                    </div>
+
+                    <form id="urlForm" method="POST" action="/accessibilityCheck">
+                        <div class="form-group">
+                            <span id="warning"></span>
+                            <input type="text" class="form-control" id="url" aria-describedby="urlHelp" name="url" placeholder="Voer een url in">
+                            <button type="submit" class="btn btn-primary" id="testButton">Start Test!</button>
+                        </div>
+                    </form>
+
                 </div>
 
-                <form id="urlForm" method="POST" action="/accessibilityCheck">
-                    <div class="form-group">
-                        <span id="warning"></span>
-                        <input type="text" class="form-control" id="url" aria-describedby="urlHelp" name="url" placeholder="Enter url">
-                        <button type="submit" class="btn btn-primary" id="testButton">Test</button>
+                <div class="explain">
+
+                    <div class="jumbotron uitleg">
+                        <h3>Uitleg</h3>
+                        <p>Zoekmachines zijn blind. Het is dus goed om te zorgen dat de code van je website aan de eisen voldoet
+                            voor kwaliteit en toegankelijkheid. Steeds meer landen voeren wetten en regelingen in om de toegankelijkheidsrichtlijnen
+                            verplicht te stellen. Doordat de code en toegankelijkheids standaarden international worden vastgesteld
+                            door het World Wide Web Consortium, is toegang tot een website ook in de toekomst gegarandeerd.</p>
+                        <img src="/img/ABEL_ILLUSTRATIONS-03.png" alt="abel story telling">
                     </div>
-                </form>
-                <div class="explanation">
-                    <span>Zoekmachines zijn blind. Het is dus goed om te zorgen dat de code van je website aan de eisen voldoet
-                        voor kwaliteit en toegankelijkheid.
-                    </span>
-                    <span> Steeds meer landen voeren wetten en regelingen in om de toegankelijkheidsrichtlijnen verplicht te stellen.
-                        Doordat de code en toegankelijkheids standaarden international worden vastgesteld door het World
-                        Wide Web Consortium, is toegang tot een website ook in de toekomst gegarandeerd.</span>
+
+                    <div class="jumbotron highscore">
+                        <h3>Top 5 uit de test</h3>
+                            <li> 1. Level level
+                                <a href="#"> https://google.com/</a>
+                            </li>
+                            <li> 2. Google
+                                <a href="#"> https://google.com/</a>
+                            </li>
+                            <li>3. Coolblue
+                                <a href="#">https://www.coolblue.nl/</a>
+                            </li>
+                            <li>4. Albert Heijn
+                                <a href="#"> https://www.ah.nl/ </a>
+                            </li>
+                            <li>5. Bol.com
+                                <a href="#">
+                                    https://www.bol.com/</a>
+                            </li>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </div>
     <footer>
         <% include ../partials/footer %>
     </footer>
     <script type="" src="/js/main.js"></script>
+
 </body>
 
 </html>
