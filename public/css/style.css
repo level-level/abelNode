@@ -166,7 +166,6 @@
     }
 
     .footer-components ul:nth-child(1) {
-        width: 25%;
     }
 
     .footer-components ul:nth-child(4) {
@@ -376,7 +375,7 @@
 
     .jumbotron.highscore li {
         margin-top: 17px;
-        width: 85%;
+        width: 70%;
         list-style-type: none;
     }
     .loader {
@@ -490,7 +489,9 @@
     }
 
     .explanation {
-        margin-top: 20px;
+        margin-top: 30px;
+        width: 60%;
+        margin: 0 auto;
     }
 
     .compareWrapper {
@@ -622,6 +623,10 @@
         margin-bottom: 30px;
         margin-top: -30px;
         text-align: center;
+    }
+
+    p.card-text {
+        height: 200px;
     }
 
     body.bodyresult {background-color: #F3EEE9;}
@@ -770,6 +775,7 @@
 
     .accessibilityCheck h3 {
         margin-top: -30px;
+        margin-bottom: 25px;
     }
 
 
