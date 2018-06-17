@@ -146,6 +146,13 @@ section.home-info {background-color: #F3EEE9;min-height: 401px;margin-top: 90px;
     display: flex;
 }
 
+a.navbar-brand {
+    color: #0f5599;
+}
+
+.navbar-light .navbar-brand {
+    color: #0f5599;
+}
 
 .footer-components ul:nth-child(2),.footer-components ul:nth-child(3) {
   width: 15%;
