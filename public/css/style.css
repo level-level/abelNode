@@ -123,7 +123,7 @@ section.home-info {background-color: #F3EEE9;min-height: 401px;margin-top: 90px;
 
 .home-info h5.card-title {font-family: 'Concert One', cursive;margin-bottom: 30px;}
 
-.home section .container.abel {
+.container.abel {
     width: 55%;
     margin-top: 50px;
     display: flex;
@@ -453,7 +453,6 @@ img.iconEye {
 }
 
 .columnWrapper {
-    width: 82%;
     margin: 0 auto;
 }
 
@@ -475,7 +474,7 @@ img.iconEye {
     padding: 10px;
 }
 
-.home .columnWrapper {
+.columnWrapper {
     text-align: center;
     width: 55%;
 }
@@ -509,6 +508,7 @@ div#headingTitle {
     left: 69%;
     margin: -150px 0px 0px -150px;
   }
+
 
  
 
@@ -654,4 +654,42 @@ div#columnResults ul>li {
     div#columnResults {
         border-right: 0px;
     }
+}
+
+
+
+@media screen and (max-width: 1300px) {
+
+    .container.intro {
+        width: 70%;
+    }
+
+    .columnWrapper {
+        width: 70%;
+    }
+
+    .container.abel {
+        width:70%;
+    }
+
+    .container.partners {
+        width:70%;
+    }
+
+    .container.slideshow {
+        width:70%;
+    }
+
+    section.footer {
+        width: 80%;
+    }
+
+    .subfooter {
+        width:70%;
+    }
+       
+   }
+
+   .navbar-brand img {
+    width: 35px;
 }
