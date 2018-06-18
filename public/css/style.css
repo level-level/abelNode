@@ -1,7 +1,5 @@
 
-    body {
-        font-family: "PT Sans";
-    }
+   
 
     .container.intro {
         width: 55%;
@@ -1006,3 +1004,8 @@
 
        }
 
+       body {
+        font-family: 'PT Sans';
+    }
+
+    
