@@ -14,6 +14,7 @@ var events = require('events');
 var fs = require('fs');
 var score;
 var scoreColor;
+var error;
 
 
 
@@ -41,7 +42,7 @@ app.get('/', function (req, res) {
 	// 	var screenshotPath = 'public/img/';
 	// 	fs.writeFileSync(screenshotPath + name, data, 'base64');
 	//   };
-	  
+
 	//   driver.takeScreenshot().then(function(data) {
 	// 	writeScreenshot(data, 'out1.png');
 	//   });
@@ -56,7 +57,9 @@ app.get('/', function (req, res) {
 
 // Accessibility check page 
 app.get('/accessibilityCheck', function (req, res) {
-	res.render('pages/accessibilityCheck');
+	res.render('pages/accessibilityCheck', {
+		error: error
+	});
 });
 
 app.get('/over-ons', function (req, res) {
@@ -67,7 +70,7 @@ app.get('/contact', function (req, res) {
 	res.render('pages/contact');
 });
 
-app.post('/accessibilityCheck', urlencoderParser, function (req, res) {	
+app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	score = 500;
 	url = req.body.url;
 	var finalUrl;
@@ -99,7 +102,7 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 					.then(function () {
 						AxeBuilder(driver)
 							.analyze(function (results) {
-								
+
 								result = results['violations'];
 
 								for (let i = 0; i < result.length; i++) {
@@ -151,15 +154,15 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 									scoreColor = 'green';
 								} else if (scorePercentage < 95 && scorePercentage > 70) {
 									coreColor = 'yellow';
-								} else if(scorePercentage <= 70 && scorePercentage > 50) {
+								} else if (scorePercentage <= 70 && scorePercentage > 50) {
 									scoreColor = 'orange';
-								}else {
+								} else {
 									scoreColor = 'red';
 								}
 								res.render('pages/results', {
 									data: result,
 									score: score,
-									url:url,
+									url: url,
 									scoreColor: scoreColor,
 									scalingArray: scalingArray,
 									scorePercentage: scorePercentage,
@@ -170,6 +173,9 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 								driver.quit();
 							});
 					});
+			} else {
+				res.redirect('/accessibilityCheck');
+				error = "voer een valide url in";
 			}
 
 		});

@@ -954,7 +954,7 @@
 
 
 
-    @media screen and (max-width: 1300px) {
+    @media screen and (max-width: 1350px) {
 
         .container.contacts {
             padding-top: 80px;
@@ -969,6 +969,7 @@
         .columnWrapper {
             width: 70%;
         }
+
 
         .container.abel {
             width:70%;
