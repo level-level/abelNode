@@ -111,7 +111,6 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 							.analyze(function (results) {
 
 								result = results['violations'];
-
 								for (let i = 0; i < result.length; i++) {
 									impact = results['violations'][i]['impact']
 									category = results['violations'][i]['tags'][0];
