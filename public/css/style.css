@@ -7,6 +7,11 @@
         display: flex;
     }
 
+    .partner-images {
+        width: 80%;
+        margin: 0 auto;
+    }
+
     section.footer {
         width: 55%;
         margin: 0 auto;
@@ -40,6 +45,7 @@
 
     .container.partners img {
         margin-left: 80px;
+        width: 90px;
     }
 
     .container.slideshow h2 {
@@ -69,7 +75,7 @@
 
     .container.slideshow  {
        margin-top: 30px;
-       width: 55%;
+       /* width: 55%; */
     }
 
     .container.slideshow h2 {
@@ -99,6 +105,8 @@
     }
 
     .container {
+        width: 55%;
+        margin: 0 auto;
         overflow: auto;
     }
 
@@ -315,7 +323,7 @@
         list-style-type: none;
     }
 
-    .footer-components>ul>li {text-decoration: none;display: flex;}
+    .footer-components>ul>li {text-decoration: none;display: flex;margin-bottom: 5px;}
 
     nav {
 
@@ -608,9 +616,7 @@
     }
 
     .introTest .jumbotron {
-        width: 60%;
         text-align: center;
-        margin: 0 auto;
         margin-top: 40px;
         background: #fff;
         border-radius: 15px;
@@ -623,9 +629,9 @@
         text-align: center;
     }
 
-    .home p.card-text {
-        height: 200px;
-    }
+
+   
+
 
     div#myTabContent p.card-text {
         min-height: 0px;
@@ -800,7 +806,7 @@
     .jumbotron.highscore ul>li {margin-bottom: 15px;margin-top: 15px;}
 
       @media screen and (max-width: 1300px) {
-
+     
         .navbar-light .navbar-nav .nav-item.checker .nav-link{
             display: table-cell;
             vertical-align: middle;
@@ -950,9 +956,16 @@
         }
     }
 
+ 
+
+    @media screen and (min-width: 1000px) {
+        .columnWrapper p.card-text {height: 200px;}
+    }
+    @media screen and (max-width: 1550px) {
 
 
-    @media screen and (max-width: 1350px) {
+        .columnWrapper .row .card {
+        }
 
         .container.contacts {
             padding-top: 80px;
@@ -960,25 +973,31 @@
             width: 68%;
         }
 
+        .nav-tabs .nav-item {
+            margin-bottom: -1px;
+            width: 160px;
+
+        }
+
         .container.intro {
-            width: 70%;
+            width: 80%;
         }
 
         .columnWrapper {
-            width: 70%;
+            width: 85%;
         }
 
 
         .container.abel {
-            width:70%;
+            width:80%;
         }
 
         .container.partners {
-            width:70%;
+            width:80%;
         }
 
         .container.slideshow {
-            width:70%;
+            width:80%;
         }
 
         .info-contact {

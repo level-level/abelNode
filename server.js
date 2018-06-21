@@ -30,6 +30,8 @@ app.use(express.static(__dirname + '/public'));
 
 // index page 
 app.get('/', function (req, res) {
+
+	// code to create screenshot website
 	// var driver = new WebDriver.Builder()
 	// .forBrowser('firefox')
 	// .setFirefoxOptions(new firefox.Options().headless(), new firefox.Options().proxy = null)
