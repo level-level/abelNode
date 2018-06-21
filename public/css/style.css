@@ -58,6 +58,11 @@ footer.blockquote-footer {
     border-radius: 50%;
 }
 
+.container.abel h2 {
+    border-bottom: 5px solid #E88421;
+    padding-bottom: 10px;
+}
+
 .footer-components h3 {
     margin-bottom: 20px;
     font-size: large;
@@ -275,7 +280,7 @@ div#socialMedia {
 
 .info-contact {
     font-size: 18px;
-    width: 38%;
+    width: 63%;
 }
 
 .info-contact h1 {
@@ -308,12 +313,12 @@ div#socialMedia {
 }
 
 .home section .container.abel p {
-    width: 90%;
+    width: 87%;
     font-size: 20px;
 }
 .home section .container.abel h2 {
     font-family: 'Concert One';
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .home section h1 {
@@ -429,6 +434,9 @@ a#goBack>img {
 }
 
 
+.container.abel .abel.image img {
+    width: 200px;
+}
 
 
 .home .wrapper {
@@ -589,7 +597,7 @@ div#headingTitle {
 
 .c100.big { font-size: 174px; }
 
-.jumbotron.highscore {width: 41%; text-align: left}
+.jumbotron.highscore {width: 41%;text-align: center;}
 
 .tab-content .row>.card {border-radius: 15px;width: 70%;}
 
@@ -610,7 +618,7 @@ div#headingTitle {
   }
 
   .navbar-brand img {
-    width: 35px;
+    width: 50px;
 }
 
 
@@ -774,7 +782,7 @@ tbody td a {
 
 .jumbotron.uitleg {margin-right: 20px;text-align: left;width: 70%;}
 
-.container.contacts img {/* width: 63%; */}
+.container.contacts img {width: 70%;}
 
 
 
