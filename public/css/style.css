@@ -162,6 +162,10 @@
         color: #0f5599;
     }
 
+    .reference-text {
+        width: 55%;
+    }
+
     .navbar-light .navbar-brand {
         color: #0f5599;
     }
@@ -266,7 +270,7 @@
 
     .info-contact {
         font-size: 18px;
-        width: 32%;
+        width: 38%;
     }
 
     .info-contact h1 {
@@ -651,6 +655,7 @@
         width: 55%;
         margin: 0 auto;
         margin-top: 40px;
+        margin-bottom: 20px;
     }
 
     .vision {
@@ -683,6 +688,16 @@
         align-self: flex-end;
         padding: 30px;
     }
+
+    .reference-page .container.contacts {
+        padding-top: 40px;
+    }
+
+     section.contact-abel {
+        height: 490px;
+    }
+
+   
 
 
     .mission-image img {
@@ -754,11 +769,9 @@
 
     .jumbotron.uitleg {margin-right: 20px;text-align: left;}
 
-    .container.contacts img { width: 66%; }
+    .container.contacts img {/* width: 63%; */}
 
-    section.contact-abel {
-        height: 515px;
-    }
+  
 
     .table td, .table th {
         padding: 0px;
@@ -801,6 +814,10 @@
         width: 200px;
         line-height: 33px;
         height: 47px;
+    }
+    
+    .reference-page .container.contacts img {
+        width: 63%;
     }
 
     .jumbotron.highscore ul>li {margin-bottom: 15px;margin-top: 15px;}

@@ -68,6 +68,11 @@ app.get('/over-ons', function (req, res) {
 	res.render('pages/about');
 });
 
+app.get('/reference', function (req, res) {
+	res.render('pages/reference');
+});
+
+
 app.get('/contact', function (req, res) {
 	res.render('pages/contact');
 });
