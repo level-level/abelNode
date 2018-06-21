@@ -15,6 +15,11 @@ section.footer {
     margin: 0 auto;
 }
 
+.explain a {
+    color: #000;
+    text-decoration: underline;
+}
+
 .contact {
     margin-top: 20px;
     font-size: 12px;
@@ -265,6 +270,11 @@ div#socialMedia {
     padding-top: 18px;
 }
 
+.container.abel a {
+    color: #000;
+    text-decoration: underline;
+}
+
 .footer-components span {
     margin-right: 21px;
     margin-bottom: 18px;
@@ -310,6 +320,7 @@ div#socialMedia {
 
 .footer-components a {
     text-decoration: underline;
+    color: #000;
 }
 
 .home section .container.abel p {
