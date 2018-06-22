@@ -40,6 +40,16 @@ footer.blockquote-footer {
     margin-bottom: 50px;
 }
 
+div#hulp a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.result-explanation a {
+    color: #000;
+    text-decoration: underline;
+}
+
 .slideshow-content {
     display: flex;
     width: 60%;
@@ -629,7 +639,7 @@ div#headingTitle {
   }
 
   .navbar-brand img {
-    width: 50px;
+    width: 30px;
 }
 
 
@@ -725,7 +735,7 @@ button#testButton {
 
 
 .mission-image img {
-    width: 200px;
+    height: 255px;
 }
 
 section.aboutus p {
