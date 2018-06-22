@@ -40,6 +40,20 @@ footer.blockquote-footer {
     margin-bottom: 50px;
 }
 
+.abel.image {
+    padding-right: 20px;
+}
+
+.abel.text {
+    width: 73%;
+}
+
+
+.container.about h2 {
+    border-bottom: 5px solid #E88421;
+    padding-bottom: 10px;
+}
+
 div#hulp a {
     color: #000;
     text-decoration: underline;
