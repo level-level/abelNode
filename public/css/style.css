@@ -314,7 +314,7 @@ div#socialMedia {
 
 .info-contact {
     font-size: 18px;
-    width: 63%;
+    width: 40%;
 }
 
 .info-contact h1 {
@@ -817,7 +817,7 @@ tbody td a {
 
 .jumbotron.uitleg {margin-right: 20px;text-align: left;width: 70%;}
 
-.container.contacts img {width: 70%;}
+.container.contacts img {height: 400px;}
 
 
 
@@ -1026,8 +1026,19 @@ div#columnResults ul>li {
 @media screen and (min-width: 1000px) {
     .columnWrapper p.card-text {height: 200px;}
 }
+
+    
+
 @media screen and (max-width: 1550px) {
 
+    .container.contacts {
+
+        width: 80%;
+    }
+
+    section.contact-abel {
+        height: 570px;
+    }
 
     .columnWrapper .row .card {
     }
