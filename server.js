@@ -14,6 +14,7 @@ var events = require('events');
 var fs = require('fs');
 var score;
 var scoreColor;
+var error;
 
 
 
@@ -29,6 +30,8 @@ app.use(express.static(__dirname + '/public'));
 
 // index page 
 app.get('/', function (req, res) {
+
+	// code to create screenshot website
 	// var driver = new WebDriver.Builder()
 	// .forBrowser('firefox')
 	// .setFirefoxOptions(new firefox.Options().headless(), new firefox.Options().proxy = null)
@@ -41,7 +44,7 @@ app.get('/', function (req, res) {
 	// 	var screenshotPath = 'public/img/';
 	// 	fs.writeFileSync(screenshotPath + name, data, 'base64');
 	//   };
-	  
+
 	//   driver.takeScreenshot().then(function(data) {
 	// 	writeScreenshot(data, 'out1.png');
 	//   });
@@ -56,10 +59,25 @@ app.get('/', function (req, res) {
 
 // Accessibility check page 
 app.get('/accessibilityCheck', function (req, res) {
-	res.render('pages/accessibilityCheck');
+	res.render('pages/accessibilityCheck', {
+		error: error
+	});
 });
 
-app.post('/accessibilityCheck', urlencoderParser, function (req, res) {	
+app.get('/over-ons', function (req, res) {
+	res.render('pages/about');
+});
+
+app.get('/reference', function (req, res) {
+	res.render('pages/reference');
+});
+
+
+app.get('/contact', function (req, res) {
+	res.render('pages/contact');
+});
+
+app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	score = 500;
 	url = req.body.url;
 	var finalUrl;
@@ -77,6 +95,7 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	var scalingArray = [];
 	var impact;
 	var category;
+	var scorePercentage;
 	if (url.indexOf("http://") == 0 || url.indexOf("https://") == 0) {
 		finalUrl = url;
 	} else {
@@ -90,9 +109,8 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 					.then(function () {
 						AxeBuilder(driver)
 							.analyze(function (results) {
-								driver.quit();
-								result = results['violations'];
 
+								result = results['violations'];
 								for (let i = 0; i < result.length; i++) {
 									impact = results['violations'][i]['impact']
 									category = results['violations'][i]['tags'][0];
@@ -142,15 +160,15 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 									scoreColor = 'green';
 								} else if (scorePercentage < 95 && scorePercentage > 70) {
 									coreColor = 'yellow';
-								} else if(scorePercentage <= 70 && scorePercentage > 50) {
+								} else if (scorePercentage <= 70 && scorePercentage > 50) {
 									scoreColor = 'orange';
-								}else {
+								} else {
 									scoreColor = 'red';
 								}
 								res.render('pages/results', {
 									data: result,
 									score: score,
-									url:url,
+									url: url,
 									scoreColor: scoreColor,
 									scalingArray: scalingArray,
 									scorePercentage: scorePercentage,
@@ -158,14 +176,18 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 									missingHTMLArray: missingHTMLArray,
 									HTMLstructureArray: HTMLstructureArray
 								});
-
+								driver.quit();
 							});
 					});
+			} else {
+				res.redirect('/accessibilityCheck');
+				error = "voer een valide url in";
 			}
 
 		});
 	} catch (e) {
 		console.error(e);
+		driver.quit();
 	}
 	console.log(finalUrl);
 

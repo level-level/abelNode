@@ -1,238 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<% include ../partials/head %>
 </head>
-<body>
+
+<body class="bodyresult">
 	<header>
 		<% include ../partials/header %>
 	</header>
-	<main class="wrapper-results" id="resultsWrapper">
-		<div class="row" id="columnResults">
-			<div id="accordion">
-				<div class="card">
-					<div class="card-header" id="headingTitle">
-						<h5 class="mb-0">
-							Resultaten
-						</h5>
-					</div>
-				</div>
-				<%if (colorContrastArray.length > 0) { %>
+	<main>
+		<div class="wrapper-results" id="resultsWrapper">
+			<div class="row" id="columnResults">
+				<div id="accordion">
 					<div class="card">
-						<div class="card-header" id="headingOne">
-							<h5 class="mb-0">
-								<button class="btn btn-link" id="buttonContrast" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-									Colors and contrast
-								</button>
-							</h5>
+						<div class="card-header" id="headingTitle">
+							<h1 class="mb-0">
+								Resultaten
+							</h1>
 						</div>
+					</div>
+					<%if (colorContrastArray.length > 0) { %>
+						<div class="card">
+							<div class="card-header" id="headingOne">
+								<h5 class="mb-0">
+									<button class="btn btn-link" id="buttonContrast" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+									 aria-controls="collapseOne">
+										Colors and contrast
+									</button>
+								</h5>
+							</div>
 
-						<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-							<div class="card-body">
-								<ul>
-									<% for(var i = 0; i < colorContrastArray.length; i++) { %>
-										<li>Type:
-											<%= colorContrastArray[i].id %>
-										</li>
-										<li>
-											Help:
-											<%= colorContrastArray[i].help %>
-										</li>
-										<li>
-											Impact:
-											<%= colorContrastArray[i].impact %>
-										</li>
-										<hr>
-										<% } %>
-								</ul>
+							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+								<div class="card-body">
+									<ul>
+										<% for(var i = 0; i < colorContrastArray.length; i++) { %>
+											<li>Type:
+												<%= colorContrastArray[i].id %>
+											</li>
+											<li>
+												Help:
+												<%= colorContrastArray[i].help %>
+											</li>
+											<li>
+												Impact:
+												<%= colorContrastArray[i].impact %>
+											</li>
+											<hr>
+											<% } %>
+									</ul>
+								</div>
 							</div>
 						</div>
-					</div>
-					<% } %>
-						<%if (HTMLstructureArray.length > 0) { %>
-							<div class="card">
-								<div class="card-header" id="headingTwo">
-									<h5 class="mb-0">
-										<button class="btn btn-link collapsed" id="buttonStructure" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-											HTML structure
-										</button>
-									</h5>
-								</div>
-								<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-									<div class="card-body">
-										<ul>
-											<% for(var i = 0; i < HTMLstructureArray.length; i++) { %>
-												<li>Type:
-													<%= HTMLstructureArray[i].id %>
-												</li>
-												<li>
-													Help:
-													<%= HTMLstructureArray[i].help %>
-												</li>
-												<li>
-													Impact:
-													<%= HTMLstructureArray[i].impact %>
-												</li>
-												<hr>
-												<% } %>
-										</ul>
+						<% } %>
+							<%if (HTMLstructureArray.length > 0) { %>
+								<div class="card">
+									<div class="card-header" id="headingTwo">
+										<h5 class="mb-0">
+											<button class="btn btn-link collapsed" id="buttonStructure" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+											 aria-controls="collapseTwo">
+												HTML structure
+											</button>
+										</h5>
+									</div>
+									<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+										<div class="card-body">
+											<ul>
+												<% for(var i = 0; i < HTMLstructureArray.length; i++) { %>
+													<li>Type:
+														<%= HTMLstructureArray[i].id %>
+													</li>
+													<li>
+														Help:
+														<%= HTMLstructureArray[i].help %>
+													</li>
+													<li>
+														Impact:
+														<%= HTMLstructureArray[i].impact %>
+													</li>
+													<hr>
+													<% } %>
+											</ul>
+										</div>
 									</div>
 								</div>
-							</div>
-							<% } %>
-								<%if (scalingArray.length > 0) { %>
-									<div class="card">
-										<div class="card-header" id="headingThree">
-											<h5 class="mb-0">
-												<button class="btn btn-link collapsed" id="buttonScaling" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-													Scaling and Zoom
-												</button>
-											</h5>
-										</div>
-										<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-											<div class="card-body">
-												<ul>
-													<% for(var i = 0; i < scalingArray.length; i++) { %>
-														<li>Type:
-															<%= scalingArray[i].id %>
-														</li>
-														<li>
-															Help:
-															<%= scalingArray[i].help %>
-														</li>
-														<li>
-															Impact:
-															<%= scalingArray[i].impact %>
-														</li>
-														<hr>
-														<% } %>
-												</ul>
+								<% } %>
+									<%if (scalingArray.length > 0) { %>
+										<div class="card">
+											<div class="card-header" id="headingThree">
+												<h5 class="mb-0">
+													<button class="btn btn-link collapsed" id="buttonScaling" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+													 aria-controls="collapseThree">
+														Scaling and Zoom
+													</button>
+												</h5>
+											</div>
+											<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+												<div class="card-body">
+													<ul>
+														<% for(var i = 0; i < scalingArray.length; i++) { %>
+															<li>Type:
+																<%= scalingArray[i].id %>
+															</li>
+															<li>
+																Help:
+																<%= scalingArray[i].help %>
+															</li>
+															<li>
+																Impact:
+																<%= scalingArray[i].impact %>
+															</li>
+															<hr>
+															<% } %>
+													</ul>
+												</div>
 											</div>
 										</div>
-									</div>
-									<% } %>
-										<%if (missingHTMLArray.length > 0) { %>
-											<div class="card">
-												<div class="card-header" id="headingThree">
-													<h5 class="mb-0">
-														<button class="btn btn-link collapsed" id="buttonMissingHTML" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-															Missing HTML elements
-														</button>
-													</h5>
-												</div>
-												<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-													<div class="card-body">
-														<ul>
-															<% for(var i = 0; i < missingHTMLArray.length; i++) { %>
-																<li>Type:
-																	<%= missingHTMLArray[i].id %>
-																</li>
-																<li>
-																	Help:
-																	<%= missingHTMLArray[i].help %>
-																</li>
-																<li>
-																	Impact:
-																	<%= missingHTMLArray[i].impact %>
-																</li>
-																<hr>
-																<% } %>
-														</ul>
+										<% } %>
+											<%if (missingHTMLArray.length > 0) { %>
+												<div class="card">
+													<div class="card-header" id="headingThree">
+														<h5 class="mb-0">
+															<button class="btn btn-link collapsed" id="buttonMissingHTML" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+															 aria-controls="collapseFour">
+																Missing HTML elements
+															</button>
+														</h5>
+													</div>
+													<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+														<div class="card-body">
+															<ul>
+																<% for(var i = 0; i < missingHTMLArray.length; i++) { %>
+																	<li>Type:
+																		<%= missingHTMLArray[i].id %>
+																	</li>
+																	<li>
+																		Help:
+																		<%= missingHTMLArray[i].help %>
+																	</li>
+																	<li>
+																		Impact:
+																		<%= missingHTMLArray[i].impact %>
+																	</li>
+																	<hr>
+																	<% } %>
+															</ul>
+														</div>
 													</div>
 												</div>
-											</div>
-											<% } %>
+												<% } %>
+				</div>
 			</div>
-		</div>
-		<div class="scoreOverview" id="overviewScore">
+			<div class="scoreOverview" id="overviewScore">
 
-			<div class="paragraph-score">
-				<h2>De score van  <%= url %> is bekend!</h2>
+				<div class="paragraph-score">
+					<h2>De score van
+						<%= url %> is bekend!</h2>
 
-				<p>Om te slagen voor de test moet u minimaal 95% scoren. Tot 70% hebben slechtziende al behoorlijk wat moeite met het gebruiken van de website en onder de 70% is de kans groot dat de website onbruikbaar is voor slechtziende.</p> 
-			</div>
+					<p>Tot een 95% hebben visueel beperkten al behoorlijk wat moeite met het gebruiken van uw website. Bij een score lager
+						dan 70% is de kans groot dat uw website onbruikbaar is voor visueel bepertken.</p>
+				</div>
 				<div id="outer-circle">
 					<div class="c100 p<%= scorePercentage.toFixed(0) %> big <%= scoreColor%>">
-						<span><%= scorePercentage.toFixed(0) %>%</span>
+						<span>
+							<%= scorePercentage.toFixed(0) %>%</span>
 						<div class="slice">
-						  <div class="bar"></div>
-						  <div class="fill"></div>
+							<div class="bar"></div>
+							<div class="fill"></div>
 						</div>
-					  </div>
 					</div>
 				</div>
+			</div>
 		</div>
-	</main>
-	<div class="result-explanation">
 
-		
-		<ul class="nav nav-tabs" id="myTab" role="tablist">
-			<li class="nav-item">
-				<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Probleem</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Effect</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Oplossing</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" id="contact2-tab" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="false">Externe hulp</a>
-			</li>
-		</ul>
-		<div class="tab-content" id="myTabContent">
-			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-				<div class="problem" id="problem">
-					 <div class="row ">
-						</div> 
+		<div class="result-explanation">
+
+
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Probleem</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Effect</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Oplossing</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="contact2-tab" data-toggle="tab" href="#contact2" role="tab" aria-controls="contact2" aria-selected="false">Externe hulp</a>
+				</li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+					<div class="problem" id="problem">
+						<div class="row ">
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="effect" id="effect">
+						<div class="row ">
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+					<div class="oplossing" id="oplossing">
+						<div class="row ">
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact2-tab">
+					<div class="hulp" id="hulp">
+						<div class="row">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title">Externe hulp</h5>
+									<p class="card-text">Voor meer informatie kunt u de volgende websites raadplegen:
+									</p>
+									<p class="card-text">
+
+										<ul>
+											<li>
+												<a href="https://www.accessibility.nl">accessibility.nl</a>
+											</li>
+											<li>
+												<a href="https://level-level.com/">Level level</a>
+											</li>
+											<li>
+												<a href="https://dequeuniversity.com/rules/axe/3.0/">dequeuniversity</a>
+											</li>
+											<li>
+												<a href="https://inclusive-components.design">inclusive-components design</a>
+											</li>
+											<li>
+												<a href="/reference">Referenties ABEL</a>
+											</li>
+										</ul>
+
+									</p>
+									<p class="card-text">
+										Heeft u meer hulp nodig met het aanpassen van uw website? Full service wordpress agency Level Level kan u daarbij helpen.
+										Neem hier contact met ons op:
+										<a href="https://level-level.com/">Level-level.com</a>
+									</p>
+
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-				<div class="effect" id="effect">
-					<div class="row ">
-					   </div> 
-			   </div>
-			</div>
-			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-				<div class="oplossing" id="oplossing">
-					<div class="row ">
-					   </div> 
-			   </div>
-			</div>
-			<div class="tab-pane fade" id="contact2" role="tabpanel" aria-labelledby="contact2-tab">
-				<div class="hulp" id="hulp">
-						<div class="row">
-								<div class="card">
-									<div class="card-body">
-										<h5 class="card-title">Externe hulp</h5>
-										<p class="card-text">Voor meer informatie kunt u de volgende websites raadplegen:
-												</p>
-										<p class="card-text">
-												
-												<ul>
-													<li><a href="https://www.accessibility.nl">accessibility.nl</a></li>
-													<li><a href="https://level-level.com/">Level level</a></li>
-													<li><a href="https://dequeuniversity.com/rules/axe/3.0/">dequeuniversity</a></li>
-													<li><a href="https://inclusive-components.design">inclusive-components design</a></li>
-												</ul>
-												
-										</p>
-										<p class="card-text">
-											Heeft u meer hulp nodig met het aanpassen van uw website? Full service wordpress agency Level Level kan u daarbij helpen. Neem hier contact met ons op:
-											<a href="https://level-level.com/">Level-level.com</a>
-									</p>
-									
-									</div>
-								</div>
-			   </div>
-			</div>
 		</div>
-	</div>
-
-	<footer>
-		<% include ../partials/footer %>
-	</footer>
-<script></script>
+	</main>
+	<% include ../partials/footerJS %>
 </body>
 
 </html>

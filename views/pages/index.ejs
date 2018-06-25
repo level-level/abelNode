@@ -5,62 +5,98 @@
 	<% include ../partials/head %>
 </head>
 
-<body >
+<body>
 	<div class="home">
 		<header>
 			<% include ../partials/header %>
 		</header>
-
 		<main>
-
-			<div class="jumbotron">
-				<div class="wrapper">
-					<h3>
-						Is jouw website toegankelijk voor
-						<span class='bold'> iedereen?</span>
-					</h3>
-					<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam hic, repellendus porro nulla, quaerat laboriosam dicta
-						nemo aperiam numquam beatae, culpa esse obcaecati fugit nostrum aliquid eaque blanditiis doloremque laudantium.</span>
+			<section class="intro-section">
+				<div class="container intro">
+					<div class="intro-text">
+						<h1>Het web toegankelijk maken voor iedereen.</h1>
+						<p>Ondanks dat de digitale wereld steeds gebruiksvriendelijker wordt, wordt dezelfde wereld voor blinden en slechtzienden
+							steeds beperkter: zij hebben geen of beperkte toegang tot het internet. Hier willen wij van ABEL iets aan veranderen,
+							maar daar hebben we jouw hulp bij nodig. Test hoe toegankelijk jouw website is. Kan ABEL jouw website gebruiken?</p>
+						<a role="button" href="/accessibilityCheck" class="btn btn-primary">Test nu uw website!</a>
+					</div>
+					<div class="intro-image">
+						<img src="img/ABEL_BASIS_TANDEN.png" alt="abel groot animatie">
+					</div>
 				</div>
-			</div>
 
-			<div class="columnWrapper">
-				<h5>
-					Is jouw website toegankelijk voor
-					<span class='bold'> iedereen?</span>
-					</h3>
+			</section>
+
+			<section class="home-info">
+				<div class="columnWrapper">
 					<div class="row">
 						<div class="card">
 							<div class="card-body">
-								<h5 class="card-title">Developer</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<h2 class="card-title">Wat is accessibility?</h2>
+								<p class="card-text">Web accessibility, ook wel toegankelijkheid, betekent het web beschikbaar én bruikbaar maken voor iedereen, inclusief
+									mensen met een beperking. Een goede website ziet er niet alleen goed uit, maar is zó opgezet dat deze bruikbaar
+									is. </p>
 							</div>
 							<div class="card-body">
-								<a href="/accessibilityCheck" class="card-link">Test</a>
-							</div>
-						</div>
-
-						<div class="card" >
-							<div class="card-body">
-								<h5 class="card-title">CEO</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							</div>
-							<div class="card-body">
-								<a href="#" class="card-link">Test</a>
+								<button type="button" class="btn btn-primary">Lees meer</button>
 							</div>
 						</div>
 
 						<div class="card">
 							<div class="card-body">
-								<h5 class="card-title">Webeigenaar</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<h2 class="card-title">Hoe verander ik mee?</h2>
+								<p class="card-text">ABEL biedt veel informatie en mogelijkheden over accessibility. Wij kunnen je ondersteunen in het bouwen naar toegankelijkheid.
+									Leren stopt nooit, groei daarom met ons mee!</p>
 							</div>
 							<div class="card-body">
-								<a href="#" class="card-link">Test</a>
+								<button type="button" class="btn btn-primary">Lees meer</button>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-body">
+								<h2 class="card-title">Onze voorlichtingen</h2>
+								<p class="card-text">Accessibility is een nog vrij onbekend begrip met een grote lading. Wij vinden het daarom juist zo belangrijk dat
+									iedereen hiervan op de hoogte is. ABEL zet zich in om zoveel mogelijk mensen te informeren over web accessibility
+									en streeft ernaar het begrip standaard te maken. </p>
+							</div>
+							<div class="card-body">
+								<button type="button" class="btn btn-primary">Lees meer</button>
 							</div>
 						</div>
 					</div>
-			</div>
+				</div>
+			</section>
+			<section class="abel">
+				<div class="container abel">
+					<div class="abel image">
+						<img src="img/ABEL_BASIS_LACH.png" alt="abel lachend">
+					</div>
+					<div class="abel text">
+						<h2> Wie is ABEL?</h2>
+						<p>ABEL is een toegankelijkheidsplatform dat is geïnspireerd op de manier waarop u werkt. Van open source tot bedrijf,
+							u kunt code hosten en beoordelen, projecten beheren en software samen met miljoenen andere ontwikkelaars bouwen.
+							<a href="/over-ons" title="lees meer over het ABEL platform" role="link">Lees meer over ons.</a>
+						</p>
+					</div>
+
+				</div>
+			</section>
+			<% include ../partials/partners %>
+				<section class="slideshow">
+					<div class="container slideshow">
+						<h2>Bijdragers van ABEL</h2>
+						<div class="slideshow-content">
+							<img src="img/foto_bijdrager.jpg" alt="Bijdarger Danny van Buuren projectleider Coolblue">
+							<blockquote class="blockquote">
+								<p class="mb-0">Persoonlijk, betrouwbaar, secuur en met passie helpt ABEL met het web toegankelijker maken! </p>
+								<footer class="blockquote-footer">
+									<cite title="Source Title">Danny van Buuren projectleider Coolblue</cite>
+								</footer>
+							</blockquote>
+						</div>
+					</div>
+				</section>
 	</div>
 	</main>
 

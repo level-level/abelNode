@@ -5,7 +5,21 @@ This project is build on the Express framework in NodeJS.
 
 This webapp uses the [axe-webdriverjs](https://github.com/dequelabs/axe-webdriverjs) to display accessibility issues in your html elements.
 
-It also need to use selenium-webdriver to start a browser to test your website.
+It also needs to use selenium-webdriver to start a browser to test your website.
+
+## install the following drivers:
+
+### Geckodriver
+```
+wget https://github.com/mozilla/geckodriver/releases/download/v0.19.0/geckodriver-v0.19.0-linux64.tar.gz
+tar -xvzf geckodriver*
+chmod +x geckodriver
+sudo mv geckodriver /usr/local/bin/
+```
+
+## Selenium webDriver & Firefox
+[Running Selenium WebDriver tests using Firefox headless mode on Ubuntu](https://medium.com/@griggheo/running-selenium-webdriver-tests-using-firefox-headless-mode-on-ubuntu-d32500bb6af2)
+
 
 Use npm install to install all necessary packages
 

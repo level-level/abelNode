@@ -11,9 +11,8 @@ var problemRow = problem.querySelector('div.row');
 var effectRow = effect.querySelector('div.row');
 var oplossingRow = oplossing.querySelector('div.row');
 var accordionFirst = document.querySelector('#accordion > div:nth-child(2) > .card-header > h5 > button ');
-
+console.log(2);
 document.addEventListener("DOMContentLoaded", function (event) {
-
      
 
     if (accordionFirst == buttonContrast) {
