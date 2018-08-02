@@ -50,7 +50,7 @@ footer.blockquote-footer {
 
 
 .container.about h2 {
-    border-bottom: 5px solid #E88421;
+    border-bottom: 3px solid #E88421;
     padding-bottom: 10px;
 }
 
@@ -86,7 +86,7 @@ div#hulp a {
 }
 
 .container.abel h2 {
-    border-bottom: 5px solid #E88421;
+    border-bottom: 3px solid #E88421;
     padding-bottom: 10px;
 }
 
@@ -357,7 +357,7 @@ div#socialMedia {
 
 .home section h1 {
     font-family: 'Concert One', cursive;
-    border-bottom:5px solid #E88421;
+    border-bottom:3px solid #E88421;
     padding-bottom: 15px;
     padding-top: 45px;
     font-size: 47px;
@@ -394,7 +394,7 @@ a.navbar-brand {
 
 
 .navbar-light .navbar-nav .nav-link:hover {
-    border-bottom: 5px solid #e88421;
+    border-bottom: 3px solid #e88421;
     color: rgba(0,0,0,1);
 }
 
@@ -1261,22 +1261,17 @@ div#resultsWrapper {
 ul#myTab {
     width: 55%;
     margin: 0 auto;
+    height: 65px;
 }
 
 .nav-tabs {
     border: 0px;
 }
 
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-border-color:transparent;
-border-bottom:5px solid #E88421;
-background-color: transparent;
-color:#000;
-
-}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {border-color:transparent;border-bottom: 3px solid #E88421;background-color: transparent;color:#000;}
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:hover {
     border-color:transparent;
-    border-bottom:5px solid #E88421;
+    border-bottom:3px solid #E88421;
     color:#000;
     background-color: transparent;
 }
@@ -1317,7 +1312,7 @@ div#myTabContent {
     /* background: red; */
 }
 
-img#screenshot-contrast {
+.screenshot-contrast {
     width: 100%;
 }
 
@@ -1339,9 +1334,13 @@ img#screenshot-contrast {
 }
 
 .oplossing-image img {
-    width: 400px;
+    width: 300px;
 }
 
+
+.oplossing-wrapper {
+    width: 60%;
+}
 
 
 .wrapper-404 .container {
@@ -1450,7 +1449,20 @@ img#screenshot-contrast {
     transition: 1s;
    opacity: 1.0 ;
 }
+.oplossing a {
+    text-decoration: underline;
+    color: #000;
+}
+
+.hideContent {
+    display: none;
+}
 
 
-
+div#showInfo {
+    width: 200px;
+    margin: 0 auto;
+    
+    
+}
 

@@ -33,7 +33,7 @@ app.use(express.static(__dirname + '/public'));
 
 // Accessibility check page 
 app.get('/', function (req, res) {
-	res.render('pages/accessibilityCheck', {
+	res.render('pages/accessibilityTester', {
 		error: error
 	});
 });
@@ -68,7 +68,7 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	try {
 		urlExists(finalUrl, function (err, exists) {
 			if (exists) {
-
+				
 		
 				driver.get(finalUrl);
 
@@ -137,7 +137,7 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 								if (scorePercentage >= 95) {
 									scoreColor = 'green';
 								} else if (scorePercentage < 95 && scorePercentage > 70) {
-									coreColor = 'yellow';
+									scoreColor = 'yellow';
 								} else if (scorePercentage <= 70 && scorePercentage > 50) {
 									scoreColor = 'orange';
 								} else {
@@ -158,7 +158,7 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 							});
 					});
 			} else {
-				res.redirect('/accessibilityCheck');
+				res.redirect('/');
 				error = "voer een valide url in";
 			}
 
