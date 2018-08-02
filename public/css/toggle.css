@@ -1,0 +1,88 @@
+/*Style main div and remove default checkbox*/
+
+.switch {
+    position: relative;
+    width: 75px;
+  }
+  
+  .switch-checkbox {
+    display: none;
+  }
+  
+  
+  /*Style words and oval switch */
+  
+  .switch-labels {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
+  .switch-text {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+  }
+  
+  .switch-text:before,
+  .switch-text:after {
+    float: left;
+    width: 50%;
+    line-height: 30px;
+    color: white;
+    box-sizing: border-box;
+  }
+  
+  .switch-text:before {
+    content: "Uit";
+    padding-left: 10px;
+    background-color: #0f559a;
+    color: #fff;
+  }
+  
+  .switch-text:after {
+    content: "Aan";
+    padding-right: 10px;
+    background-color: #E88421;
+    color: #FFFFFF;
+    text-align: right;
+  }
+  
+  
+  /*Style center dot*/
+  
+  .switch-dot {
+    width: 30px;
+    height: 30px;
+    background: #dfdfdf;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 41px;
+    margin-right: 5px;
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+  }
+  
+  .switch-dot:after{
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #dfdfdf;
+      margin: 5px 0 0 5px;
+  }
+  
+  
+  /*State changer*/
+  
+  .switch-checkbox:checked+.switch-labels .switch-text {
+    margin-left: 0;
+  }
+  
+  .switch-checkbox:checked+.switch-labels .switch-dot {
+    right: 0px;
+    margin-right: 0px;
+  }

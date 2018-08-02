@@ -28,54 +28,16 @@ let port = 8080;
 
 app.use(express.static(__dirname + '/public'));
 
-// index page 
-app.get('/', function (req, res) {
-
-	// code to create screenshot website
-	// var driver = new WebDriver.Builder()
-	// .forBrowser('firefox')
-	// .setFirefoxOptions(new firefox.Options().headless(), new firefox.Options().proxy = null)
-	// .build();
-
-	// driver.get('https://coolblue.nl');
-
-	// function writeScreenshot(data, name) {
-	// 	name = name || 'ss.png';
-	// 	var screenshotPath = 'public/img/';
-	// 	fs.writeFileSync(screenshotPath + name, data, 'base64');
-	//   };
-
-	//   driver.takeScreenshot().then(function(data) {
-	// 	writeScreenshot(data, 'out1.png');
-	//   });
-
-	var header = "Test your website";
-	res.render('pages/index', {
-	});
-
-});
 
 
 
 // Accessibility check page 
-app.get('/accessibilityCheck', function (req, res) {
+app.get('/', function (req, res) {
 	res.render('pages/accessibilityCheck', {
 		error: error
 	});
 });
 
-app.get('/over-ons', function (req, res) {
-	res.render('pages/about');
-});
-
-app.get('/reference', function (req, res) {
-	res.render('pages/reference');
-});
-
-
-app.get('/contact', function (req, res) {
-	res.render('pages/contact');
-});
 
 app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	score = 500;
@@ -88,6 +50,8 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 		.forBrowser('firefox')
 		.setFirefoxOptions(new firefox.Options().headless(), new firefox.Options().proxy = null)
 		.build();
+
+	
 
 	var colorContrastArray = [];
 	var HTMLstructureArray = [];
@@ -104,6 +68,21 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	try {
 		urlExists(finalUrl, function (err, exists) {
 			if (exists) {
+
+		
+				driver.get(finalUrl);
+
+				function writeScreenshot(data, name) {
+					name = name || 'ss.png';
+					var screenshotPath = 'public/img/';
+					fs.writeFileSync(screenshotPath + name, data, 'base64');
+				};
+
+				
+				driver.takeScreenshot().then(function (data) {
+					writeScreenshot(data, 'out1.png');
+				});
+
 				driver
 					.get(finalUrl)
 					.then(function () {
@@ -114,7 +93,6 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 								for (let i = 0; i < result.length; i++) {
 									impact = results['violations'][i]['impact']
 									category = results['violations'][i]['tags'][0];
-									// console.log("\n" + results['passes'][i]['id']);
 
 
 									if (category == 'cat.color') {
@@ -194,6 +172,12 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 
 
 });
+
+app.get('*', function(req, res){
+	res.render('pages/404', {
+	
+	});
+  });
 
 
 

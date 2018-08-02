@@ -55,13 +55,11 @@ footer.blockquote-footer {
 }
 
 div#hulp a {
-    color: #000;
-    text-decoration: underline;
+  
 }
 
 .result-explanation a {
-    color: #000;
-    text-decoration: underline;
+ 
 }
 
 .slideshow-content {
@@ -139,8 +137,8 @@ div#accordion button {
 .container {
     width: 55%;
     margin: 0 auto;
-    margin-bottom: 50px;
     overflow: auto;
+    margin-top: 90px;
 }
 
 section.partners {
@@ -207,6 +205,7 @@ a.navbar-brand {
 
 .navbar-light .navbar-brand {
     color: #0f5599;
+    width: 0px;
 }
 
 
@@ -368,9 +367,7 @@ div#socialMedia {
 .footer-components {
     display: flex;
 }
-ul li {
-    list-style-type: none;
-}
+nav .nav-item {height: 50px;width: 200px;}
 
 .footer-components>ul>li {text-decoration: none;display: flex;margin-bottom: 5px;}
 
@@ -384,24 +381,15 @@ a.navbar-brand {
 }
 
 
-.navbar-expand-lg .navbar-collapse {
-    height: 50px;
-}
 
-.navbar-light .navbar-nav .nav-item.checker {
-    font-weight: bold;
-    background: #04549a;
-    line-height: 5px;
-    height: 52px;
-    margin: 10px;
-    border-radius: 10px;
-}
+
 .navbar-light .navbar-nav .nav-item.checker .nav-link:hover {
     border-bottom:0px;
 }
 
 .navbar-light .navbar-nav .nav-item.checker .nav-link {
     color: #fff;
+    width: 170px;
 }
 
 
@@ -493,9 +481,9 @@ div#columnResults {
     margin-top:20px;
     display: inline;
     height: 48px;
-    margin-right: 10px;
+    /* margin: 0 auto; */
     margin-left: 14px;
-    width: 51%;
+    width: 43%;
     border-radius: 10px;
 }
 
@@ -532,23 +520,24 @@ div#columnResults {
 
 
 .accessibilityCheck .jumbotron {
-    background-color: white;
     width: 100%;
     border-radius: 15px;
     margin: 0 auto;
-    margin-top: 40px;
+    border: 2px solid #aea8a8;
+    margin-top: 30px;
+    background-color: #ffff;
     text-align: center;
 }
 
 
 
 .wrapper-results {
-    display: flex;
+    display: grid;
 }
 
 .explanation {
     margin-top: 30px;
-    width: 60%;
+    width: 66%;
     margin: 0 auto;
 }
 
@@ -622,7 +611,7 @@ img.iconEye {
 
  .navbar {
     margin-bottom: 0px;
-    box-shadow: 0 1px 1px 1px rgba(0,0,0,0.1);
+    background-color: rgba(255,255,255,0.7);
 }
 
 div#headingTitle {
@@ -634,7 +623,7 @@ div#headingTitle {
 
 .jumbotron.highscore {width: 41%;text-align: center;}
 
-.tab-content .row>.card {border-radius: 15px;width: 70%;}
+.tab-content .row>.card {width: 100%;min-height: 1000px;}
 
   .center-text {
     width: 50%;
@@ -660,6 +649,13 @@ div#headingTitle {
 main.container.checker {
     margin-bottom: 194px;
     width: 55%;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 section.introTest {
@@ -688,8 +684,13 @@ section.introTest {
 div#myTabContent p.card-text {
     min-height: 0px;
 }
-
-body.bodyresult {background-color: #F3EEE9;}
+.nobackground {
+    background-image: url('');
+}
+.bodyresult {
+    background-image: url('../img/Blob_tool_test_header.png');
+    background-repeat: no-repeat;
+}
 
 .introTest .jumbotron p {
     font-size: 20px;
@@ -716,7 +717,7 @@ div#myTabContent h5 {font-family: concert one;}
 
 button#testButton {
     border-radius: 10px;
-    width: 185px;
+    width: 100px;
     height: 48px;
 }
 
@@ -766,7 +767,7 @@ div#myTabContent {
     margin-top: 25px;
 }
 
-.wrapper-check {background-color: #F3EEE9;height: 100%;}
+.wrapper-check {height: 100%;}
 
 .explain {
     display: flex;
@@ -815,7 +816,7 @@ tbody td a {
     height: 80px;
 }
 
-.jumbotron.uitleg {margin-right: 20px;text-align: left;width: 70%;}
+.jumbotron.uitleg {text-align: left;}
 
 .container.contacts img {height: 400px;}
 
@@ -891,7 +892,11 @@ a.btn.btn-primary {
          max-width: 100%;
 
      }
+
+  
+     
  }
+
 
 
 
@@ -899,6 +904,10 @@ a.btn.btn-primary {
     .accessibilityCheck .jumbotron { 
         width: 100%;
         text-align: center;
+    }
+
+    .navbar {
+        background-color: rgba(255,255,255,0.7);
     }
 
     .result-explanation {
@@ -911,8 +920,6 @@ a.btn.btn-primary {
     }
 
     .explanation {
-        margin-top: 31px;
-        display: grid;
     }
 
     .explanation span {
@@ -943,10 +950,8 @@ a.btn.btn-primary {
 }
 
 a.navbar-brand {
-    width: 45%;
     text-decoration: none;
-    margin-left: 15%;
-    margin-top: -10px;
+    margin: 10px;
 }
 
 
@@ -959,17 +964,24 @@ a.navbar-brand {
     padding: 10px;
     color: #000;
     margin: 10px;
+    width: 100px;
 }
 
-.bg-light {
-    background: #fff!important;
+nav {
+    width: 100%;
+    box-shadow: 0 5px 2px -2px grey;
 }
 
-.paragraph-score {width: 56%;border-radius: 10px;float: left;margin-right: 71px;background: #fff;padding: 26px;}
+.paragraph-score {width: 70%;border-radius: 10px;float: left;margin-right: 71px;background: #fff;padding: 26px;}
 
 @media screen and (min-width: 1000px) {
 
-div#overviewScore {background: transparent;padding: 10px;margin-top: 30px;width: 60%;}
+    #carouselExampleControls {
+    display: none;
+}
+
+
+div#overviewScore {padding: 10px;width: 55%;margin: 0 auto;}
 div#accordion {
     width: 23.8%;
     margin-top: 30px;
@@ -977,13 +989,6 @@ div#accordion {
 }
 
 
-.result-explanation {
-    width: calc(100% - 24.7%);
-    float: right;
-}
-
-div#myTabContent .card-text {
-}
 
 div#columnResults ul>li {
     font-size: 18px;
@@ -997,6 +1002,15 @@ div#columnResults ul>li {
 
         width: 70%;
 
+    }
+
+    .accessibilityCheck .jumbotron {
+        margin-top: 15px;
+    }
+
+    .accessibilityCheck h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
     }
 
     .wrapper-results .row .card {
@@ -1023,8 +1037,50 @@ div#columnResults ul>li {
 
 
 
+.abel-explanation-image {
+    margin: 0 auto;
+}
+
+.abel-explanation-image img {
+    width: 400px;
+    margin-top: 30px;
+}
+
+
 @media screen and (min-width: 1000px) {
     .columnWrapper p.card-text {height: 200px;}
+
+   
+}
+
+
+@media screen and (max-width: 1300px) {
+
+    .jumbotron button {
+        margin-top: 20px;
+    }
+
+    .wrapper-loader h4 {
+
+        font-size: 14px;
+    }
+
+    .abel-explanation-image {
+        width: 100%;
+    }
+
+    .abel-explanation-image img {
+        width: 300px;
+        margin-top: 30px;
+    }
+
+    .container {
+        width: 100%;
+    }
+    
+    .explanation {
+        width: 90%;
+    }
 }
 
     
@@ -1102,5 +1158,299 @@ div#columnResults ul>li {
    body {
     font-family: 'PT Sans';
 }
+
+div#resultsWrapper {
+    margin: 0 auto;
+}
+
+
+
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+input[type="radio"] {
+    margin: 10px;
+}
+
+.blueYellow {
+    filter: url(#tritanopia);
+    
+}
+
+.greyscale {
+    filter:grayscale(100%);
+}
+
+.redGreen {
+    filter: url(#deuteranopia);
+}
+
+
+.zoomOn {
+    /* transform: scale(0.8); */
+    filter: blur(10px);
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+
+.zoomOff {
+    transform: scale(1);
+    filter: blur(0px);
+       -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+
+
+
+.navbar-icon {
+    width: 70%;
+}
+
+
+
+ul.navbar-nav.mr-auto.mt-2.mt-lg-0 {
+  
+}
+
+header {
+    display: flex;
+}
+
+ul.navbar-nav {
+    width: 55%;
+    text-align: -webkit-center;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+
+.jumbotron.uitleg h2 {
+    border-bottom: 5px solid #E88421;
+    width: 85px;
+    padding-bottom: 12px;
+}
+
+.navbar-light .navbar-nav .nav-item.checker {
+    font-weight: bold;
+    background: #04549a;
+    line-height: 5px;
+    height: 52px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+div#resultsWrapper {
+    height: 400px;
+    margin-top: 100px;
+}
+
+#myTab li.nav-item {margin-right: 20px;}
+ul#myTab {
+    width: 55%;
+    margin: 0 auto;
+}
+
+.nav-tabs {
+    border: 0px;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+border-color:transparent;
+border-bottom:5px solid #E88421;
+background-color: transparent;
+color:#000;
+
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:hover {
+    border-color:transparent;
+    border-bottom:5px solid #E88421;
+    color:#000;
+    background-color: transparent;
+}
+
+.card-body h2 {
+    margin-bottom: 10px;
+}
+
+ul.results-list {
+    display: inline-block;
+    width: 400px;
+}
+
+.wrapper-contrast-effect {
+    margin-top: 10px;
+}
+
+div#myTabContent {
+    width: 55%;
+    margin: 0 auto;
+}
+
+.tab-content .card {
+    border: 0px;
+}
+
+.results-list li:nth-child(1) {
+    list-style-type: none;
+}
+
+.verklaring img {
+    width: 320px;
+}
+
+
+.verklaring {
+    display: flex;
+    /* background: red; */
+}
+
+img#screenshot-contrast {
+    width: 100%;
+}
+
+.screenshot-site {
+    margin-bottom: 20px;
+}
+
+.verklaring p {
+    width: 57%;
+    margin-right: 10px;
+}
+
+.card-body {
+    border: 0px;
+}
+
+.oplossing {
+    display: flex;
+}
+
+.oplossing-image img {
+    width: 400px;
+}
+
+
+
+.wrapper-404 .container {
+}
+
+.wrapper-404 h1 {
+    font-size: 200px;
+}
+
+.text-404 {
+    width: 50%;
+    text-align: -webkit-center;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+
+.wrapper-404 {
+    width: 100%;
+}
+
+.mobileViewIncidents {
+    display: none;
+}
+
+
+@media screen and (max-width: 850px) {
+
+
+    .mobileViewIncidents {
+        display: block;
+    }
+
+    carouselExampleControls {
+        display: block;
+    }
+
+
+
+    ul.results-list {
+        width: 100%;
+    }
+
+    .scoreOverview h2 {
+        font-size: 24px;
+    }
+
+    .navbar {
+        background-color: #fff;
+    }
+
+     .text-404 {
+        width: 100%;
+
+    }
+
+    .paragraph-score {
+        float: initial;
+        width: 100%;
+    }
+    
+    #outer-circle {
+        margin-top: 20px;
+        width: 70%;
+    }
+
+    .c100.big {
+        font-size: 250px;
+
+
+}
+
+
+
+
+.bodyresult .navbar {
+    background: #fff;
+}
+
+}
+
+.body-404 {
+    background-image: url('../img/404_PAGE.png');
+
+}
+
+.checker-abel {
+    background-image: url('../img/Blob_tool_test.png');
+}
+
+
+.contentOff {
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+   opacity: 0.0 !important;
+}
+
+.contentOn {
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+   opacity: 1.0 ;
+}
+
+
 
 
