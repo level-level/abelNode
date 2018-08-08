@@ -690,6 +690,7 @@ div#myTabContent p.card-text {
 }
 .bodyresult {
     background-image: url('../img/Blob_tool_test_header.png');
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -1308,7 +1309,7 @@ div#myTabContent {
 }
 
 .verklaring img {
-    width: 320px;
+    width: 204px;
 }
 
 
@@ -1326,7 +1327,7 @@ div#myTabContent {
 }
 
 .verklaring p {
-    width: 57%;
+    width: 39%;
     margin-right: 10px;
 }
 
