@@ -538,6 +538,7 @@ div#columnResults {
 .explanation {
     margin-top: 30px;
     width: 66%;
+    text-align: -webkit-center;
     margin: 0 auto;
 }
 
@@ -849,7 +850,10 @@ tbody td a {
 
 .accessibilityCheck h3, .accessibilityCheck h1 , .accessibilityCheck h2 {
     margin-top: -30px;
+    border-bottom: 3px solid #e88421;
+    padding-bottom: 10px;
     margin-bottom: 25px;
+    width: 360px;
 }
 
 
@@ -1010,6 +1014,7 @@ div#columnResults ul>li {
 
     .accessibilityCheck h1 {
         font-size: 22px;
+        width: 100%;
         margin-bottom: 10px;
     }
 
@@ -1369,6 +1374,25 @@ div#myTabContent {
 
 @media screen and (max-width: 850px) {
 
+    .d-block.w-100 {
+        min-height: 200px;
+    }
+
+    div#outer-circle {
+        margin-left: 15px;
+    }
+    
+    .carousel-inner {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .circle-wrapper {
+        width: 90%;
+        margin: 0 auto;
+        height: 280px;
+    }
+
 
     .mobileViewIncidents {
         display: block;
@@ -1404,7 +1428,6 @@ div#myTabContent {
     
     #outer-circle {
         margin-top: 20px;
-        width: 70%;
     }
 
     .c100.big {
@@ -1465,4 +1488,6 @@ div#showInfo {
     
     
 }
+
+
 
