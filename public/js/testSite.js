@@ -18,6 +18,7 @@ var width = Math.max(window.screen.width, window.innerWidth);
 var navbarResults = document.querySelector('.navbar ');
 let checker = document.getElementById('checker-container');
 let score = document.querySelector('.c100 > span');
+let myForm = document.getElementById('myForm');
 var scroll = this.scrollY;
 
 
@@ -92,6 +93,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         document.body.classList.remove("redGreen");
     }
 
+
+    myForm.addEventListener("click", function () {
+        e.preventDefault();
+    });
     removeHeaders.addEventListener("click", function () {
 
         for (i = 0; i < h2.length; i++) {

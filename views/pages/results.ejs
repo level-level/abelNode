@@ -103,11 +103,11 @@
 						</div>
 						<div class="carousel-item">
 							<div class="d-block w-100">
-								<h2>Probleem schalen en inzoomen</h2>
+								<h2>Probleem Schalen en inzoomen</h2>
 
 								<div class="mobileViewIncidents">
 									<% if(scalingArray.length <= 0){ %>
-										<b>Uw website heeft geen problemen op het gebied van schalen en inzoomen.</b>
+										<b>Uw website heeft geen problemen op het gebied van Schalen en inzoomen.</b>
 										<% } %>
 											<% for(var i = 0; i < scalingArray.length; i++) { %>
 
@@ -185,7 +185,7 @@
 					 aria-selected="false">HTML structuur</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" id="zoom-tab" data-toggle="tab" href="#zoom" role="tab" aria-controls="zoom" aria-selected="false">schalen en inzoomen</a>
+					<a class="nav-link" id="zoom-tab" data-toggle="tab" href="#zoom" role="tab" aria-controls="zoom" aria-selected="false">Schalen en inzoomen</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" id="missingHTML-tab" data-toggle="tab" href="#missingHTML" role="tab" aria-controls="missingHTML" aria-selected="false">Missende HTML elementen</a>
@@ -224,19 +224,19 @@
 											</div>
 											<h2>Verklaring</h2>
 											<div class="verklaring">
-												<p>Het kleurgebruik van de website is niet optimaal voor slechtzienden. Mensen met bijvoorbeeld kleurenblindheid
-													kunnen uw website hierdoor niet goed bekijken. 1 op de 200 vrouwen en zelfs 1 op de 12 mannen is kleurenblind.
-													Omdat er geen rekening is gehouden met het kleurcontrast kunnen letters terugvallen in de achtergrond. Hierdoor
+												<p>Het kleurgebruik binnen de website is niet optimaal benut voor slechtzienden. Mensen met kleurenblindheid kunnen
+													uw website hierdoor niet goed bekijken. 1 op de 200 vrouwen en zelfs 1 op de 12 mannen is kleurenblind. Omdat
+													er geen rekening is gehouden met het kleurcontrast kunnen elementen terugvallen in de achtergrond. Hierdoor
 													loopt u mogelijke omzet mis of bereikt u niet het effect van de website zoals bedoeld.</p>
 												<div class="verklaring-image">
 													<img src="img/Kleurcontrast.png" alt="Abel geeft verklaring over probleem kleur en contrast">
 												</div>
 											</div>
 											<h2>Effect</h2>
-											<p>Door op één van de onderstaande knoppen te drukken kunt u ervaren hoe uw webiste eruit ziet als uw gebruiker kleurenblind
-												is.
+											<p>Onderstaand kunt u uw website ervaren door de ogen van een kleurenblinde gebruiker. Schakel tussen de knoppen
+												om te zien hoe kleur en contrast op uw website worden weergegeven.
 											</p>
-											<form>
+											<form onsubmit="return false;" id="myForm">
 												<div id="color-deficiency-group" role="radiogroup" aria-label="Experience different color vision deficiencies">
 													<input class="choice" role="radio" type="radio" aria-label="greyscale view" value="1" name="choice">Grijsschaal zicht</input>
 													<input class="choice" role="radio" type="radio" aria-label="Blue/Yellow color vision deficiency " value="2" name="choice">Blauw/Geel kleurenblindheid</input>
@@ -248,20 +248,21 @@
 												<div class="screenshot-site">
 													<img class="screenshot-contrast" src="img/out1.png" alt="A screenshot of website that is being tested">
 												</div>
-												<p>Kleur en contrasten zijn erg belangrijk: wanneer er geen duidelijk verschil zit tussen kleuren van elementen
+												<p>Kleuren en contrasten zijn erg belangrijk: wanneer er geen duidelijk verschil zit tussen kleuren van elementen
 													binnen de website, zullen teksten, lijnen, hoeken en details niet effectief worden waargenomen. Dit zorgt ervoor
-													dat de website lijkt op een geheel vlak.
+													dat elementen terugvallen in de achtergrond, waardoor de website lijkt op een geheel vlak.
 												</p>
 											</div>
 											<h2>Oplossing</h2>
 											<div class="oplossing">
 
 												<div class="oplossing-wrapper">
-													<p>De vraag is, hoe verandert u uw website? U kunt het volgende doen: Zorg dat elementen genoeg kleurencontrast
-														hebben, zodat ze kunnen worden onderscheiden van elkaar. Zorg dat links onderlijnd worden, zodat men weet dat
-														dit een link is. U kunt op de volgende pagina gebruiken maken van de
-														<a href="http://contrast-ratio.com/#black-on-white">color-contrast helper</a> om de correcte contrast te vinden
-													</p>
+
+
+													<p>U kunt het volgende doen om deze drempel weg te nemen: Zorg dat elementen genoeg kleurcontrast hebben, zodat
+														ze kunnen worden onderscheiden van elkaar. Zorg dat links onderlijnd worden, zodat men weet dat dit een link
+														is. U kunt op de volgende pagina gebruiken maken van de
+														<a href="http://contrast-ratio.com/#black-on-white">color-contrast helper</a> om kleuren te testen en correcte contrasten te vinden.</p>
 												</div>
 
 												<div class="oplossing-image">
@@ -404,7 +405,7 @@
 									<h2>Oplossing</h2>
 									<div class="oplossing">
 										<div class="oplossing-wrapper">
-											<p>De vraag is, hoe verandert u uw webiste? u kent het volgende doen:</p>
+											<p>De vraag is, hoe verandert u uw webiste? u kunt het volgende doen:</p>
 											<ul>
 												<li>Met behulp van viewport maakt u de website schaalbaar voor verschillende apparaten. Hierdoor is het mogelijk
 													in te zoomen.</li>
