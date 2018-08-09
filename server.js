@@ -72,35 +72,35 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 		urlExists(finalUrl, function (err, exists) {
 			if (exists) {
 
-				(async () => {
+				// (async () => {
 
-					const browser = await puppeteer.launch();
-					const page = await browser.newPage();
+				// 	const browser = await puppeteer.launch();
+				// 	const page = await browser.newPage();
 			
-					await page.goto(finalUrl);
+				// 	await page.goto(finalUrl);
 					
 			
-					await page.setViewport({
-						width: 1024,
-						height: await page.evaluate(() => document.body.clientHeight)
-					});
-					const screenshot = await page.screenshot();
-					await browser.close();
-					fs.writeFileSync('public/img/out1.png', screenshot);
-				})();
+				// 	await page.setViewport({
+				// 		width: 1024,
+				// 		height: await page.evaluate(() => document.body.clientHeight)
+				// 	});
+				// 	const screenshot = await page.screenshot();
+				// 	await browser.close();
+				// 	fs.writeFileSync('public/img/out1.png', screenshot);
+				// })();
 
 				driver.get(finalUrl);
 
-				// function writeScreenshot(data, name) {
-				// 	name = name || 'ss.png';
-				// 	var screenshotPath = 'public/img/';
-				// 	fs.writeFileSync(screenshotPath + name, data, 'base64');
-				// };
+				function writeScreenshot(data, name) {
+					name = name || 'ss.png';
+					var screenshotPath = 'public/img/';
+					fs.writeFileSync(screenshotPath + name, data, 'base64');
+				};
 
 
-				// driver.takeScreenshot().then(function (data) {
-				// 	writeScreenshot(data, 'out1.png');
-				// });
+				driver.takeScreenshot().then(function (data) {
+					writeScreenshot(data, 'out1.png');
+				});
 
 				driver
 					.get(finalUrl)
