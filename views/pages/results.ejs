@@ -41,30 +41,33 @@
 							<div class="d-block w-100">
 
 								<h2>Probleem kleuren en contrast</h2>
+
 								<% if(colorContrastArray.length <= 0){ %>
 									<b>Uw website heeft geen problemen op het gebied van kleuren en contrast.</b>
-									<% } %>
-										<div class="mobileViewIncidents">
-											<% for(var i = 0; i < colorContrastArray.length; i++) { %>
-												<ul class="results-list">
-													<li>
-														<h3>
-															<%= colorContrastArray[i].id %>
-														</h3>
+									<% } else { %>
+										<span>De volgende drempels zijn gevonden binnen uw website (termen zijn weergegeven in het Engels):</span>
+										<% } %>
+											<div class="mobileViewIncidents">
+												<% for(var i = 0; i < colorContrastArray.length; i++) { %>
+													<ul class="results-list">
+														<li>
+															<h3>
+																<%= colorContrastArray[i].id %>
+															</h3>
 
-													</li>
-													<li>
-														Help:
-														<%= colorContrastArray[i].help %>
-													</li>
-													<li>
-														Impact:
-														<%= colorContrastArray[i].impact %>
-													</li>
-												</ul>
-												<% } %>
-													<hr>
-										</div>
+														</li>
+														<li>
+															Help:
+															<%= colorContrastArray[i].help %>
+														</li>
+														<li>
+															Impact:
+															<%= colorContrastArray[i].impact %>
+														</li>
+													</ul>
+													<% } %>
+														<hr>
+											</div>
 
 							</div>
 						</div>
@@ -76,27 +79,29 @@
 								<div class="mobileViewIncidents">
 									<% if(HTMLstructureArray.length <= 0){ %>
 										<b>Uw website heeft geen problemen op het gebied van HTML structuur.</b>
-										<% } %>
-											<% for(var i = 0; i < HTMLstructureArray.length; i++) { %>
+										<% } else { %>
+											<span>De volgende drempels zijn gevonden binnen uw website (termen zijn weergegeven in het Engels):</span>
+											<% } %>
+												<% for(var i = 0; i < HTMLstructureArray.length; i++) { %>
 
-												<ul class="results-list">
-													<li>
-														<h3>
-															<%= HTMLstructureArray[i].id %>
-														</h3>
+													<ul class="results-list">
+														<li>
+															<h3>
+																<%= HTMLstructureArray[i].id %>
+															</h3>
 
-													</li>
-													<li>
-														Help:
-														<%= HTMLstructureArray[i].help %>
-													</li>
-													<li>
-														Impact:
-														<%= HTMLstructureArray[i].impact %>
-													</li>
-												</ul>
-												<% } %>
-													<hr>
+														</li>
+														<li>
+															Help:
+															<%= HTMLstructureArray[i].help %>
+														</li>
+														<li>
+															Impact:
+															<%= HTMLstructureArray[i].impact %>
+														</li>
+													</ul>
+													<% } %>
+														<hr>
 
 								</div>
 							</div>
@@ -104,31 +109,32 @@
 						<div class="carousel-item">
 							<div class="d-block w-100">
 								<h2>Probleem Schalen en inzoomen</h2>
-
 								<div class="mobileViewIncidents">
 									<% if(scalingArray.length <= 0){ %>
 										<b>Uw website heeft geen problemen op het gebied van Schalen en inzoomen.</b>
-										<% } %>
-											<% for(var i = 0; i < scalingArray.length; i++) { %>
+										<% } else { %>
+											<span>De volgende drempels zijn gevonden binnen uw website (termen zijn weergegeven in het Engels):</span>
+											<% } %>
+												<% for(var i = 0; i < scalingArray.length; i++) { %>
 
-												<ul class="results-list">
-													<li>
-														<h3>
-															<%= scalingArray[i].id %>
-														</h3>
+													<ul class="results-list">
+														<li>
+															<h3>
+																<%= scalingArray[i].id %>
+															</h3>
 
-													</li>
-													<li>
-														Help:
-														<%= scalingArray[i].help %>
-													</li>
-													<li>
-														Impact:
-														<%= scalingArray[i].impact %>
-													</li>
-												</ul>
-												<% } %>
-													<hr>
+														</li>
+														<li>
+															Help:
+															<%= scalingArray[i].help %>
+														</li>
+														<li>
+															Impact:
+															<%= scalingArray[i].impact %>
+														</li>
+													</ul>
+													<% } %>
+														<hr>
 
 								</div>
 							</div>
@@ -140,26 +146,28 @@
 								<div class="mobileViewIncidents">
 									<% if(missingHTMLArray.length <= 0){ %>
 										<b>Uw website heeft geen problemen op het gebied van missende HTML elementen.</b>
-										<% } %>
-											<% for(var i = 0; i < missingHTMLArray.length; i++) { %>
-												<ul class="results-list">
-													<li>
-														<h3>
-															<%= missingHTMLArray[i].id %>
-														</h3>
+										<% } else { %>
+											<span>De volgende drempels zijn gevonden binnen uw website (termen zijn weergegeven in het Engels):</span>
+											<% } %>
+												<% for(var i = 0; i < missingHTMLArray.length; i++) { %>
+													<ul class="results-list">
+														<li>
+															<h3>
+																<%= missingHTMLArray[i].id %>
+															</h3>
 
-													</li>
-													<li>
-														Help:
-														<%= missingHTMLArray[i].help %>
-													</li>
-													<li>
-														Impact:
-														<%= missingHTMLArray[i].impact %>
-													</li>
-												</ul>
-												<% } %>
-													<hr>
+														</li>
+														<li>
+															Help:
+															<%= missingHTMLArray[i].help %>
+														</li>
+														<li>
+															Impact:
+															<%= missingHTMLArray[i].impact %>
+														</li>
+													</ul>
+													<% } %>
+														<hr>
 								</div>
 							</div>
 						</div>
@@ -201,75 +209,77 @@
 									<h2>Probleem Kleuren en contrast</h2>
 									<% if(colorContrastArray.length <= 0){ %>
 										<b>Uw website heeft geen problemen op het gebied van kleuren en contrast.</b>
-										<% } %>
-											<div>
-												<% for(var i = 0; i < colorContrastArray.length; i++) { %>
-													<ul class="results-list">
-														<li>
-															<h3>
-																<%= colorContrastArray[i].id %>
-															</h3>
+										<% } else { %>
+											<span>De volgende drempels zijn gevonden binnen uw website (termen zijn weergegeven in het Engels):</span>
+											<% } %>
+												<div>
+													<% for(var i = 0; i < colorContrastArray.length; i++) { %>
+														<ul class="results-list">
+															<li>
+																<h3>
+																	<%= colorContrastArray[i].id %>
+																</h3>
 
-														</li>
-														<li>
-															Help:
-															<%= colorContrastArray[i].help %>
-														</li>
-														<li>
-															Impact:
-															<%= colorContrastArray[i].impact %>
-														</li>
-													</ul>
-													<% } %>
-											</div>
-											<h2>Verklaring</h2>
-											<div class="verklaring">
-												<p>Het kleurgebruik binnen de website is niet optimaal benut voor slechtzienden. Mensen met kleurenblindheid kunnen
-													uw website hierdoor niet goed bekijken. 1 op de 200 vrouwen en zelfs 1 op de 12 mannen is kleurenblind. Omdat
-													er geen rekening is gehouden met het kleurcontrast kunnen elementen terugvallen in de achtergrond. Hierdoor
-													loopt u mogelijke omzet mis of bereikt u niet het effect van de website zoals bedoeld.</p>
-												<div class="verklaring-image">
-													<img src="img/Kleurcontrast.png" alt="Abel geeft verklaring over probleem kleur en contrast">
+															</li>
+															<li>
+																Help:
+																<%= colorContrastArray[i].help %>
+															</li>
+															<li>
+																Impact:
+																<%= colorContrastArray[i].impact %>
+															</li>
+														</ul>
+														<% } %>
 												</div>
-											</div>
-											<h2>Effect</h2>
-											<p>Onderstaand kunt u uw website ervaren door de ogen van een kleurenblinde gebruiker. Schakel tussen de knoppen
-												om te zien hoe kleur en contrast op uw website worden weergegeven.
-											</p>
-											<form onsubmit="return false;" id="myForm">
-												<div id="color-deficiency-group" role="radiogroup" aria-label="Experience different color vision deficiencies">
-													<input class="choice" role="radio" type="radio" aria-label="greyscale view" value="1" name="choice">Grijsschaal zicht</input>
-													<input class="choice" role="radio" type="radio" aria-label="Blue/Yellow color vision deficiency " value="2" name="choice">Blauw/Geel kleurenblindheid</input>
-													<input class="choice" role="radio" type="radio" aria-label="Red/Green color vision deficiency" value="3" name="choice">Rood/Groen kleurenblindheid</input>
-													<input class="choice" role="radio" type="radio" aria-label="Turnoff color vision deficiency " value="4" name="choice" checked>Uit</input>
+												<h2>Verklaring</h2>
+												<div class="verklaring">
+													<p>Het kleurgebruik binnen de website is niet optimaal benut voor slechtzienden. Mensen met kleurenblindheid kunnen
+														uw website hierdoor niet goed bekijken. 1 op de 200 vrouwen en zelfs 1 op de 12 mannen is kleurenblind. Omdat
+														er geen rekening is gehouden met het kleurcontrast kunnen elementen terugvallen in de achtergrond. Hierdoor
+														loopt u mogelijke omzet mis of bereikt u niet het effect van de website zoals bedoeld.</p>
+													<div class="verklaring-image">
+														<img src="img/Kleurcontrast.png" alt="Abel geeft verklaring over probleem kleur en contrast">
+													</div>
 												</div>
-											</form>
-											<div class="wrapper-contrast-effect">
-												<div class="screenshot-site">
-													<img class="screenshot-contrast" src="img/out1.png" alt="A screenshot of website that is being tested">
-												</div>
-												<p>Kleuren en contrasten zijn erg belangrijk: wanneer er geen duidelijk verschil zit tussen kleuren van elementen
-													binnen de website, zullen teksten, lijnen, hoeken en details niet effectief worden waargenomen. Dit zorgt ervoor
-													dat elementen terugvallen in de achtergrond, waardoor de website lijkt op een geheel vlak.
+												<h2>Effect</h2>
+												<p>Onderstaand kunt u uw website ervaren door de ogen van een kleurenblinde gebruiker. Schakel tussen de knoppen
+													om te zien hoe kleur en contrast op uw website worden weergegeven.
 												</p>
-											</div>
-											<h2>Oplossing</h2>
-											<div class="oplossing">
-
-												<div class="oplossing-wrapper">
-
-
-													<p>U kunt het volgende doen om deze drempel weg te nemen: Zorg dat elementen genoeg kleurcontrast hebben, zodat
-														ze kunnen worden onderscheiden van elkaar. Zorg dat links onderlijnd worden, zodat men weet dat dit een link
-														is. U kunt op de volgende pagina gebruiken maken van de
-														<a href="http://contrast-ratio.com/#black-on-white">color-contrast helper</a> om kleuren te testen en correcte contrasten te vinden.</p>
+												<form onsubmit="return false;" id="myForm">
+													<div id="color-deficiency-group" role="radiogroup" aria-label="Experience different color vision deficiencies">
+														<input class="choice" role="radio" type="radio" aria-label="greyscale view" value="1" name="choice">Grijsschaal zicht</input>
+														<input class="choice" role="radio" type="radio" aria-label="Blue/Yellow color vision deficiency " value="2" name="choice">Blauw/Geel kleurenblindheid</input>
+														<input class="choice" role="radio" type="radio" aria-label="Red/Green color vision deficiency" value="3" name="choice">Rood/Groen kleurenblindheid</input>
+														<input class="choice" role="radio" type="radio" aria-label="Turnoff color vision deficiency " value="4" name="choice" checked>Uit</input>
+													</div>
+												</form>
+												<div class="wrapper-contrast-effect">
+													<div class="screenshot-site">
+														<img class="screenshot-contrast" src="img/out1.png" alt="A screenshot of website that is being tested">
+													</div>
+													<p>Kleuren en contrasten zijn erg belangrijk: wanneer er geen duidelijk verschil zit tussen kleuren van elementen
+														binnen de website, zullen teksten, lijnen, hoeken en details niet effectief worden waargenomen. Dit zorgt ervoor
+														dat elementen terugvallen in de achtergrond, waardoor de website lijkt op een geheel vlak.
+													</p>
 												</div>
+												<h2>Oplossing</h2>
+												<div class="oplossing">
 
-												<div class="oplossing-image">
-													<img src="img/ABEL_Kleurcontrast.png" alt="Abel geeft en oplossing voor het probleem van kleur en contrast">
+													<div class="oplossing-wrapper">
 
+
+														<p>U kunt het volgende doen om deze drempel weg te nemen: Zorg dat elementen genoeg kleurcontrast hebben, zodat
+															ze kunnen worden onderscheiden van elkaar. Zorg dat links onderlijnd worden, zodat men weet dat dit een link
+															is. U kunt op de volgende pagina gebruiken maken van de
+															<a href="http://contrast-ratio.com/#black-on-white">color-contrast helper</a> om kleuren te testen en correcte contrasten te vinden.</p>
+													</div>
+
+													<div class="oplossing-image">
+														<img src="img/ABEL_Kleurcontrast.png" alt="Abel geeft en oplossing voor het probleem van kleur en contrast">
+
+													</div>
 												</div>
-											</div>
 
 								</div>
 							</div>
@@ -286,33 +296,35 @@
 									<div>
 										<% if(HTMLstructureArray.length <= 0){ %>
 											<b>Uw website heeft geen problemen op het gebied van HTML structuur.</b>
-											<% } %>
-												<% for(var i = 0; i < HTMLstructureArray.length; i++) { %>
+											<% } else { %>
+												<span>De volgende drempels zijn gevonden binnen uw website (termen zijn weergegeven in het Engels):</span>
+												<% } %>
+													<% for(var i = 0; i < HTMLstructureArray.length; i++) { %>
 
-													<ul class="results-list">
-														<li>
-															<h3>
-																<%= HTMLstructureArray[i].id %>
-															</h3>
+														<ul class="results-list">
+															<li>
+																<h3>
+																	<%= HTMLstructureArray[i].id %>
+																</h3>
 
-														</li>
-														<li>
-															Help:
-															<%= HTMLstructureArray[i].help %>
-														</li>
-														<li>
-															Impact:
-															<%= HTMLstructureArray[i].impact %>
-														</li>
-													</ul>
-													<% } %>
+															</li>
+															<li>
+																Help:
+																<%= HTMLstructureArray[i].help %>
+															</li>
+															<li>
+																Impact:
+																<%= HTMLstructureArray[i].impact %>
+															</li>
+														</ul>
+														<% } %>
 									</div>
 
 									<h2>Verklaring</h2>
 									<div class="verklaring">
-										<p>De structuur van de website is niet optimaal voor slechtzienden en blinden. Doordat de html structuur niet compleet
-											is, raken slechtzienden en blinden al snel verdwaald op uw website. Zij verlaten hierdoor sneller uw website,
-											waardoor u mogelijke omzet misloopt of waardoor u het effect van uw website niet bereikt.</p>
+										<p>De website is niet goed genoeg gestructureerd voor visueel beperkten. Doordat de HTML-structuur niet compleet is,
+											raken blinden en slechtzienden al snel verdwaald op uw website. Dit zorgt voor frustratie, waardoor zij de website
+											sneller zullen verlaten.</p>
 										<div class="verklaring-image">
 											<img src="img/HTML Structuur.png" alt="Abel geeft verklaring over probleem kleur en contrast">
 										</div>
@@ -327,10 +339,10 @@
 									<div class="oplossing">
 
 										<div class="oplossing-wrapper">
-											<p>De vraag is, hoe verandert u uw website? U kunt het volgende doen: Zorg voor een duidelijke structuur. Maak gebruik
-												van H1, H2. Zorg dat elke pagina voorzien is van headers. De headers moeten uiteraard beginnen met een H1, zodat
-												de gebruiker met een screenreader kan navigeren door de website. Gebruik headers dus nooit door elkaar: dit zal
-												ervoor zorgen dat de screenreader geen structuur kan vinden, waardoor de gebruiker verdwaald raakt op je website.</p>
+											<p>U kunt het volgende doen: Zorg voor een duidelijke structuur. Maak gebruik van H1, H2. Zorg dat elke pagina voorzien
+												is van headers. De headers moeten uiteraard beginnen met een H1, zodat de gebruiker met een screenreader kan
+												navigeren door de website. Gebruik headers dus nooit door elkaar: dit zal ervoor zorgen dat de screenreader geen
+												structuur kan vinden, waardoor de gebruiker verdwaald raakt op de website.</p>
 										</div>
 										<div class="oplossing-image">
 											<img src="img/ABEL_HTML.png" alt="Abel geeft en oplossing voor het probleem van kleur en contrast">
@@ -350,43 +362,44 @@
 								<div class="card-body">
 
 									<h2>Probleem Schalen en inzoomen</h2>
-
 									<div>
 										<% if(scalingArray.length <= 0){ %>
 											<b>Uw website heeft geen problemen op het gebied van schalen en inzoomen.</b>
-											<% } %>
-												<% for(var i = 0; i < scalingArray.length; i++) { %>
+											<% } else { %>
+												<span>De volgende drempels zijn gevonden binnen uw website (termen zijn weergegeven in het Engels):</span>
+												<% } %>
+													<% for(var i = 0; i < scalingArray.length; i++) { %>
 
-													<ul class="results-list">
-														<li>
-															<h3>
-																<%= scalingArray[i].id %>
-															</h3>
+														<ul class="results-list">
+															<li>
+																<h3>
+																	<%= scalingArray[i].id %>
+																</h3>
 
-														</li>
-														<li>
-															Help:
-															<%= scalingArray[i].help %>
-														</li>
-														<li>
-															Impact:
-															<%= scalingArray[i].impact %>
-														</li>
-													</ul>
-													<% } %>
+															</li>
+															<li>
+																Help:
+																<%= scalingArray[i].help %>
+															</li>
+															<li>
+																Impact:
+																<%= scalingArray[i].impact %>
+															</li>
+														</ul>
+														<% } %>
 									</div>
 									<h2>Verklaring</h2>
 									<div class="verklaring">
-										<p>Meer dan 350.000 Nederlanders hebben een visuele beperking. Vele daarvan zijn erbij gebaat om te kunnen inzoomen
-											op de website. Door in te zoomen, kunnen zij de website bekijken zoals ieder ander dit bekijkt. Helaas is dit
-											bij uw website niet het geval. Zij kunnen hierdoor teksten niet lezen of afbeeldingen niet bekijken. Doordat niet
-											iedereen dit kan, loopt u mogelijke omzet mis of bereikt u niet het effect van de website zoals bedoeld</p>
+										<p>Veel mensen met een visuele beperking zijn gebaat bij de zoomfunctie op een website. Door in te zoomen, kunnen
+											zij elementen op de website beter bekijken. Wanneer de zoomfunctie mist, kan deze gebruikersgroep teksten niet
+											lezen of afbeeldingen niet bekijken. Hierdoor worden teksten en afbeeldingen heel wazig en moeilijk waar te nemen
+											voor een gebruiker met een visuele beperking. </p>
 										<div class="verklaring-image">
 											<img src="img/Schalen.png" alt="Abel geeft verklaring over probleem kleur en contrast">
 										</div>
 									</div>
 									<h2>Effect</h2>
-									<p>Door op deze knop te drukken kun u ervaren hoe visuele beperkte gebruikers uw website zien</p>
+									<p>Middels deze aan/uit knop kunt u zien hoe uw website wordt weergegeven voor een visueel beperkte.</p>
 									<div class="switch">
 										<input type="checkbox" name="switch" class="switch-checkbox" role="checkbox" id="myswitch-scaling" tabindex="0" checked>
 										<label class="switch-labels" for="myswitch-scaling">
@@ -405,11 +418,11 @@
 									<h2>Oplossing</h2>
 									<div class="oplossing">
 										<div class="oplossing-wrapper">
-											<p>De vraag is, hoe verandert u uw webiste? u kunt het volgende doen:</p>
+											<p>U kunt het volgende doen:</p>
 											<ul>
 												<li>Met behulp van viewport maakt u de website schaalbaar voor verschillende apparaten. Hierdoor is het mogelijk
 													in te zoomen.</li>
-												<li>Verwijder user-scalable=no van uw viewport: dit zorgt er namelijk voor dat de zooming functionaliteit uit staat.</li>
+												<li>Verwijder user-scalable=no van uw viewport: dit zorgt er namelijk voor dat de zoom functionaliteit uit staat</li>
 												<li>Bezoek de volgende pagina voor meer uitleg:
 													<a href="https://dequeuniversity.com/rules/axe/3.0/meta-viewport">dequeuniversity - meta-viewport</a>
 												</li>
@@ -435,33 +448,33 @@
 								<div>
 									<% if(missingHTMLArray.length <= 0){ %>
 										<b>Uw website heeft geen problemen op het gebied van missende HTML elementen.</b>
-										<% } %>
-											<% for(var i = 0; i < missingHTMLArray.length; i++) { %>
-												<ul class="results-list">
-													<li>
-														<h3>
-															<%= missingHTMLArray[i].id %>
-														</h3>
+										<% } else { %>
+											<span>De volgende drempels zijn gevonden binnen uw website (termen zijn weergegeven in het Engels):</span>
+											<% } %>
+												<% for(var i = 0; i < missingHTMLArray.length; i++) { %>
+													<ul class="results-list">
+														<li>
+															<h3>
+																<%= missingHTMLArray[i].id %>
+															</h3>
 
-													</li>
-													<li>
-														Help:
-														<%= missingHTMLArray[i].help %>
-													</li>
-													<li>
-														Impact:
-														<%= missingHTMLArray[i].impact %>
-													</li>
-												</ul>
-												<% } %>
+														</li>
+														<li>
+															Help:
+															<%= missingHTMLArray[i].help %>
+														</li>
+														<li>
+															Impact:
+															<%= missingHTMLArray[i].impact %>
+														</li>
+													</ul>
+													<% } %>
 								</div>
 								<h2>Verklaring</h2>
 								<div class="verklaring">
-									<p>Er zijn meer dan 350.000 mensen in Nederland met een visuele beperking. Doordat html elementen op de website missen,
-										is de website voor o.a. deze mensen niet goed leesbaar. Visueel beperkten gebruiken vaak met screenreader, dit
-										apparaat leest de teksten op een website. Wanneer een button niet staat aangegeven als een button, kunnen zij hierin
-										verdwaald raken. Daardoor loopt u mogelijke omzet mis of bereikt u niet het effect van de website zoals bedoeld.
-										Het is daarom belangrijk om uw website aan te passen.</p>
+									<p>HTML-elementen zijn belangrijk om een website begrijpbaar te maken. Gebruikers met goed zicht kunnen dit niet waarnemen,
+										maar visueel beperkten gebruiken vaak een screenreader die alles op de website voorleest. Wanneer een button geen
+										duidelijke benaming heeft gekregen, kunnen visueel beperkten dit niet waarnemen en lopen ze mogelijk vast.</p>
 									<div class="verklaring-image">
 										<img src="img/Missing-Elements.png" alt="Abel geeft verklaring over probleem kleur en contrast">
 									</div>
@@ -475,17 +488,17 @@
 									</label>
 								</div>
 								<div class="wrapper-contrast-effect">
-									<p>Visueel beperkten weten (vaak) niet waar ze op klikken en wat er dus op de website staat. Als bijvoorbeeld afbeeldingen
-										of knoppen een betekenisloze beschrijvingen bevatten, zoals img1, img2, img3, worden ze als zodanig voorgelezen.
+									<p>Visueel beperkten zien (vaak) niet waar ze op klikken, maar krijgen te horen wat er op de website staat. Als afbeeldingen
+										of knoppen een betekenisloze beschrijvingen bevatten, zoals img1, link2, knop3, worden ze als zodanig voorgelezen.
 										Hierdoor heeft de gebruiker geen idee waar hij zich binnen de website bevindt.
 									</p>
 								</div>
 								<h2>Oplossing</h2>
 								<div class="oplossing">
 									<div class="oplossing-wrapper">
-										<p>De vraag is, hoe verandert u uw website? U kunt het volgende doen: Afbeeldingen moeten een alt-tag bevatten. Links
-											moeten herkenbare teksten bevatten. Probeer zoveel mogelijk HTML5 elementen te gebruiken zoals nav, header, footer,
-											article enzovoorts.</p>
+										<p>U kunt het volgende doen: Voorzie afbeeldingen van een alt-tag. Links moeten herkenbare teksten bevatten. Probeer
+											zoveel mogelijk HTML5 elementen te gebruiken zoals nav, header, footer, article enzovoorts.
+										</p>
 									</div>
 									<div class="oplossing-image">
 										<img src="img/ABEL_Puzzelstuk.png" alt="Abel geeft en oplossing voor het probleem van kleur en contrast">

@@ -17,7 +17,6 @@ var scoreColor;
 var error;
 
 
-
 var urlencoderParser = bodyParser.urlencoded({ extended: true });
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -33,6 +32,10 @@ app.use(express.static(__dirname + '/public'));
 
 // Accessibility check page 
 app.get('/', function (req, res) {
+
+
+
+
 	res.render('pages/accessibilityTester', {
 		error: error
 	});
@@ -51,7 +54,7 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 		.setFirefoxOptions(new firefox.Options().headless(), new firefox.Options().proxy = null)
 		.build();
 
-	
+
 
 	var colorContrastArray = [];
 	var HTMLstructureArray = [];
@@ -68,20 +71,36 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	try {
 		urlExists(finalUrl, function (err, exists) {
 			if (exists) {
-				
-		
+
+				(async () => {
+
+					const browser = await puppeteer.launch();
+					const page = await browser.newPage();
+			
+					await page.goto(finalUrl);
+					
+			
+					await page.setViewport({
+						width: 1024,
+						height: await page.evaluate(() => document.body.clientHeight)
+					});
+					await page.screenshot({ path: 'public/img/out1.png' });
+			
+					await browser.close();
+				})();
+
 				driver.get(finalUrl);
 
-				function writeScreenshot(data, name) {
-					name = name || 'ss.png';
-					var screenshotPath = 'public/img/';
-					fs.writeFileSync(screenshotPath + name, data, 'base64');
-				};
+				// function writeScreenshot(data, name) {
+				// 	name = name || 'ss.png';
+				// 	var screenshotPath = 'public/img/';
+				// 	fs.writeFileSync(screenshotPath + name, data, 'base64');
+				// };
 
-				
-				driver.takeScreenshot().then(function (data) {
-					writeScreenshot(data, 'out1.png');
-				});
+
+				// driver.takeScreenshot().then(function (data) {
+				// 	writeScreenshot(data, 'out1.png');
+				// });
 
 				driver
 					.get(finalUrl)
@@ -173,11 +192,11 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 
 });
 
-app.get('*', function(req, res){
+app.get('*', function (req, res) {
 	res.render('pages/404', {
-	
+
 	});
-  });
+});
 
 
 
