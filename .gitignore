@@ -2,6 +2,9 @@
 logs
 *.log
 
+#screenshot image
+public/image/out1.png
+
 # Runtime data
 pids
 *.pid
