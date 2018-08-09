@@ -84,9 +84,9 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 						width: 1024,
 						height: await page.evaluate(() => document.body.clientHeight)
 					});
-					await page.screenshot({ path: 'public/img/out1.png' });
-			
+					const screenshot = await page.screenshot();
 					await browser.close();
+					fs.writeFileSync('public/img/out1.png', screenshot);
 				})();
 
 				driver.get(finalUrl);
