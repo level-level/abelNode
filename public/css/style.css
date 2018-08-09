@@ -127,7 +127,7 @@ div#accordion button {
     color: #000;
 }
 
-.result-explanation .nav-link {font-family: 'Concert One';color: #000;font-size: 20px;}
+.result-explanation .nav-link {font-family: 'Concert One';color: #000;font-size: 19px;}
 
 .home-info button.btn.btn-primary:hover {
     border-color: #04549a;
@@ -367,7 +367,7 @@ div#socialMedia {
 .footer-components {
     display: flex;
 }
-nav .nav-item {height: 50px;width: 200px;}
+nav .nav-item {height: 50px;width: auto;}
 
 .footer-components>ul>li {text-decoration: none;display: flex;margin-bottom: 5px;}
 
@@ -905,6 +905,8 @@ a.btn.btn-primary {
 
 
 
+
+
   @media screen and (max-width: 1000px) {
     .accessibilityCheck .jumbotron { 
         width: 100%;
@@ -946,6 +948,7 @@ a.btn.btn-primary {
     .scoreOverview {
         width: 90%;
         margin: 0 auto;
+        display: flex;
     }
 
     .columnWrapper .row  .card {
@@ -977,7 +980,7 @@ nav {
     box-shadow: 0 5px 2px -2px grey;
 }
 
-.paragraph-score {width: 70%;border-radius: 10px;float: left;margin-right: 71px;background: #fff;padding: 26px;}
+.paragraph-score {width: 60%;border-radius: 10px;margin-right: 71px;padding: 26px;min-height: 300px;}
 
 @media screen and (min-width: 1000px) {
 
@@ -986,7 +989,7 @@ nav {
 }
 
 
-div#overviewScore {padding: 10px;width: 55%;margin: 0 auto;}
+div#overviewScore {padding: 10px;width: 55%;display: flex;margin: 0 auto;}
 div#accordion {
     width: 23.8%;
     margin-top: 30px;
@@ -1259,7 +1262,7 @@ ul.navbar-nav {
 }
 
 div#resultsWrapper {
-    height: 400px;
+    min-height: 400px;
     margin-top: 100px;
 }
 
@@ -1269,6 +1272,9 @@ ul#myTab {
     margin: 0 auto;
     height: 65px;
 }
+
+
+
 
 .nav-tabs {
     border: 0px;
@@ -1280,6 +1286,9 @@ ul#myTab {
     border-bottom:3px solid #E88421;
     color:#000;
     background-color: transparent;
+}
+
+.circle-wrapper {
 }
 
 .card-body h2 {
@@ -1373,7 +1382,20 @@ div#myTabContent {
 }
 
 
-@media screen and (max-width: 850px) {
+
+
+@media screen and (max-width: 1100px) {
+
+    div#resultsWrapper {
+        height: auto;
+        margin-top: 100px;
+    }
+
+    .scoreOverview {
+      
+        display: block;
+
+    }
 
     .d-block.w-100 {
         min-height: 200px;
@@ -1381,6 +1403,8 @@ div#myTabContent {
 
     div#outer-circle {
         margin-left: 15px;
+        /* margin: 0 auto; */
+        /* width: 100%; */
     }
     
     .carousel-inner {
@@ -1389,10 +1413,13 @@ div#myTabContent {
     }
     
     .circle-wrapper {
-        width: 90%;
         margin: 0 auto;
-        height: 280px;
+        height: 300px;
+        width: 100%;
+        float: initial;
+        margin-top: 20px;
     }
+
 
 
     .mobileViewIncidents {
@@ -1433,18 +1460,23 @@ div#myTabContent {
 
     .c100.big {
         font-size: 250px;
-
-
+        margin: 0 auto;
 }
-
-
-
 
 .bodyresult .navbar {
     background: #fff;
 }
 
 }
+
+@media screen and (max-width: 400px) {
+    .circle-wrapper {
+        width: 100%;
+    }
+
+}
+
+
 
 .body-404 {
     background-image: url('../img/404_PAGE.png');
@@ -1489,6 +1521,26 @@ div#showInfo {
     
     
 }
+
+
+@media screen and (max-width: 1500px) {
+
+    ul#myTab {
+        width: 80%;
+    }
+
+    ul.navbar-nav {
+        width: 80%;
+    }
+
+    div#myTabContent {
+        width: 80%;
+    }
+
+    div#overviewScore {
+        width: 80%;
+    }
+ }
 
 
 

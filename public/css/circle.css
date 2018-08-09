@@ -228,9 +228,8 @@
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  float: left;
   margin: 0 0.1em 0.1em 0;
-  background-color: transparent ;
+  background-color: transparent;
 }
 .c100 *,
 .c100 *:before,
@@ -1083,25 +1082,3 @@
 }
 
 .c100.red > span {
-  color: #cd0000;
-}
-
-.c100.yellow .bar,
-.c100.yellow .fill {
-  border-color: #f1c40f  !important;
-}
-.c100.yellow:hover > span {
-  color: #f1c40f ;
-}
-
-.c100.yellow > span {
-  color: #f1c40f ;
-}
-
-.c100.orange.dark .bar,
-.c100.orange.dark .fill {
-  border-color: #e88421 !important;
-}
-.c100.orange.dark:hover > span {
-  color: #e08833;
-}

@@ -21,8 +21,22 @@ let score = document.querySelector('.c100 > span');
 var scroll = this.scrollY;
 
 
-window.addEventListener("DOMContentLoaded", function (event) {
+window.addEventListener("scroll", function (event) {
+    var scroll = this.scrollY;
 
+    if (scroll < 20) {
+        if (width > 720) {
+            if (checker) {
+                navbarResults.style.backgroundColor = "rgba(255,255,255,0.7)";
+            }
+        }
+    } else {
+        navbar.style.backgroundColor = "#fff";
+    }
+});
+
+
+window.addEventListener("DOMContentLoaded", function (event) {
 
     if (scroll < 30) {
         if (width > 720) {
