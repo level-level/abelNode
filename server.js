@@ -74,7 +74,8 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 
 				(async () => {
 
-					const browser = await puppeteer.launch();
+					const browser = await puppeteer.launch({headless: true, args:['--no-sandbox']});
+
 					const page = await browser.newPage();
 			
 					await page.goto(finalUrl);
