@@ -82,12 +82,12 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 					
 			
 					await page.setViewport({
-						width: 1024,
-						height: await page.evaluate(() => document.body.clientHeight)
+						width: 1034,
+						height: 1080
 					});
-					const screenshot = await page.screenshot();
+					await page.screenshot({ path: 'public/img/out1.png', fullPage: true });
+				  
 					await browser.close();
-					fs.writeFileSync('public/img/out1.png', screenshot);
 				})();
 
 				driver.get(finalUrl);
