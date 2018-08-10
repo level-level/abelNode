@@ -83,13 +83,11 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 
 
 					await page.setViewport({
-						width: 1034,
-						height: 1080
+						width: 800,
+						height: 600
 					});
 
 					await page.goto(finalUrl, { waitUntil: 'networkidle2' });
-
-					await timeout(10000);
 					await page.screenshot({ path: 'public/img/out1.png', fullPage: true });
 
 					await browser.close();
