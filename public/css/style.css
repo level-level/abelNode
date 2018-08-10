@@ -1122,7 +1122,7 @@ div#columnResults ul>li {
 
     .nav-tabs .nav-item {
         margin-bottom: -1px;
-        width: 160px;
+        /* width: 160px; */
 
     }
 
@@ -1311,8 +1311,8 @@ ul#myTab {
 }
 
 ul.results-list {
-    display: inline-block;
-    width: 400px;
+    display: inline-table;
+    width: 40%;
 }
 
 .wrapper-contrast-effect {
@@ -1574,6 +1574,11 @@ div#color-deficiency-group {
  .oplossing-wrapper p {
     margin-right: 50px;
 }
+
+p {
+    font-size: 20px;
+}
+
 
 
 

@@ -55,6 +55,9 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 		.build();
 
 
+	function timeout(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+	};
 
 	var colorContrastArray = [];
 	var HTMLstructureArray = [];
@@ -74,19 +77,21 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 
 				(async () => {
 
-					const browser = await puppeteer.launch({headless: true, args:['--no-sandbox']});
+					const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
 
 					const page = await browser.newPage();
-			
-					await page.goto(finalUrl);
-					
-			
+
+
 					await page.setViewport({
 						width: 1034,
 						height: 1080
 					});
+
+					await page.goto(finalUrl, { waitUntil: 'networkidle2' });
+
+					await timeout(10000);
 					await page.screenshot({ path: 'public/img/out1.png', fullPage: true });
-				  
+
 					await browser.close();
 				})();
 
