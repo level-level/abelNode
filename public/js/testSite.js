@@ -94,9 +94,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
 
-    myForm.addEventListener("click", function () {
-        e.preventDefault();
-    });
+
     removeHeaders.addEventListener("click", function () {
 
         for (i = 0; i < h2.length; i++) {

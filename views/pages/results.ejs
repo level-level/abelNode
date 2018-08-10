@@ -219,7 +219,6 @@
 																<h3>
 																	<%= colorContrastArray[i].id %>
 																</h3>
-
 															</li>
 															<li>
 																Help:
@@ -228,6 +227,16 @@
 															<li>
 																Impact:
 																<%= colorContrastArray[i].impact %>
+															</li>
+															<li>
+																explanation:
+																<%= colorContrastArray[i].description %>
+															</li>
+															<li>
+																Help url:
+																<a href="<%= colorContrastArray[i].helpUrl %>">
+																	<%= colorContrastArray[i].help %>
+																</a>
 															</li>
 														</ul>
 														<% } %>
@@ -316,6 +325,16 @@
 																Impact:
 																<%= HTMLstructureArray[i].impact %>
 															</li>
+															<li>
+																explanation:
+																<%= HTMLstructureArray[i].description %>
+															</li>
+															<li>
+																Help url:
+																<a href="<%= HTMLstructureArray[i].helpUrl %>">
+																	<%= HTMLstructureArray[i].help %>
+																</a>
+															</li>
 														</ul>
 														<% } %>
 									</div>
@@ -384,6 +403,16 @@
 															<li>
 																Impact:
 																<%= scalingArray[i].impact %>
+															</li>
+															<li>
+																explanation:
+																<%= scalingArray[i].description %>
+															</li>
+															<li>
+																Help url:
+																<a href="<%= scalingArray[i].helpUrl %>">
+																	<%= scalingArray[i].help %>
+																</a>
 															</li>
 														</ul>
 														<% } %>
@@ -466,6 +495,16 @@
 														<li>
 															Impact:
 															<%= missingHTMLArray[i].impact %>
+														</li>
+														<li>
+															explanation:
+															<%= missingHTMLArray[i].description %>
+														</li>
+														<li>
+															Help url:
+															<a href="<%= missingHTMLArray[i].helpUrl %>">
+																<%= missingHTMLArray[i].help %>
+															</a>
 														</li>
 													</ul>
 													<% } %>
