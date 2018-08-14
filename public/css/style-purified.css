@@ -1,3 +1,6 @@
+
+
+
 .abel.image {
   padding-right: 20px;
 }
@@ -131,8 +134,12 @@ h1,h2,h3,h4 {
 .container {
   width: 55%;
   margin: 0 auto;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   overflow: auto;
-  margin-top: 90px;
+  /* margin-top: 90px; */
 }
 
 .btn.btn-primary {
@@ -561,6 +568,7 @@ div#resultsWrapper {
 html,body {
   margin: 0px;
   padding: 0px;
+  height: 100%;
 }
 
 input[type="radio"] {
@@ -730,11 +738,17 @@ div#myTabContent {
   width: 50%;
   text-align: -webkit-center;
   margin: 0 auto;
-  margin-top: 150px;
+  /* height: 100%; */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* background: red; */
+  /* margin-top: 150px; */
 }
 
 .wrapper-404 {
   width: 100%;
+  height: 100%;
 }
 
 .mobileViewIncidents {
