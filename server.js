@@ -14,7 +14,9 @@ var events = require('events');
 var fs = require('fs');
 var score;
 var scoreColor;
-var error;
+var errorForm = "";
+var hello = "Hello World";
+var error = "Voer een url in om je website te testen";
 
 
 var urlencoderParser = bodyParser.urlencoded({ extended: true });
@@ -33,10 +35,8 @@ app.use(express.static(__dirname + '/public'));
 // Accessibility check page 
 app.get('/', function (req, res) {
 
-
-
-
 	res.render('pages/accessibilityTester', {
+		errorForm: errorForm,
 		error: error
 	});
 });
@@ -46,18 +46,15 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	score = 500;
 	url = req.body.url;
 	var finalUrl;
-
+	if (req.body.url == "") {
+		console.log("empty");
+	}
 
 	var result;
 	var driver = new WebDriver.Builder()
 		.forBrowser('firefox')
 		.setFirefoxOptions(new firefox.Options().headless(), new firefox.Options().proxy = null)
 		.build();
-
-
-	function timeout(ms) {
-		return new Promise(resolve => setTimeout(resolve, ms));
-	};
 
 	var colorContrastArray = [];
 	var HTMLstructureArray = [];
@@ -74,6 +71,8 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	try {
 		urlExists(finalUrl, function (err, exists) {
 			if (exists) {
+
+				errorForm = "errorForm-correct";
 
 				(async () => {
 
@@ -92,19 +91,6 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 
 					await browser.close();
 				})();
-
-				driver.get(finalUrl);
-
-				// function writeScreenshot(data, name) {
-				// 	name = name || 'ss.png';
-				// 	var screenshotPath = 'public/img/';
-				// 	fs.writeFileSync(screenshotPath + name, data, 'base64');
-				// };
-
-
-				// driver.takeScreenshot().then(function (data) {
-				// 	writeScreenshot(data, 'out1.png');
-				// });
 
 				driver
 					.get(finalUrl)
@@ -181,8 +167,9 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 							});
 					});
 			} else {
-				res.redirect('/');
-				error = "voer een valide url in";
+				res.send(hello);
+				errorForm = "errorForm";
+				error = "Voer een correcte url in";
 			}
 
 		});

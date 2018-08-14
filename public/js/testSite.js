@@ -20,6 +20,9 @@ let checker = document.getElementById('checker-container');
 let score = document.querySelector('.c100 > span');
 let myForm = document.getElementById('myForm');
 var scroll = this.scrollY;
+let imgScreenshot = document.querySelector('.wrapper-contrast-effect > .screenshot-site > .screenshot-contrast');
+let imgScreenshotZoom = document.querySelector('.wrapper-contrast-effect > .screenshot-site > .screenshot-Zoom');
+let kleurcontrastImg = document.querySelector('.verklaring-image > #kleurcontrastImage');
 
 
 window.addEventListener("scroll", function (event) {
@@ -63,8 +66,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-
-
     $('.carousel').carousel({
         interval: 100000
     })
@@ -72,25 +73,37 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     var radios = document.getElementsByName('choice');
     radios[0].onclick = function () {
-        document.body.classList.remove("blueYellow");
-        document.body.classList.remove("redGreen");
-        document.body.classList.add("greyscale");
+        imgScreenshot.classList.remove("blueYellow");
+        imgScreenshot.classList.remove("redGreen");
+        kleurcontrastImg.classList.remove("blueYellow");
+        kleurcontrastImg.classList.remove("redGreen");
+        kleurcontrastImg.classList.add("greyscale");
+        imgScreenshot.classList.add("greyscale");
     }
     radios[1].onclick = function () {
-        document.body.classList.remove("greyscale");
-        document.body.classList.remove("redGreen");
-        document.body.classList.add("blueYellow");
+        imgScreenshot.classList.remove("greyscale");
+        imgScreenshot.classList.remove("redGreen");
+        imgScreenshot.classList.add("blueYellow");
+        kleurcontrastImg.classList.remove("greyscale");
+        kleurcontrastImg.classList.remove("redGreen");
+        kleurcontrastImg.classList.add("blueYellow");
     }
     radios[2].onclick = function () {
-        document.body.classList.remove("greyscale");
-        document.body.classList.remove("blueYellow");
-        document.body.classList.add("redGreen");
+        imgScreenshot.classList.remove("greyscale");
+        imgScreenshot.classList.remove("blueYellow");
+        imgScreenshot.classList.add("redGreen");
+        kleurcontrastImg.classList.remove("greyscale");
+        kleurcontrastImg.classList.remove("blueYellow");
+        kleurcontrastImg.classList.add("redGreen");
     }
 
     radios[3].onclick = function () {
-        document.body.classList.remove("greyscale");
-        document.body.classList.remove("blueYellow");
-        document.body.classList.remove("redGreen");
+        imgScreenshot.classList.remove("greyscale");
+        imgScreenshot.classList.remove("blueYellow");
+        imgScreenshot.classList.remove("redGreen");
+        kleurcontrastImg.classList.remove("greyscale");
+        kleurcontrastImg.classList.remove("blueYellow");
+        kleurcontrastImg.classList.remove("redGreen");
     }
 
 
@@ -127,10 +140,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
     buttonZoom.addEventListener("click", function () {
-
-
         document.body.classList.remove("blueYellow");
         resultbody.classList.add("bodyresult");
-        fullbody.classList.toggle("zoomOn");
+        imgScreenshotZoom.classList.toggle("zoomOn");
     });
 });

@@ -31,7 +31,7 @@
                         <form id="urlForm" method="POST" action="/accessibilityCheck">
                             <div class="form-group">
                                 <span id="warning"></span>
-                                <input type="text" class="form-control" id="url" aria-label="Enter url for Accessibility checker here" name="url" placeholder="Voer een url in">
+                                <input type="text" class="form-control <%= errorForm%>" id="url" aria-label="Enter url for Accessibility checker here" name="url" placeholder="<%= error%>">
                                 <button type="submit" class="btn btn-primary" id="testButton">Start Test!</button>
                             </div>
                         </form>
