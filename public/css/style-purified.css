@@ -832,6 +832,10 @@ div#myTabContent {
   }
 }
 
+#checker-container {
+  margin-top: 90px;
+}
+
 .body-404 {
   background-image: url('../img/404_PAGE.png');
 }
@@ -886,4 +890,8 @@ div#color-deficiency-group {
 
 p {
   font-size: 20px;
+}
+
+.wrapper-404 main {
+  height: 100%;
 }
