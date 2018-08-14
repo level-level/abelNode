@@ -68,6 +68,7 @@ ul.navbar-nav {
   background: #04549a;
   line-height: 5px;
   height: 52px;
+  width: 200px;
   text-align: center;
   margin: 10px;
   border-radius: 10px;
@@ -132,7 +133,6 @@ h1,h2,h3,h4 {
 }
 
 .container {
-  width: 55%;
   margin: 0 auto;
   height: 100%;
   -webkit-transform-style: preserve-3d;
@@ -231,6 +231,7 @@ nav .nav-item {
   height: 48px;
   /* margin: 0 auto; */
   margin-left: 14px;
+  margin-right: 10px;
   width: 43%;
   border-radius: 10px;
 }
@@ -512,10 +513,22 @@ nav {
 
 .abel-explanation-image img {
   width: 400px;
-  margin-top: 30px;
 }
 
-@media screen and (max-width: 1300px) {
+
+@media screen and (max-width: 1000px) {
+
+.form-group {
+  display: inline-block;
+}
+
+.accessibilityCheck input#url {
+  width: 90%;
+}
+
+}
+
+@media screen and (max-width: 1400px) {
   .jumbotron button {
     margin-top: 20px;
   }
@@ -610,7 +623,7 @@ header {
 }
 
 ul.navbar-nav {
-  width: 55%;
+  width: 66%;
   text-align: -webkit-center;
   margin: 0 auto;
   border-radius: 10px;
@@ -872,7 +885,7 @@ div#color-deficiency-group {
   }
 
   ul.navbar-nav {
-    width: 80%;
+    width: 100%;
   }
 
   div#myTabContent {
