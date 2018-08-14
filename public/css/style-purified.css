@@ -739,7 +739,7 @@ div#myTabContent {
   text-align: -webkit-center;
   margin: 0 auto;
   /* height: 100%; */
-  position: absolute;
+  position: relative;
   top: 50%;
   transform: translateY(-50%);
   /* background: red; */
