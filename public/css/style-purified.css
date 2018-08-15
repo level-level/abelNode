@@ -233,7 +233,7 @@ nav .nav-item {
   margin-left: 14px;
   margin-right: 10px;
   width: 43%;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 .btn-primary {
@@ -907,4 +907,33 @@ p {
 
 .wrapper-404 main {
   height: 100%;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #000;
+}
+
+.contact {
+  display: flex;
+}
+
+.contact p {
+  margin-right: 50px;
+}
+
+.contact-image {
+  width: 400px;
+}
+
+img {
+  width: 400px;
+}
+
+.text-contact ul li {
+  list-style-type: none;
+}
+
+.text-contact ul  {
+  padding: 0px;
+  font-size: 20px;
 }
