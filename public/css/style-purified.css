@@ -67,11 +67,11 @@ ul.navbar-nav {
   font-weight: bold;
   background: #04549a;
   line-height: 5px;
-  height: 52px;
+  /* height: 30px; */
   width: 200px;
   text-align: center;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 
@@ -363,7 +363,7 @@ div#myTabContent h5 {
 }
 
 button#testButton {
-  border-radius: 10px;
+  border-radius: 50px;
   width: 100px;
   height: 48px;
 }

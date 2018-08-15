@@ -11,24 +11,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 });
 
-function showLoading() {
+function showLoading(e) {
 
-    //   $("form").submit(function (e) {
-    //     e.preventDefault();
-    //     console.log("Hello world");
-    //     var $form = $(this);
-    //     var url = "/";
-    //     $.ajax({
-    //         url: url,
-    //         type: "POST",
-    //         dataType: "json",
-    //         success: function (data) {
-    //             console.log("Hello world");
+    // e.preventDefault();
+    // $.ajax({
+    //     url: 'http://localhost:8080/accessibilityCheck',
+    //     type: "GET",
+    //     dataType: "json",
+    //     success: function (data) {
+    //         if (data == true) {
+    //             setInterval(addDot, 1000);
+    //             abelCheck.remove();
+    //             loader.style.display = 'block';
     //         }
-
-    //     });
+    //     }
 
     // });
+
 
     setInterval(addDot, 1000);
     abelCheck.remove();

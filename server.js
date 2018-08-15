@@ -15,7 +15,6 @@ var fs = require('fs');
 var score;
 var scoreColor;
 var errorForm = "";
-var hello = "Hello World";
 var error = "Voer een url in om je website te testen";
 
 
@@ -42,6 +41,51 @@ app.get('/', function (req, res) {
 });
 
 
+
+// app.get('/accessibilityCheck', urlencoderParser, function (req, res) {
+// 	score = 500;
+// 	url = req.body.url;
+// 	var urlExist = false;
+// 	var finalUrl;
+// 	if (req.body.url == "") {
+// 		console.log("empty");
+// 	}
+
+	
+
+// 	if (url.indexOf("http://") == 0 || url.indexOf("https://") == 0) {
+// 		finalUrl = url;
+// 	} else {
+// 		finalUrl = "https://" + url;
+// 	}
+// 	try {
+// 		urlExists(finalUrl, function (err, exists) {
+// 			if (exists) {
+
+// 				urlExist = true;
+// 			} else {
+// 				res.writeHead(200, {
+// 					'Content-Type': 'text/html',
+// 					'Access-Control-Allow-Origin': '*'
+// 				});
+
+// 				// res.redirect('/');
+// 				errorForm = "errorForm";
+// 				error = "Voer een correcte url in";
+// 			}
+
+// 		});
+// 	} catch (e) {
+// 		console.error(e);
+// 	}
+
+// 	res.send(urlExist);
+// 	console.log(finalUrl);
+
+
+
+
+// });
 app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	score = 500;
 	url = req.body.url;
@@ -71,6 +115,8 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	try {
 		urlExists(finalUrl, function (err, exists) {
 			if (exists) {
+
+				urlExist = true;
 
 				errorForm = "errorForm-correct";
 
@@ -167,7 +213,12 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 							});
 					});
 			} else {
-				res.send(hello);
+				// res.writeHead(200, {
+				// 	'Content-Type': 'text/html',
+				// 	'Access-Control-Allow-Origin': '*'
+				// });
+				// res.send(urlExist);
+				res.redirect('/');
 				errorForm = "errorForm";
 				error = "Voer een correcte url in";
 			}
