@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "axe-core": "^3.0.2",
+    "puppeteer": "^1.6.2",
     "url-exists": "^1.0.3"
   }
 }

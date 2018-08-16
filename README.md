@@ -7,6 +7,9 @@ This webapp uses the [axe-webdriverjs](https://github.com/dequelabs/axe-webdrive
 
 It also needs to use selenium-webdriver to start a browser to test your website.
 
+
+## You will need to have Nodejs 8 installed to run this project correctly without any errors.
+
 ## install the following drivers:
 
 ### Geckodriver
@@ -51,5 +54,6 @@ var driver = new WebDriver.Builder()
 		});
 ```
 
+![Tool results example 1](https://i.imgur.com/Ag1oSvn.png)
 
 

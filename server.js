@@ -14,8 +14,8 @@ var events = require('events');
 var fs = require('fs');
 var score;
 var scoreColor;
-var error;
-
+var errorForm = "";
+var error = "Voer een url in om je website te testen";
 
 
 var urlencoderParser = bodyParser.urlencoded({ extended: true });
@@ -28,60 +28,71 @@ let port = 8080;
 
 app.use(express.static(__dirname + '/public'));
 
-// index page 
-app.get('/', function (req, res) {
-
-	// code to create screenshot website
-	// var driver = new WebDriver.Builder()
-	// .forBrowser('firefox')
-	// .setFirefoxOptions(new firefox.Options().headless(), new firefox.Options().proxy = null)
-	// .build();
-
-	// driver.get('https://coolblue.nl');
-
-	// function writeScreenshot(data, name) {
-	// 	name = name || 'ss.png';
-	// 	var screenshotPath = 'public/img/';
-	// 	fs.writeFileSync(screenshotPath + name, data, 'base64');
-	//   };
-
-	//   driver.takeScreenshot().then(function(data) {
-	// 	writeScreenshot(data, 'out1.png');
-	//   });
-
-	var header = "Test your website";
-	res.render('pages/index', {
-	});
-
-});
 
 
 
 // Accessibility check page 
-app.get('/accessibilityCheck', function (req, res) {
-	res.render('pages/accessibilityCheck', {
+app.get('/', function (req, res) {
+
+	res.render('pages/accessibilityTester', {
+		errorForm: errorForm,
 		error: error
 	});
 });
 
-app.get('/over-ons', function (req, res) {
-	res.render('pages/about');
-});
-
-app.get('/reference', function (req, res) {
-	res.render('pages/reference');
-});
 
 
-app.get('/contact', function (req, res) {
-	res.render('pages/contact');
-});
+// app.get('/accessibilityCheck', urlencoderParser, function (req, res) {
+// 	score = 500;
+// 	url = req.body.url;
+// 	var urlExist = false;
+// 	var finalUrl;
+// 	if (req.body.url == "") {
+// 		console.log("empty");
+// 	}
 
+	
+
+// 	if (url.indexOf("http://") == 0 || url.indexOf("https://") == 0) {
+// 		finalUrl = url;
+// 	} else {
+// 		finalUrl = "https://" + url;
+// 	}
+// 	try {
+// 		urlExists(finalUrl, function (err, exists) {
+// 			if (exists) {
+
+// 				urlExist = true;
+// 			} else {
+// 				res.writeHead(200, {
+// 					'Content-Type': 'text/html',
+// 					'Access-Control-Allow-Origin': '*'
+// 				});
+
+// 				// res.redirect('/');
+// 				errorForm = "errorForm";
+// 				error = "Voer een correcte url in";
+// 			}
+
+// 		});
+// 	} catch (e) {
+// 		console.error(e);
+// 	}
+
+// 	res.send(urlExist);
+// 	console.log(finalUrl);
+
+
+
+
+// });
 app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	score = 500;
 	url = req.body.url;
 	var finalUrl;
-
+	if (req.body.url == "") {
+		console.log("empty");
+	}
 
 	var result;
 	var driver = new WebDriver.Builder()
@@ -104,6 +115,29 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	try {
 		urlExists(finalUrl, function (err, exists) {
 			if (exists) {
+
+				urlExist = true;
+
+				errorForm = "errorForm-correct";
+
+				(async () => {
+
+					const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
+
+					const page = await browser.newPage();
+
+
+					await page.setViewport({
+						width: 800,
+						height: 600
+					});
+
+					await page.goto(finalUrl, { waitUntil: 'networkidle2' });
+					await page.screenshot({ path: 'public/img/out1.png', fullPage: true });
+
+					await browser.close();
+				})();
+
 				driver
 					.get(finalUrl)
 					.then(function () {
@@ -114,7 +148,6 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 								for (let i = 0; i < result.length; i++) {
 									impact = results['violations'][i]['impact']
 									category = results['violations'][i]['tags'][0];
-									// console.log("\n" + results['passes'][i]['id']);
 
 
 									if (category == 'cat.color') {
@@ -159,7 +192,7 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 								if (scorePercentage >= 95) {
 									scoreColor = 'green';
 								} else if (scorePercentage < 95 && scorePercentage > 70) {
-									coreColor = 'yellow';
+									scoreColor = 'yellow';
 								} else if (scorePercentage <= 70 && scorePercentage > 50) {
 									scoreColor = 'orange';
 								} else {
@@ -180,8 +213,14 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 							});
 					});
 			} else {
-				res.redirect('/accessibilityCheck');
-				error = "voer een valide url in";
+				// res.writeHead(200, {
+				// 	'Content-Type': 'text/html',
+				// 	'Access-Control-Allow-Origin': '*'
+				// });
+				// res.send(urlExist);
+				res.redirect('/');
+				errorForm = "errorForm";
+				error = "Voer een correcte url in";
 			}
 
 		});
@@ -193,6 +232,12 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 
 
 
+});
+
+app.get('*', function (req, res) {
+	res.render('pages/404', {
+
+	});
 });
 
 
