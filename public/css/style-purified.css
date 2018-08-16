@@ -9,6 +9,10 @@
   width: 73%;
 }
 
+.contact {
+  display: flex;
+}
+
 li.nav-item {
   font-family: 'Concert One';
 }
@@ -100,6 +104,11 @@ ul.navbar-nav {
   border-bottom: 0px;
 
 }
+
+img {
+  width: 400px;
+}
+
 
 .navbar {
   background-color: #fff;
@@ -344,11 +353,7 @@ div#myTabContent p.card-text {
   background-image: url('');
 }
 
-.bodyresult {
-  background-image: url('../img/Blob_tool_test_header.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+
 
 div#myTabContent h5 {
   font-family: concert one;
@@ -414,12 +419,53 @@ a.btn.btn-primary {
   li.nav-item {
     width: 108px;
   }
+
+
 }
+
+@media screen and (min-width: 1000px) {
+
+  .verklaring p {
+    width: 57%;
+    margin-right: 50px;
+  }
+
+}
+
 
 @media screen and (max-width: 1000px) {
   .accessibilityCheck .jumbotron {
     width: 100%;
     text-align: center;
+  }
+  
+  .oplossing-wrapper {
+    width: 100%;
+  }
+
+  .verklaring  {
+    display: inline-block;
+
+  }
+
+  .contact-image img {
+    width:  100%;
+  }
+
+  .contact {
+   display: inline-block;
+  }
+
+  .oplossing {
+    display: inline-block;
+  }
+
+  .bodyresult {
+    background: #fff;
+  }
+
+  .verklaring {
+    display: inline-block;
   }
 
   .circle-wrapper {
@@ -475,13 +521,11 @@ nav {
 }
 
 @media screen and (min-width: 1000px) {
-  #carouselExampleControls {
-    display: none;
-  }
+
 
   div#overviewScore {
     padding: 10px;
-    width: 55%;
+    width: 65%;
     display: flex;
     margin: 0 auto;
   }
@@ -490,6 +534,10 @@ nav {
 @media screen and (max-width: 1000px) {
   .accessibilityCheck input#url {
     width: 70%;
+  }
+
+  screenshot-site img {
+    width: 100%;
   }
 
   .accessibilityCheck .jumbotron {
@@ -516,7 +564,7 @@ nav {
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
 
 .form-group {
   display: inline-block;
@@ -526,12 +574,37 @@ nav {
   width: 90%;
 }
 
+.card {
+  border:0px;
+}
+
+}
+
+@media screen and (max-width: 480px) {
+.verklaring img {
+  width: 100%;
+}
+
+div#color-deficiency-group {
+  display: grid;
+}
+
+img {
+  width: 100%;
+}
+
+.oplossing-image img {
+  width: 100%;
+}
+
 }
 
 @media screen and (max-width: 1400px) {
   .jumbotron button {
     margin-top: 20px;
   }
+
+
 
   .wrapper-loader h4 {
     font-size: 14px;
@@ -641,11 +714,11 @@ div#resultsWrapper {
 }
 
 #myTab li.nav-item {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 ul#myTab {
-  width: 55%;
+  width: 65%;
   margin: 0 auto;
   height: 65px;
 }
@@ -680,7 +753,7 @@ ul.results-list {
 }
 
 div#myTabContent {
-  width: 55%;
+  width: 65%;
   margin: 0 auto;
 }
 
@@ -692,14 +765,9 @@ div#myTabContent {
   list-style-type: none;
 }
 
-.verklaring img {
-  width: 200px;
-}
 
-.verklaring {
-  display: flex;
-  /* background: red; */
-}
+
+
 
 .screenshot-contrast,.screenshot-Zoom {
   border-radius: 15px;
@@ -720,26 +788,15 @@ div#myTabContent {
   margin-bottom: 20px;
 }
 
-.verklaring p {
-  width: 57%;
-  margin-right: 50px;
-}
+
 
 .card-body {
   border: 0px;
 }
 
-.oplossing {
-  display: flex;
-}
 
-.oplossing-image img {
-  width: 200px;
-}
 
-.oplossing-wrapper {
-  width: 60%;
-}
+
 
 
 
@@ -768,6 +825,9 @@ div#myTabContent {
   display: none;
 }
 
+#carouselExampleControls {
+  display: none;
+}
 .results-list li a {
   text-decoration: underline;
   color: #000;
@@ -804,9 +864,10 @@ div#myTabContent {
     display: block;
   }
 
-  carouselExampleControls {
+  #carouselExampleControls {
     display: block;
   }
+
 
   ul.results-list {
     width: 100%;
@@ -881,7 +942,7 @@ div#color-deficiency-group {
 
 @media screen and (max-width: 1500px) {
   ul#myTab {
-    width: 80%;
+    width: 92%;
   }
 
   ul.navbar-nav {
@@ -889,17 +950,15 @@ div#color-deficiency-group {
   }
 
   div#myTabContent {
-    width: 80%;
+    width: 90%;
   }
 
   div#overviewScore {
-    width: 80%;
+    width: 90%;
   }
 }
 
-.oplossing-wrapper p {
-  margin-right: 50px;
-}
+
 
 p {
   font-size: 20px;
@@ -913,21 +972,15 @@ p {
   color: #000;
 }
 
-.contact {
-  display: flex;
-}
+
 
 .contact p {
   margin-right: 50px;
 }
 
-.contact-image {
-  width: 400px;
-}
 
-img {
-  width: 400px;
-}
+
+
 
 .text-contact ul li {
   list-style-type: none;
@@ -937,3 +990,90 @@ img {
   padding: 0px;
   font-size: 20px;
 }
+
+
+div#myTabContent {
+  margin-top: 20px;
+}
+
+
+@media screen and (min-width: 1100px) {
+
+  .oplossing {
+    display: flex;
+  }
+
+  .contact-image {
+    width: 400px;
+  }
+
+  .bodyresult {
+    background-image: url('../img/Blob_tool_test_header.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+ 
+  .oplossing-wrapper p {
+    margin-right: 50px;
+  }
+
+  .oplossing-image img {
+    width: 200px;
+  }
+  
+  .oplossing-wrapper {
+    width: 60%;
+  }
+
+
+  .verklaring {
+    display: flex;
+  }
+
+  .verklaring img {
+    width: 200px;
+  }
+
+
+
+
+  .oplossing-wrapper p {
+    margin-right: 50px;
+  }
+
+
+  .verklaring p {
+    width: 57%;
+    margin-right: 50px;
+  }
+
+}
+
+.carousel-control-next, .carousel-control-prev {
+  width: 5%;
+  position: fixed;
+}
+
+.card ul li {
+  font-size: 20px;
+}
+
+input.choiceMobile {
+  width: 10%;
+}
+
+.radiowrapper {
+  padding: 10px;
+}
+
+
+span.carousel-control-next-icon {
+  background-image: url('../img/arrow-left.png');
+}
+
+
+span.carousel-control-prev-icon {
+  background-image: url('../img/arrow-right.png');
+}
+
