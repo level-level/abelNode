@@ -54,8 +54,8 @@ var driver = new WebDriver.Builder()
 		});
 ```
 
-![Tool results example 1(https://i.imgur.com/Ag1oSvn.png)
+![Tool results example 1](https://i.imgur.com/Ag1oSvn.png)
 
-![Tool results example 2(https://i.imgur.com/ZRuBFLa.png)
+![Tool results example 2](https://i.imgur.com/ZRuBFLa.png)
 
 
