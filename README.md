@@ -56,4 +56,18 @@ var driver = new WebDriver.Builder()
 
 ![Tool results example 1](https://i.imgur.com/Ag1oSvn.png)
 
+#Running multiple instances with PM2 with load balancing
+Install PM2 with npm or Yarn
+```
+npm install pm2 -g
+```
 
+Install the PM2 autocomplete
+```
+pm2 completion install
+```
+
+Start the server instances.
+```
+sh start_servers.sh
+```

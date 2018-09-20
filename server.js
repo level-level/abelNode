@@ -17,19 +17,14 @@ var scoreColor;
 var errorForm = "";
 var error = "Voer een url in om je website te testen";
 
-
 var urlencoderParser = bodyParser.urlencoded({ extended: true });
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
 // Set the port number
-let port = 8080;
-
+let port = 8000;
 
 app.use(express.static(__dirname + '/public'));
-
-
-
 
 // Accessibility check page 
 app.get('/', function (req, res) {
@@ -40,52 +35,6 @@ app.get('/', function (req, res) {
 	});
 });
 
-
-
-// app.get('/accessibilityCheck', urlencoderParser, function (req, res) {
-// 	score = 500;
-// 	url = req.body.url;
-// 	var urlExist = false;
-// 	var finalUrl;
-// 	if (req.body.url == "") {
-// 		console.log("empty");
-// 	}
-
-	
-
-// 	if (url.indexOf("http://") == 0 || url.indexOf("https://") == 0) {
-// 		finalUrl = url;
-// 	} else {
-// 		finalUrl = "https://" + url;
-// 	}
-// 	try {
-// 		urlExists(finalUrl, function (err, exists) {
-// 			if (exists) {
-
-// 				urlExist = true;
-// 			} else {
-// 				res.writeHead(200, {
-// 					'Content-Type': 'text/html',
-// 					'Access-Control-Allow-Origin': '*'
-// 				});
-
-// 				// res.redirect('/');
-// 				errorForm = "errorForm";
-// 				error = "Voer een correcte url in";
-// 			}
-
-// 		});
-// 	} catch (e) {
-// 		console.error(e);
-// 	}
-
-// 	res.send(urlExist);
-// 	console.log(finalUrl);
-
-
-
-
-// });
 app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 	score = 500;
 	url = req.body.url;
@@ -213,11 +162,6 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 							});
 					});
 			} else {
-				// res.writeHead(200, {
-				// 	'Content-Type': 'text/html',
-				// 	'Access-Control-Allow-Origin': '*'
-				// });
-				// res.send(urlExist);
 				res.redirect('/');
 				errorForm = "errorForm";
 				error = "Voer een correcte url in";
@@ -229,9 +173,6 @@ app.post('/accessibilityCheck', urlencoderParser, function (req, res) {
 		driver.quit();
 	}
 	console.log(finalUrl);
-
-
-
 });
 
 app.get('*', function (req, res) {
@@ -240,10 +181,6 @@ app.get('*', function (req, res) {
 	});
 });
 
-
-
 const server = http.createServer(app).listen(port, function (req, res) {
 	console.log('LISTENING ON PORT ' + port);
 });
-
-
